@@ -131,6 +131,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>customerDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="customerDataSet.vb">
+      <DependentUpon>customerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CustomerDetail.Designer.vb">
       <DependentUpon>CustomerDetail.vb</DependentUpon>
     </Compile>

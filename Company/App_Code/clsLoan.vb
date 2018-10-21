@@ -58,7 +58,7 @@
         Return dstData
     End Function
     Public Function RecoveryList(Optional ByVal intCustomerId As Integer = 0) As DataSet
-        strSqlCommand = "select l.loanid,ln.loantableid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month' WHEN 'Y' THEN 'Year' END type,duration,ln.loandate,enddate,loannumber,advancedate,amount,interestrate,ln.interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid left join loantable ln on l.loanid = ln.loanid WHERE ((DATEADD(dd, 0, DATEDIFF(dd, 0, ln.loandate)) =  DATEADD(dd, 0, DATEDIFF(dd, 0, getdate())))) AND ISNULL(ln.paidamount,0) = 0"
+        strSqlCommand = "select l.loanid,ln.loantableid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month' WHEN 'Y' THEN 'Year' END type,duration,ln.loandate,enddate,loannumber,advancedate,amount,interestrate,ln.interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile, ISNULL(ln.paidamount, 0) paidamount from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid left join loantable ln on l.loanid = ln.loanid WHERE ((DATEADD(dd, 0, DATEDIFF(dd, 0, ln.loandate)) =  DATEADD(dd, 0, DATEDIFF(dd, 0, getdate()))))"
 
         If intCustomerId > 0 Then
             strSqlCommand &= " AND l.customerid = " & intCustomerId

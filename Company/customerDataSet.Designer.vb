@@ -307,6 +307,8 @@ Partial Public Class customerDataSet
         
         Private columnadharno As Global.System.Data.DataColumn
         
+        Private columnselect As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -439,6 +441,14 @@ Partial Public Class customerDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property selectColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnselect
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -475,9 +485,9 @@ Partial Public Class customerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddcustomerRow(ByVal companyid As Long, ByVal regno As String, ByVal name As String, ByVal address As String, ByVal jilloid As Long, ByVal talukoid As Long, ByVal rajyaid As Long, ByVal pincode As String, ByVal mobile1 As String, ByVal mobile2 As String, ByVal adharno As String) As customerRow
+        Public Overloads Function AddcustomerRow(ByVal companyid As Long, ByVal regno As String, ByVal name As String, ByVal address As String, ByVal jilloid As Long, ByVal talukoid As Long, ByVal rajyaid As Long, ByVal pincode As String, ByVal mobile1 As String, ByVal mobile2 As String, ByVal adharno As String, ByVal _select As String) As customerRow
             Dim rowcustomerRow As customerRow = CType(Me.NewRow,customerRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, companyid, regno, name, address, jilloid, talukoid, rajyaid, pincode, mobile1, mobile2, adharno}
+            Dim columnValuesArray() As Object = New Object() {Nothing, companyid, regno, name, address, jilloid, talukoid, rajyaid, pincode, mobile1, mobile2, adharno, _select}
             rowcustomerRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowcustomerRow)
             Return rowcustomerRow
@@ -518,6 +528,7 @@ Partial Public Class customerDataSet
             Me.columnmobile1 = MyBase.Columns("mobile1")
             Me.columnmobile2 = MyBase.Columns("mobile2")
             Me.columnadharno = MyBase.Columns("adharno")
+            Me.columnselect = MyBase.Columns("select")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -547,6 +558,11 @@ Partial Public Class customerDataSet
             MyBase.Columns.Add(Me.columnmobile2)
             Me.columnadharno = New Global.System.Data.DataColumn("adharno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnadharno)
+            Me.columnselect = New Global.System.Data.DataColumn("select", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnselect.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "selectColumn")
+            Me.columnselect.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnselect")
+            Me.columnselect.ExtendedProperties.Add("Generator_UserColumnName", "select")
+            MyBase.Columns.Add(Me.columnselect)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncustomerid}, true))
             Me.columncustomerid.AutoIncrement = true
             Me.columncustomerid.AutoIncrementSeed = -1
@@ -561,6 +577,9 @@ Partial Public Class customerDataSet
             Me.columnmobile1.MaxLength = 50
             Me.columnmobile2.MaxLength = 50
             Me.columnadharno.MaxLength = 50
+            Me.columnselect.ReadOnly = true
+            Me.columnselect.Caption = "Column1"
+            Me.columnselect.MaxLength = 6
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -883,6 +902,21 @@ Partial Public Class customerDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property _select() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablecustomer.selectColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'select' in table 'customer' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablecustomer.selectColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IscompanyidNull() As Boolean
             Return Me.IsNull(Me.tablecustomer.companyidColumn)
         End Function
@@ -1011,6 +1045,18 @@ Partial Public Class customerDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetadharnoNull()
             Me(Me.tablecustomer.adharnoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Is_selectNull() As Boolean
+            Return Me.IsNull(Me.tablecustomer.selectColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Set_selectNull()
+            Me(Me.tablecustomer.selectColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1192,6 +1238,7 @@ Namespace customerDataSetTableAdapters
             tableMapping.ColumnMappings.Add("mobile1", "mobile1")
             tableMapping.ColumnMappings.Add("mobile2", "mobile2")
             tableMapping.ColumnMappings.Add("adharno", "adharno")
+            tableMapping.ColumnMappings.Add("Column1", "select")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -1238,8 +1285,8 @@ Namespace customerDataSetTableAdapters
                 " [talukoid], [rajyaid], [pincode], [mobile1], [mobile2], [adharno]) VALUES (@com"& _ 
                 "panyid, @regno, @name, @address, @jilloid, @talukoid, @rajyaid, @pincode, @mobil"& _ 
                 "e1, @mobile2, @adharno);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT customerid, companyid, regno, name, address, ji"& _ 
-                "lloid, talukoid, rajyaid, pincode, mobile1, mobile2, adharno FROM customer WHERE"& _ 
-                " (customerid = SCOPE_IDENTITY())"
+                "lloid, talukoid, rajyaid, pincode, mobile1, mobile2, adharno, 'select' AS Expr1 "& _ 
+                "FROM customer WHERE (customerid = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@companyid", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "companyid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@regno", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "regno", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1270,8 +1317,8 @@ Namespace customerDataSetTableAdapters
                 "e1] = @Original_mobile1)) AND ((@IsNull_mobile2 = 1 AND [mobile2] IS NULL) OR (["& _ 
                 "mobile2] = @Original_mobile2)) AND ((@IsNull_adharno = 1 AND [adharno] IS NULL) "& _ 
                 "OR ([adharno] = @Original_adharno)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT customerid, companyid, regno, name"& _ 
-                ", address, jilloid, talukoid, rajyaid, pincode, mobile1, mobile2, adharno FROM c"& _ 
-                "ustomer WHERE (customerid = @customerid)"
+                ", address, jilloid, talukoid, rajyaid, pincode, mobile1, mobile2, adharno, 'sele"& _ 
+                "ct' AS Expr1 FROM customer WHERE (customerid = @customerid)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@companyid", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "companyid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@regno", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "regno", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1324,13 +1371,12 @@ Namespace customerDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT customerid, companyid, regno, name, address, jilloid, talukoid, rajyaid, p"& _ 
-                "incode, mobile1, mobile2, adharno FROM dbo.customer"
+                "incode, mobile1, mobile2, adharno, 'select' FROM dbo.customer"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        customerid, companyid, regno, name, address, jilloid, talukoid, raj"& _ 
-                "yaid, pincode, mobile1, mobile2, adharno"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            customer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE       "& _ 
-                " (companyid = @companyid)"
+            Me._commandCollection(1).CommandText = "SELECT address, adharno, companyid, customerid, jilloid, mobile1, mobile2, name, "& _ 
+                "pincode, rajyaid, regno, talukoid FROM customer WHERE (companyid = @companyid)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@companyid", Global.System.Data.SqlDbType.BigInt, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "companyid", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

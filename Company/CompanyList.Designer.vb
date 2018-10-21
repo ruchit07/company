@@ -24,9 +24,6 @@ Partial Class CompanyList
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CompanyDataSet = New Company.companyDataSet()
-        Me.CompanyTableAdapter = New Company.companyDataSetTableAdapters.companyTableAdapter()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,6 +36,9 @@ Partial Class CompanyList
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CompanyDataSet = New Company.companyDataSet()
+        Me.CompanyTableAdapter = New Company.companyDataSetTableAdapters.companyTableAdapter()
         Me.companyid = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,9 +47,9 @@ Partial Class CompanyList
         Me.FormnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Command = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -67,20 +67,6 @@ Partial Class CompanyList
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1017, 377)
         Me.DataGridView1.TabIndex = 0
-        '
-        'CompanyBindingSource
-        '
-        Me.CompanyBindingSource.DataMember = "company"
-        Me.CompanyBindingSource.DataSource = Me.CompanyDataSet
-        '
-        'CompanyDataSet
-        '
-        Me.CompanyDataSet.DataSetName = "companyDataSet"
-        Me.CompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'CompanyTableAdapter
-        '
-        Me.CompanyTableAdapter.ClearBeforeFill = True
         '
         'btnAdd
         '
@@ -164,6 +150,20 @@ Partial Class CompanyList
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
+        'CompanyBindingSource
+        '
+        Me.CompanyBindingSource.DataMember = "company"
+        Me.CompanyBindingSource.DataSource = Me.CompanyDataSet
+        '
+        'CompanyDataSet
+        '
+        Me.CompanyDataSet.DataSetName = "companyDataSet"
+        Me.CompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CompanyTableAdapter
+        '
+        Me.CompanyTableAdapter.ClearBeforeFill = True
+        '
         'companyid
         '
         Me.companyid.DataPropertyName = "companyid"
@@ -211,6 +211,7 @@ Partial Class CompanyList
         '
         'Command
         '
+        Me.Command.DataPropertyName = "Expr1"
         Me.Command.HeaderText = "સીલેકટ"
         Me.Command.Name = "Command"
         Me.Command.ReadOnly = True
@@ -228,10 +229,10 @@ Partial Class CompanyList
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Company List"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

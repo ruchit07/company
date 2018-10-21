@@ -22,18 +22,7 @@ Partial Class CustomerList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblCompanyId = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.customerid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.regno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Adhar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mobile1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.loan = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -47,19 +36,20 @@ Partial Class CustomerList
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblCompanyId = New System.Windows.Forms.Label()
+        Me.customerid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.regno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Adhar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.loan = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'lblCompanyId
-        '
-        Me.lblCompanyId.AutoSize = True
-        Me.lblCompanyId.Location = New System.Drawing.Point(26, 32)
-        Me.lblCompanyId.Name = "lblCompanyId"
-        Me.lblCompanyId.Size = New System.Drawing.Size(39, 13)
-        Me.lblCompanyId.TabIndex = 0
-        Me.lblCompanyId.Text = "Label1"
-        Me.lblCompanyId.Visible = False
         '
         'DataGridView1
         '
@@ -73,79 +63,9 @@ Partial Class CustomerList
         Me.DataGridView1.Size = New System.Drawing.Size(952, 150)
         Me.DataGridView1.TabIndex = 1
         '
-        'customerid
-        '
-        Me.customerid.DataPropertyName = "customerid"
-        Me.customerid.HeaderText = "customerid"
-        Me.customerid.Name = "customerid"
-        Me.customerid.ReadOnly = True
-        Me.customerid.Visible = False
-        '
-        'regno
-        '
-        Me.regno.DataPropertyName = "regno"
-        Me.regno.HeaderText = "રજીસ્ટ્રેશન નં"
-        Me.regno.Name = "regno"
-        Me.regno.ReadOnly = True
-        '
-        'name
-        '
-        Me.name.DataPropertyName = "name"
-        Me.name.HeaderText = "નામ​"
-        Me.name.Name = "name"
-        Me.name.ReadOnly = True
-        '
-        'Adhar
-        '
-        Me.Adhar.DataPropertyName = "adharno"
-        Me.Adhar.HeaderText = "આધાર નં"
-        Me.Adhar.Name = "Adhar"
-        Me.Adhar.ReadOnly = True
-        '
-        'address
-        '
-        Me.address.DataPropertyName = "address"
-        Me.address.HeaderText = "સરનામું"
-        Me.address.Name = "address"
-        Me.address.ReadOnly = True
-        '
-        'Taluko
-        '
-        Me.Taluko.DataPropertyName = "taliko"
-        Me.Taluko.HeaderText = "તાલુકો"
-        Me.Taluko.Name = "Taluko"
-        Me.Taluko.ReadOnly = True
-        '
-        'Jillo
-        '
-        Me.Jillo.DataPropertyName = "jillo"
-        Me.Jillo.HeaderText = "જીલ્લો"
-        Me.Jillo.Name = "Jillo"
-        Me.Jillo.ReadOnly = True
-        '
-        'Rajya
-        '
-        Me.Rajya.DataPropertyName = "rajya"
-        Me.Rajya.HeaderText = "રાજ્ય​"
-        Me.Rajya.Name = "Rajya"
-        Me.Rajya.ReadOnly = True
-        '
-        'mobile1
-        '
-        Me.mobile1.DataPropertyName = "mobile1"
-        Me.mobile1.HeaderText = "મોબાઇલ​"
-        Me.mobile1.Name = "mobile1"
-        Me.mobile1.ReadOnly = True
-        '
-        'loan
-        '
-        Me.loan.HeaderText = "લોન"
-        Me.loan.Name = "loan"
-        Me.loan.ReadOnly = True
-        '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(686, 27)
+        Me.btnAdd.Location = New System.Drawing.Point(798, 32)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 2
@@ -154,7 +74,7 @@ Partial Class CustomerList
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(778, 27)
+        Me.btnCancel.Location = New System.Drawing.Point(879, 32)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 3
@@ -234,6 +154,87 @@ Partial Class CustomerList
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
+        'lblCompanyId
+        '
+        Me.lblCompanyId.AutoSize = True
+        Me.lblCompanyId.Location = New System.Drawing.Point(26, 32)
+        Me.lblCompanyId.Name = "lblCompanyId"
+        Me.lblCompanyId.Size = New System.Drawing.Size(39, 13)
+        Me.lblCompanyId.TabIndex = 0
+        Me.lblCompanyId.Text = "Label1"
+        Me.lblCompanyId.Visible = False
+        '
+        'customerid
+        '
+        Me.customerid.DataPropertyName = "customerid"
+        Me.customerid.HeaderText = "customerid"
+        Me.customerid.Name = "customerid"
+        Me.customerid.ReadOnly = True
+        Me.customerid.Visible = False
+        '
+        'regno
+        '
+        Me.regno.DataPropertyName = "regno"
+        Me.regno.HeaderText = "રજીસ્ટ્રેશન નં"
+        Me.regno.Name = "regno"
+        Me.regno.ReadOnly = True
+        '
+        'name
+        '
+        Me.name.DataPropertyName = "name"
+        Me.name.HeaderText = "નામ​"
+        Me.name.Name = "name"
+        Me.name.ReadOnly = True
+        '
+        'Adhar
+        '
+        Me.Adhar.DataPropertyName = "adharno"
+        Me.Adhar.HeaderText = "આધાર નં"
+        Me.Adhar.Name = "Adhar"
+        Me.Adhar.ReadOnly = True
+        '
+        'address
+        '
+        Me.address.DataPropertyName = "address"
+        Me.address.HeaderText = "સરનામું"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
+        '
+        'Taluko
+        '
+        Me.Taluko.DataPropertyName = "taliko"
+        Me.Taluko.HeaderText = "તાલુકો"
+        Me.Taluko.Name = "Taluko"
+        Me.Taluko.ReadOnly = True
+        '
+        'Jillo
+        '
+        Me.Jillo.DataPropertyName = "jillo"
+        Me.Jillo.HeaderText = "જીલ્લો"
+        Me.Jillo.Name = "Jillo"
+        Me.Jillo.ReadOnly = True
+        '
+        'Rajya
+        '
+        Me.Rajya.DataPropertyName = "rajya"
+        Me.Rajya.HeaderText = "રાજ્ય​"
+        Me.Rajya.Name = "Rajya"
+        Me.Rajya.ReadOnly = True
+        '
+        'mobile1
+        '
+        Me.mobile1.DataPropertyName = "mobile1"
+        Me.mobile1.HeaderText = "મોબાઇલ​"
+        Me.mobile1.Name = "mobile1"
+        Me.mobile1.ReadOnly = True
+        '
+        'loan
+        '
+        Me.loan.DataPropertyName = "loan"
+        Me.loan.HeaderText = "લોન"
+        Me.loan.Name = "loan"
+        Me.loan.ReadOnly = True
+        '
         'CustomerList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -244,6 +245,7 @@ Partial Class CustomerList
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblCompanyId)
+        'Me.name = "CustomerList"
         Me.Text = "CustomerList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -252,21 +254,9 @@ Partial Class CustomerList
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblCompanyId As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnCancel As Button
-    Friend WithEvents customerid As DataGridViewTextBoxColumn
-    Friend WithEvents regno As DataGridViewTextBoxColumn
-    Friend WithEvents name As DataGridViewTextBoxColumn
-    Friend WithEvents Adhar As DataGridViewTextBoxColumn
-    Friend WithEvents address As DataGridViewTextBoxColumn
-    Friend WithEvents Taluko As DataGridViewTextBoxColumn
-    Friend WithEvents Jillo As DataGridViewTextBoxColumn
-    Friend WithEvents Rajya As DataGridViewTextBoxColumn
-    Friend WithEvents mobile1 As DataGridViewTextBoxColumn
-    Friend WithEvents loan As DataGridViewButtonColumn
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CompanyToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CompanyListToolStripMenuItem As ToolStripMenuItem
@@ -278,4 +268,15 @@ Partial Class CustomerList
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblCompanyId As Label
+    Friend WithEvents customerid As DataGridViewTextBoxColumn
+    Friend WithEvents regno As DataGridViewTextBoxColumn
+    Friend WithEvents name As DataGridViewTextBoxColumn
+    Friend WithEvents Adhar As DataGridViewTextBoxColumn
+    Friend WithEvents address As DataGridViewTextBoxColumn
+    Friend WithEvents Taluko As DataGridViewTextBoxColumn
+    Friend WithEvents Jillo As DataGridViewTextBoxColumn
+    Friend WithEvents Rajya As DataGridViewTextBoxColumn
+    Friend WithEvents mobile1 As DataGridViewTextBoxColumn
+    Friend WithEvents loan As DataGridViewButtonColumn
 End Class

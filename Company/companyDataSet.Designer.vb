@@ -311,6 +311,8 @@ Partial Public Class companyDataSet
         
         Private columnpassword As Global.System.Data.DataColumn
         
+        Private columnExpr1 As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -459,6 +461,14 @@ Partial Public Class companyDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Expr1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnExpr1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -495,9 +505,9 @@ Partial Public Class companyDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddcompanyRow(ByVal name As String, ByVal address As String, ByVal talukoid As Long, ByVal jilloid As Long, ByVal rajyaid As Long, ByVal zipcode As String, ByVal ownername As String, ByVal mobile As String, ByVal formno As String, ByVal startdate As Date, ByVal enddate As Date, ByVal username As String, ByVal password As String) As companyRow
+        Public Overloads Function AddcompanyRow(ByVal name As String, ByVal address As String, ByVal talukoid As Long, ByVal jilloid As Long, ByVal rajyaid As Long, ByVal zipcode As String, ByVal ownername As String, ByVal mobile As String, ByVal formno As String, ByVal startdate As Date, ByVal enddate As Date, ByVal username As String, ByVal password As String, ByVal Expr1 As String) As companyRow
             Dim rowcompanyRow As companyRow = CType(Me.NewRow,companyRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, name, address, talukoid, jilloid, rajyaid, zipcode, ownername, mobile, formno, startdate, enddate, username, password}
+            Dim columnValuesArray() As Object = New Object() {Nothing, name, address, talukoid, jilloid, rajyaid, zipcode, ownername, mobile, formno, startdate, enddate, username, password, Expr1}
             rowcompanyRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowcompanyRow)
             Return rowcompanyRow
@@ -540,6 +550,7 @@ Partial Public Class companyDataSet
             Me.columnenddate = MyBase.Columns("enddate")
             Me.columnusername = MyBase.Columns("username")
             Me.columnpassword = MyBase.Columns("password")
+            Me.columnExpr1 = MyBase.Columns("Expr1")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -573,6 +584,8 @@ Partial Public Class companyDataSet
             MyBase.Columns.Add(Me.columnusername)
             Me.columnpassword = New Global.System.Data.DataColumn("password", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpassword)
+            Me.columnExpr1 = New Global.System.Data.DataColumn("Expr1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnExpr1)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columncompanyid}, true))
             Me.columncompanyid.AutoIncrement = true
             Me.columncompanyid.AutoIncrementSeed = -1
@@ -588,6 +601,8 @@ Partial Public Class companyDataSet
             Me.columnformno.MaxLength = 50
             Me.columnusername.MaxLength = 50
             Me.columnpassword.MaxLength = 50
+            Me.columnExpr1.ReadOnly = true
+            Me.columnExpr1.MaxLength = 6
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -940,6 +955,21 @@ Partial Public Class companyDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Expr1() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablecompany.Expr1Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Expr1' in table 'company' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablecompany.Expr1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsnameNull() As Boolean
             Return Me.IsNull(Me.tablecompany.nameColumn)
         End Function
@@ -1092,6 +1122,18 @@ Partial Public Class companyDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetpasswordNull()
             Me(Me.tablecompany.passwordColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsExpr1Null() As Boolean
+            Return Me.IsNull(Me.tablecompany.Expr1Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetExpr1Null()
+            Me(Me.tablecompany.Expr1Column) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -1275,24 +1317,25 @@ Namespace companyDataSetTableAdapters
             tableMapping.ColumnMappings.Add("enddate", "enddate")
             tableMapping.ColumnMappings.Add("username", "username")
             tableMapping.ColumnMappings.Add("password", "password")
+            tableMapping.ColumnMappings.Add("Expr1", "Expr1")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[company] WHERE (([companyid] = @Original_companyid) AND ((@IsN"& _ 
-                "ull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_add"& _ 
-                "ress = 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNul"& _ 
-                "l_talukoid = 1 AND [talukoid] IS NULL) OR ([talukoid] = @Original_talukoid)) AND"& _ 
-                " ((@IsNull_jilloid = 1 AND [jilloid] IS NULL) OR ([jilloid] = @Original_jilloid)"& _ 
-                ") AND ((@IsNull_rajyaid = 1 AND [rajyaid] IS NULL) OR ([rajyaid] = @Original_raj"& _ 
-                "yaid)) AND ((@IsNull_zipcode = 1 AND [zipcode] IS NULL) OR ([zipcode] = @Origina"& _ 
-                "l_zipcode)) AND ((@IsNull_ownername = 1 AND [ownername] IS NULL) OR ([ownername]"& _ 
-                " = @Original_ownername)) AND ((@IsNull_mobile = 1 AND [mobile] IS NULL) OR ([mob"& _ 
-                "ile] = @Original_mobile)) AND ((@IsNull_formno = 1 AND [formno] IS NULL) OR ([fo"& _ 
-                "rmno] = @Original_formno)) AND ((@IsNull_startdate = 1 AND [startdate] IS NULL) "& _ 
-                "OR ([startdate] = @Original_startdate)) AND ((@IsNull_enddate = 1 AND [enddate] "& _ 
-                "IS NULL) OR ([enddate] = @Original_enddate)) AND ((@IsNull_username = 1 AND [use"& _ 
-                "rname] IS NULL) OR ([username] = @Original_username)) AND ((@IsNull_password = 1"& _ 
-                " AND [password] IS NULL) OR ([password] = @Original_password)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [company] WHERE (([companyid] = @Original_companyid) AND ((@IsNull_na"& _ 
+                "me = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_address ="& _ 
+                " 1 AND [address] IS NULL) OR ([address] = @Original_address)) AND ((@IsNull_talu"& _ 
+                "koid = 1 AND [talukoid] IS NULL) OR ([talukoid] = @Original_talukoid)) AND ((@Is"& _ 
+                "Null_jilloid = 1 AND [jilloid] IS NULL) OR ([jilloid] = @Original_jilloid)) AND "& _ 
+                "((@IsNull_rajyaid = 1 AND [rajyaid] IS NULL) OR ([rajyaid] = @Original_rajyaid))"& _ 
+                " AND ((@IsNull_zipcode = 1 AND [zipcode] IS NULL) OR ([zipcode] = @Original_zipc"& _ 
+                "ode)) AND ((@IsNull_ownername = 1 AND [ownername] IS NULL) OR ([ownername] = @Or"& _ 
+                "iginal_ownername)) AND ((@IsNull_mobile = 1 AND [mobile] IS NULL) OR ([mobile] ="& _ 
+                " @Original_mobile)) AND ((@IsNull_formno = 1 AND [formno] IS NULL) OR ([formno] "& _ 
+                "= @Original_formno)) AND ((@IsNull_startdate = 1 AND [startdate] IS NULL) OR ([s"& _ 
+                "tartdate] = @Original_startdate)) AND ((@IsNull_enddate = 1 AND [enddate] IS NUL"& _ 
+                "L) OR ([enddate] = @Original_enddate)) AND ((@IsNull_username = 1 AND [username]"& _ 
+                " IS NULL) OR ([username] = @Original_username)) AND ((@IsNull_password = 1 AND ["& _ 
+                "password] IS NULL) OR ([password] = @Original_password)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_companyid", Global.System.Data.SqlDbType.BigInt, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "companyid", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_name", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -1323,13 +1366,13 @@ Namespace companyDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_password", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[company] ([name], [address], [talukoid], [jilloid], [rajyaid],"& _ 
-                " [zipcode], [ownername], [mobile], [formno], [startdate], [enddate], [username],"& _ 
-                " [password]) VALUES (@name, @address, @talukoid, @jilloid, @rajyaid, @zipcode, @"& _ 
-                "ownername, @mobile, @formno, @startdate, @enddate, @username, @password);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELEC"& _ 
-                "T companyid, name, address, talukoid, jilloid, rajyaid, zipcode, ownername, mobi"& _ 
-                "le, formno, startdate, enddate, username, password FROM company WHERE (companyid"& _ 
-                " = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [company] ([name], [address], [talukoid], [jilloid], [rajyaid], [zipc"& _ 
+                "ode], [ownername], [mobile], [formno], [startdate], [enddate], [username], [pass"& _ 
+                "word]) VALUES (@name, @address, @talukoid, @jilloid, @rajyaid, @zipcode, @ownern"& _ 
+                "ame, @mobile, @formno, @startdate, @enddate, @username, @password);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT comp"& _ 
+                "anyid, name, address, talukoid, jilloid, rajyaid, zipcode, ownername, mobile, fo"& _ 
+                "rmno, startdate, enddate, username, password, 'select' AS Expr1 FROM company WHE"& _ 
+                "RE (companyid = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@address", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1346,27 +1389,27 @@ Namespace companyDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[company] SET [name] = @name, [address] = @address, [talukoid] = @ta"& _ 
-                "lukoid, [jilloid] = @jilloid, [rajyaid] = @rajyaid, [zipcode] = @zipcode, [owner"& _ 
-                "name] = @ownername, [mobile] = @mobile, [formno] = @formno, [startdate] = @start"& _ 
-                "date, [enddate] = @enddate, [username] = @username, [password] = @password WHERE"& _ 
-                " (([companyid] = @Original_companyid) AND ((@IsNull_name = 1 AND [name] IS NULL)"& _ 
-                " OR ([name] = @Original_name)) AND ((@IsNull_address = 1 AND [address] IS NULL) "& _ 
-                "OR ([address] = @Original_address)) AND ((@IsNull_talukoid = 1 AND [talukoid] IS"& _ 
-                " NULL) OR ([talukoid] = @Original_talukoid)) AND ((@IsNull_jilloid = 1 AND [jill"& _ 
-                "oid] IS NULL) OR ([jilloid] = @Original_jilloid)) AND ((@IsNull_rajyaid = 1 AND "& _ 
-                "[rajyaid] IS NULL) OR ([rajyaid] = @Original_rajyaid)) AND ((@IsNull_zipcode = 1"& _ 
-                " AND [zipcode] IS NULL) OR ([zipcode] = @Original_zipcode)) AND ((@IsNull_ownern"& _ 
-                "ame = 1 AND [ownername] IS NULL) OR ([ownername] = @Original_ownername)) AND ((@"& _ 
-                "IsNull_mobile = 1 AND [mobile] IS NULL) OR ([mobile] = @Original_mobile)) AND (("& _ 
-                "@IsNull_formno = 1 AND [formno] IS NULL) OR ([formno] = @Original_formno)) AND ("& _ 
-                "(@IsNull_startdate = 1 AND [startdate] IS NULL) OR ([startdate] = @Original_star"& _ 
-                "tdate)) AND ((@IsNull_enddate = 1 AND [enddate] IS NULL) OR ([enddate] = @Origin"& _ 
-                "al_enddate)) AND ((@IsNull_username = 1 AND [username] IS NULL) OR ([username] ="& _ 
-                " @Original_username)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([pa"& _ 
-                "ssword] = @Original_password)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT companyid, name, address, talukoid, jil"& _ 
-                "loid, rajyaid, zipcode, ownername, mobile, formno, startdate, enddate, username,"& _ 
-                " password FROM company WHERE (companyid = @companyid)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [company] SET [name] = @name, [address] = @address, [talukoid] = @talukoid"& _ 
+                ", [jilloid] = @jilloid, [rajyaid] = @rajyaid, [zipcode] = @zipcode, [ownername] "& _ 
+                "= @ownername, [mobile] = @mobile, [formno] = @formno, [startdate] = @startdate, "& _ 
+                "[enddate] = @enddate, [username] = @username, [password] = @password WHERE (([co"& _ 
+                "mpanyid] = @Original_companyid) AND ((@IsNull_name = 1 AND [name] IS NULL) OR (["& _ 
+                "name] = @Original_name)) AND ((@IsNull_address = 1 AND [address] IS NULL) OR ([a"& _ 
+                "ddress] = @Original_address)) AND ((@IsNull_talukoid = 1 AND [talukoid] IS NULL)"& _ 
+                " OR ([talukoid] = @Original_talukoid)) AND ((@IsNull_jilloid = 1 AND [jilloid] I"& _ 
+                "S NULL) OR ([jilloid] = @Original_jilloid)) AND ((@IsNull_rajyaid = 1 AND [rajya"& _ 
+                "id] IS NULL) OR ([rajyaid] = @Original_rajyaid)) AND ((@IsNull_zipcode = 1 AND ["& _ 
+                "zipcode] IS NULL) OR ([zipcode] = @Original_zipcode)) AND ((@IsNull_ownername = "& _ 
+                "1 AND [ownername] IS NULL) OR ([ownername] = @Original_ownername)) AND ((@IsNull"& _ 
+                "_mobile = 1 AND [mobile] IS NULL) OR ([mobile] = @Original_mobile)) AND ((@IsNul"& _ 
+                "l_formno = 1 AND [formno] IS NULL) OR ([formno] = @Original_formno)) AND ((@IsNu"& _ 
+                "ll_startdate = 1 AND [startdate] IS NULL) OR ([startdate] = @Original_startdate)"& _ 
+                ") AND ((@IsNull_enddate = 1 AND [enddate] IS NULL) OR ([enddate] = @Original_end"& _ 
+                "date)) AND ((@IsNull_username = 1 AND [username] IS NULL) OR ([username] = @Orig"& _ 
+                "inal_username)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password"& _ 
+                "] = @Original_password)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT companyid, name, address, talukoid, jilloid, "& _ 
+                "rajyaid, zipcode, ownername, mobile, formno, startdate, enddate, username, passw"& _ 
+                "ord, 'select' AS Expr1 FROM company WHERE (companyid = @companyid)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@name", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "name", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@address", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1424,8 +1467,9 @@ Namespace companyDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT companyid, name, address, talukoid, jilloid, rajyaid, zipcode, ownername, "& _ 
-                "mobile, formno, startdate, enddate, username, password FROM dbo.company"
+            Me._commandCollection(0).CommandText = "SELECT        companyid, name, address, talukoid, jilloid, rajyaid, zipcode, owne"& _ 
+                "rname, mobile, formno, startdate, enddate, username, password, 'select' AS Expr1"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            company"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

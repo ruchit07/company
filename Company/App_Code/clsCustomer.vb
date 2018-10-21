@@ -5,7 +5,7 @@
 
     Public Function GetCustomerList(ByVal intCompanyId As Integer) As DataSet
 
-        strSqlCommand = "SELECT c.customerid, c.companyid, c.regno, c.name, c.address, j.name jillo, t.name taliko, r.name rajya,mobile1,mobile2,c.adharno FROM customer c INNER JOIN jillo j on j.jilloid = c.jilloid INNER JOIN taluko t ON t.talukoid = c.talukoid INNER JOIN rajya r ON r.rajyaid = c.rajyaid  WHERE companyid = " & intCompanyId
+        strSqlCommand = "SELECT c.customerid, c.companyid, c.regno, c.name, c.address, j.name jillo, t.name taliko, r.name rajya,mobile1,mobile2,c.adharno,'loan' AS loan FROM customer c INNER JOIN jillo j on j.jilloid = c.jilloid INNER JOIN taluko t ON t.talukoid = c.talukoid INNER JOIN rajya r ON r.rajyaid = c.rajyaid  WHERE companyid = " & intCompanyId
 
         Dim dstCustomer As DataSet
         dstCustomer = FillDataSet(strSqlCommand)
