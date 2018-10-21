@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="jilloDataSet" targetNamespace="http://tempuri.org/jilloDataSet.xsd" xmlns:mstns="http://tempuri.org/jilloDataSet.xsd" xmlns="http://tempuri.org/jilloDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="companyConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="companyConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Company.My.MySettings.GlobalReference.Default.companyConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="jilloTableAdapter" GeneratorDataComponentClassName="jilloTableAdapter" Name="jillo" UserDataComponentName="jilloTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="companyConnectionString (MySettings)" DbObjectName="company.dbo.jillo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT jilloid, name FROM dbo.jillo union SELECT 999999 jilloid,'Other' name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="jilloid" DataSetColumn="jilloid" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="jilloDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="jilloDataSet" msprop:Generator_UserDSName="jilloDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="jillo" msprop:Generator_TableClassName="jilloDataTable" msprop:Generator_TableVarName="tablejillo" msprop:Generator_RowChangedName="jilloRowChanged" msprop:Generator_TablePropName="jillo" msprop:Generator_RowDeletingName="jilloRowDeleting" msprop:Generator_RowChangingName="jilloRowChanging" msprop:Generator_RowEvHandlerName="jilloRowChangeEventHandler" msprop:Generator_RowDeletedName="jilloRowDeleted" msprop:Generator_RowClassName="jilloRow" msprop:Generator_UserTableName="jillo" msprop:Generator_RowEvArgName="jilloRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="jilloid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnjilloid" msprop:Generator_ColumnPropNameInRow="jilloid" msprop:Generator_ColumnPropNameInTable="jilloidColumn" msprop:Generator_UserColumnName="jilloid" type="xs:long" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:jillo" />
+      <xs:field xpath="mstns:jilloid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

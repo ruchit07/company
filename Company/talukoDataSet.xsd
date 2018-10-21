@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="talukoDataSet" targetNamespace="http://tempuri.org/talukoDataSet.xsd" xmlns:mstns="http://tempuri.org/talukoDataSet.xsd" xmlns="http://tempuri.org/talukoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="companyConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="companyConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Company.My.MySettings.GlobalReference.Default.companyConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="talukoTableAdapter" GeneratorDataComponentClassName="talukoTableAdapter" Name="taluko" UserDataComponentName="talukoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="companyConnectionString (MySettings)" DbObjectName="company.dbo.taluko" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        talukoid, name
+FROM            taluko
+UNION
+SELECT        999999 AS talukoid, 'Other' AS name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="talukoid" DataSetColumn="talukoid" />
+              <Mapping SourceColumn="name" DataSetColumn="name" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="companyConnectionString (MySettings)" DbObjectName="company.dbo.taluko" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT name, talukoid FROM taluko UNION SELECT 0 AS talukoid, 'Other' AS name</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="talukoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="talukoDataSet" msprop:Generator_UserDSName="talukoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="taluko" msprop:Generator_TableClassName="talukoDataTable" msprop:Generator_TableVarName="tabletaluko" msprop:Generator_RowChangedName="talukoRowChanged" msprop:Generator_TablePropName="taluko" msprop:Generator_RowDeletingName="talukoRowDeleting" msprop:Generator_RowChangingName="talukoRowChanging" msprop:Generator_RowEvHandlerName="talukoRowChangeEventHandler" msprop:Generator_RowDeletedName="talukoRowDeleted" msprop:Generator_RowClassName="talukoRow" msprop:Generator_UserTableName="taluko" msprop:Generator_RowEvArgName="talukoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="talukoid" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columntalukoid" msprop:Generator_ColumnPropNameInRow="talukoid" msprop:Generator_ColumnPropNameInTable="talukoidColumn" msprop:Generator_UserColumnName="talukoid" type="xs:long" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:taluko" />
+      <xs:field xpath="mstns:talukoid" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
