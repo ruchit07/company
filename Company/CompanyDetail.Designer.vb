@@ -141,9 +141,9 @@ Partial Class CompanyDetail
         Me.GroupBox1.Controls.Add(Me.lblCompanyName)
         Me.GroupBox1.Controls.Add(Me.txtRegistrationNo)
         Me.GroupBox1.Controls.Add(Me.lblRegistration)
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 26)
+        Me.GroupBox1.Location = New System.Drawing.Point(13, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(731, 726)
+        Me.GroupBox1.Size = New System.Drawing.Size(731, 725)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ન​વી કંપની બનાવ​વી"
@@ -579,7 +579,7 @@ Partial Class CompanyDetail
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'CompanyDetail
