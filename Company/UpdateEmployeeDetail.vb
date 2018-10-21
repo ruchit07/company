@@ -80,6 +80,7 @@
         Me.JilloTableAdapter.Fill(Me.JilloDataSet.jillo)
         'TODO: This line of code loads data into the 'TalukoDataSet.taluko' table. You can move, or remove it, as needed.
         Me.TalukoTableAdapter.Fill(Me.TalukoDataSet.taluko)
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Dim objEmployee As New clsEmployee()
 
         Dim dstData As DataSet

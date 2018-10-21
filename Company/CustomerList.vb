@@ -1,8 +1,7 @@
 ﻿Public Class CustomerList
     Private Sub CustomerList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Dim objCustomer As New clsCustomer()
-
         Dim dstCustomer As DataSet
 
         dstCustomer = objCustomer.GetCustomerList(lblCompanyId.Text)

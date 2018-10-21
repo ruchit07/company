@@ -102,7 +102,7 @@
 
     Private Sub UploadLoan_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.EmployeeTableAdapter.Fill(Me.EmployeeDataSet.employee)
-
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Dim objLoan As New clsLoan()
         ddlType.SelectedIndex = 0
         lblFinalDate.Text = DateAdd(DateInterval.Day, 100, Date.Now().AddDays(-1)).Date

@@ -25,4 +25,8 @@
         End If
     End Sub
 
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+    End Sub
+
 End Class

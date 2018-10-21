@@ -11,6 +11,7 @@
     Private Sub Loan_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim objLoan As New clsLoan()
         Dim dstData As DataSet
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         DataGridView1.AutoGenerateColumns = False
         dstData = objLoan.GetLoanList(lblCustomerId.Text)
 

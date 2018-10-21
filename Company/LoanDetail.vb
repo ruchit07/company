@@ -17,6 +17,7 @@
     Private Sub LoanDetail_Load(sender As Object, e As EventArgs) Handles Me.Load
         'TODO: This line of code loads data into the 'EmployeeDataSet.employee' table. You can move, or remove it, as needed.
         Me.EmployeeTableAdapter.Fill(Me.EmployeeDataSet.employee)
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         ddlType.SelectedIndex = 0
         lblFinalDate.Text = ""
     End Sub

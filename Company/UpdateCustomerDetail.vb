@@ -42,6 +42,7 @@
 
     Private Sub UpdateCustomerDetail_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.RajyaTableAdapter.Fill(Me.RajyaDataSet.rajya)
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         'TODO: This line of code loads data into the 'JilloDataSet.jillo' table. You can move, or remove it, as needed.
         Me.JilloTableAdapter.Fill(Me.JilloDataSet.jillo)
         'TODO: This line of code loads data into the 'TalukoDataSet.taluko' table. You can move, or remove it, as needed.

@@ -17,8 +17,8 @@
     End Sub
 
     Private Sub RecoveryList_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Dim objLoan As New clsLoan()
-
         Dim dstLoan As New DataSet
         dstLoan = objLoan.RecoveryList()
         DataGridView1.AutoGenerateColumns = False
