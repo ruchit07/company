@@ -244,7 +244,6 @@ Partial Class CustomerList
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblCompanyId)
-        'Me.name = "CustomerList"
         Me.Text = "CustomerList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
