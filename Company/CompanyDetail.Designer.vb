@@ -143,14 +143,14 @@ Partial Class CompanyDetail
         Me.GroupBox1.Controls.Add(Me.lblRegistration)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 27)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(731, 725)
+        Me.GroupBox1.Size = New System.Drawing.Size(1003, 448)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ન​વી કંપની બનાવ​વી"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(201, 697)
+        Me.btnCancel.Location = New System.Drawing.Point(198, 408)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 37
@@ -159,7 +159,7 @@ Partial Class CompanyDetail
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(106, 697)
+        Me.btnReset.Location = New System.Drawing.Point(103, 408)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(75, 23)
         Me.btnReset.TabIndex = 36
@@ -168,7 +168,7 @@ Partial Class CompanyDetail
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(12, 697)
+        Me.btnSave.Location = New System.Drawing.Point(9, 408)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 35
@@ -177,7 +177,7 @@ Partial Class CompanyDetail
         '
         'txtConfirmPassword
         '
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(115, 633)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(677, 270)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.Size = New System.Drawing.Size(146, 20)
         Me.txtConfirmPassword.TabIndex = 34
@@ -186,7 +186,7 @@ Partial Class CompanyDetail
         'lblConfirmPassword
         '
         Me.lblConfirmPassword.AutoSize = True
-        Me.lblConfirmPassword.Location = New System.Drawing.Point(6, 640)
+        Me.lblConfirmPassword.Location = New System.Drawing.Point(568, 277)
         Me.lblConfirmPassword.Name = "lblConfirmPassword"
         Me.lblConfirmPassword.Size = New System.Drawing.Size(51, 13)
         Me.lblConfirmPassword.TabIndex = 33
@@ -194,7 +194,7 @@ Partial Class CompanyDetail
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(115, 596)
+        Me.txtPassword.Location = New System.Drawing.Point(677, 233)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(146, 20)
         Me.txtPassword.TabIndex = 32
@@ -203,7 +203,7 @@ Partial Class CompanyDetail
         'lblPassword
         '
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(6, 599)
+        Me.lblPassword.Location = New System.Drawing.Point(568, 236)
         Me.lblPassword.Name = "lblPassword"
         Me.lblPassword.Size = New System.Drawing.Size(39, 13)
         Me.lblPassword.TabIndex = 31
@@ -211,7 +211,7 @@ Partial Class CompanyDetail
         '
         'txtUserName
         '
-        Me.txtUserName.Location = New System.Drawing.Point(115, 557)
+        Me.txtUserName.Location = New System.Drawing.Point(677, 194)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(146, 20)
         Me.txtUserName.TabIndex = 30
@@ -219,7 +219,7 @@ Partial Class CompanyDetail
         'lblUserName
         '
         Me.lblUserName.AutoSize = True
-        Me.lblUserName.Location = New System.Drawing.Point(6, 560)
+        Me.lblUserName.Location = New System.Drawing.Point(568, 197)
         Me.lblUserName.Name = "lblUserName"
         Me.lblUserName.Size = New System.Drawing.Size(51, 13)
         Me.lblUserName.TabIndex = 29
@@ -228,7 +228,7 @@ Partial Class CompanyDetail
         'txtEndDate
         '
         Me.txtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtEndDate.Location = New System.Drawing.Point(115, 519)
+        Me.txtEndDate.Location = New System.Drawing.Point(677, 156)
         Me.txtEndDate.Name = "txtEndDate"
         Me.txtEndDate.Size = New System.Drawing.Size(89, 20)
         Me.txtEndDate.TabIndex = 28
@@ -236,7 +236,7 @@ Partial Class CompanyDetail
         'lblEndDate
         '
         Me.lblEndDate.AutoSize = True
-        Me.lblEndDate.Location = New System.Drawing.Point(6, 525)
+        Me.lblEndDate.Location = New System.Drawing.Point(568, 162)
         Me.lblEndDate.Name = "lblEndDate"
         Me.lblEndDate.Size = New System.Drawing.Size(69, 13)
         Me.lblEndDate.TabIndex = 27
@@ -245,7 +245,7 @@ Partial Class CompanyDetail
         'txtStartDate
         '
         Me.txtStartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtStartDate.Location = New System.Drawing.Point(115, 477)
+        Me.txtStartDate.Location = New System.Drawing.Point(677, 114)
         Me.txtStartDate.Name = "txtStartDate"
         Me.txtStartDate.Size = New System.Drawing.Size(89, 20)
         Me.txtStartDate.TabIndex = 26
@@ -253,7 +253,7 @@ Partial Class CompanyDetail
         'lblAccountStartDate
         '
         Me.lblAccountStartDate.AutoSize = True
-        Me.lblAccountStartDate.Location = New System.Drawing.Point(6, 483)
+        Me.lblAccountStartDate.Location = New System.Drawing.Point(568, 120)
         Me.lblAccountStartDate.Name = "lblAccountStartDate"
         Me.lblAccountStartDate.Size = New System.Drawing.Size(76, 13)
         Me.lblAccountStartDate.TabIndex = 25
@@ -261,7 +261,7 @@ Partial Class CompanyDetail
         '
         'txtFormPost
         '
-        Me.txtFormPost.Location = New System.Drawing.Point(226, 438)
+        Me.txtFormPost.Location = New System.Drawing.Point(788, 75)
         Me.txtFormPost.Name = "txtFormPost"
         Me.txtFormPost.Size = New System.Drawing.Size(80, 20)
         Me.txtFormPost.TabIndex = 24
@@ -269,7 +269,7 @@ Partial Class CompanyDetail
         'lblDash
         '
         Me.lblDash.AutoSize = True
-        Me.lblDash.Location = New System.Drawing.Point(210, 441)
+        Me.lblDash.Location = New System.Drawing.Point(772, 78)
         Me.lblDash.Name = "lblDash"
         Me.lblDash.Size = New System.Drawing.Size(10, 13)
         Me.lblDash.TabIndex = 23
@@ -277,7 +277,7 @@ Partial Class CompanyDetail
         '
         'txtFormPre
         '
-        Me.txtFormPre.Location = New System.Drawing.Point(115, 438)
+        Me.txtFormPre.Location = New System.Drawing.Point(677, 75)
         Me.txtFormPre.Name = "txtFormPre"
         Me.txtFormPre.Size = New System.Drawing.Size(89, 20)
         Me.txtFormPre.TabIndex = 22
@@ -285,7 +285,7 @@ Partial Class CompanyDetail
         'lblFormNo
         '
         Me.lblFormNo.AutoSize = True
-        Me.lblFormNo.Location = New System.Drawing.Point(9, 441)
+        Me.lblFormNo.Location = New System.Drawing.Point(571, 78)
         Me.lblFormNo.Name = "lblFormNo"
         Me.lblFormNo.Size = New System.Drawing.Size(36, 13)
         Me.lblFormNo.TabIndex = 21
@@ -293,7 +293,7 @@ Partial Class CompanyDetail
         '
         'txtMobileNumber
         '
-        Me.txtMobileNumber.Location = New System.Drawing.Point(115, 400)
+        Me.txtMobileNumber.Location = New System.Drawing.Point(677, 37)
         Me.txtMobileNumber.Name = "txtMobileNumber"
         Me.txtMobileNumber.Size = New System.Drawing.Size(170, 20)
         Me.txtMobileNumber.TabIndex = 20
@@ -301,7 +301,7 @@ Partial Class CompanyDetail
         'lblMobile
         '
         Me.lblMobile.AutoSize = True
-        Me.lblMobile.Location = New System.Drawing.Point(6, 407)
+        Me.lblMobile.Location = New System.Drawing.Point(568, 44)
         Me.lblMobile.Name = "lblMobile"
         Me.lblMobile.Size = New System.Drawing.Size(58, 13)
         Me.lblMobile.TabIndex = 19
@@ -514,7 +514,7 @@ Partial Class CompanyDetail
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1028, 24)
         Me.MenuStrip1.TabIndex = 3
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -586,7 +586,7 @@ Partial Class CompanyDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 764)
+        Me.ClientSize = New System.Drawing.Size(1028, 485)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "CompanyDetail"
