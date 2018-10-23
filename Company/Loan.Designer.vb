@@ -46,6 +46,9 @@ Partial Class Loan
         Me.interestrate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.interestamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalpaidamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.totalremainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.nextemidate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -74,16 +77,11 @@ Partial Class Loan
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.loannumber, Me.loandate, Me.customer, Me.mobile, Me.amount, Me.advanceamount, Me.interestrate, Me.interestamount, Me.totalamount})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.loannumber, Me.loandate, Me.customer, Me.mobile, Me.amount, Me.advanceamount, Me.interestrate, Me.interestamount, Me.totalamount, Me.totalpaidamount, Me.totalremainingamount, Me.nextemidate})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 75)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-
-
-        Me.DataGridView1.Size = New System.Drawing.Size(863, 363)
-
-        Me.DataGridView1.Size = New System.Drawing.Size(1039, 150)
-        Me.DataGridView1.Size = New System.Drawing.Size(1039, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(1245, 352)
         Me.DataGridView1.TabIndex = 2
         '
         'MenuStrip1
@@ -91,7 +89,7 @@ Partial Class Loan
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1209, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1257, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -226,15 +224,36 @@ Partial Class Loan
         'totalamount
         '
         Me.totalamount.DataPropertyName = "totalamount"
-        Me.totalamount.HeaderText = "Total"
+        Me.totalamount.HeaderText = "Amount to Pay"
         Me.totalamount.Name = "totalamount"
         Me.totalamount.ReadOnly = True
+        '
+        'totalpaidamount
+        '
+        Me.totalpaidamount.DataPropertyName = "totalpaidamount"
+        Me.totalpaidamount.HeaderText = "Paid Amount"
+        Me.totalpaidamount.Name = "totalpaidamount"
+        Me.totalpaidamount.ReadOnly = True
+        '
+        'totalremainingamount
+        '
+        Me.totalremainingamount.DataPropertyName = "remainingamount"
+        Me.totalremainingamount.HeaderText = "Remaining Amount"
+        Me.totalremainingamount.Name = "totalremainingamount"
+        Me.totalremainingamount.ReadOnly = True
+        '
+        'nextemidate
+        '
+        Me.nextemidate.DataPropertyName = "nextemidate"
+        Me.nextemidate.HeaderText = "Next EMI Date"
+        Me.nextemidate.Name = "nextemidate"
+        Me.nextemidate.ReadOnly = True
         '
         'Loan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1209, 450)
+        Me.ClientSize = New System.Drawing.Size(1257, 450)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblCustomerId)
@@ -273,4 +292,7 @@ Partial Class Loan
     Friend WithEvents interestrate As DataGridViewTextBoxColumn
     Friend WithEvents interestamount As DataGridViewTextBoxColumn
     Friend WithEvents totalamount As DataGridViewTextBoxColumn
+    Friend WithEvents totalpaidamount As DataGridViewTextBoxColumn
+    Friend WithEvents totalremainingamount As DataGridViewTextBoxColumn
+    Friend WithEvents nextemidate As DataGridViewTextBoxColumn
 End Class

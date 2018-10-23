@@ -23,7 +23,9 @@
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         ddlType.SelectedIndex = 0
         lblFinalDate.Text = ""
-        ddlCustomer.SelectedValue = lblCustomerId.Text
+        If Val(lblCustomerId.Text) > 0 Then
+            ddlCustomer.SelectedValue = lblCustomerId.Text
+        End If
     End Sub
 
     Private Sub CalculateInterest()
@@ -106,7 +108,7 @@
 
         If strType <> "T" Then
 
-            For intI As Integer = 0 To intDuration
+            For intI As Integer = 1 To intDuration
                 Dim dtEMIDate As Date
                 If strType = "D" Then
 

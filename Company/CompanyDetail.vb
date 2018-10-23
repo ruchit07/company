@@ -205,4 +205,11 @@
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
     End Sub
+
+    Private Sub AddLoanToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+        Me.Hide()
+        Dim form2 = New Loan()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
 End Class

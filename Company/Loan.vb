@@ -13,7 +13,7 @@
         Dim dstData As DataSet
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         DataGridView1.AutoGenerateColumns = False
-        dstData = objLoan.GetLoanList(lblCustomerId.Text)
+        dstData = objLoan.GetLoanList(Val(lblCustomerId.Text))
 
         DataGridView1.DataSource = dstData.Tables(0)
     End Sub
@@ -70,4 +70,6 @@
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
     End Sub
+
+
 End Class

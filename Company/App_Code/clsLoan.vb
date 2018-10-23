@@ -11,7 +11,7 @@
         intMaxLoanId = Val(ExecuteScalar(strSqlCommand, "InsertLoan"))
         intMaxLoanId = intMaxLoanId + 1
         strLoanNumber = strType & intMaxLoanId
-        strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi) VALUES ('" & strType & "','" & strDuration & "',GETDATE(),'" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & ")"
+        strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi,remainingamount,totalpaidamount) VALUES ('" & strType & "','" & strDuration & "',GETDATE(),'" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & "," & dblTotalAmount & ",0)"
 
         Dim intLoanId As Integer
         intLoanId = ExecuteNonQuery(strSqlCommand, "", "Y")
@@ -47,14 +47,17 @@
     End Function
 
     Public Sub UpdateLoanPaidAmount(ByVal intLoanId As Integer, ByVal dblPaidAmount As Double)
-        strSqlCommand = "UPDATE loan SET totalamount = totalamount - " & dblPaidAmount & " WHERE loanid = " & intLoanId
+        strSqlCommand = "UPDATE loan SET remainingamount = remainingamount - " & dblPaidAmount & ",totalpaidamount = totalpaidamount + " & dblPaidAmount & " WHERE loanid = " & intLoanId
+
+        ExecuteNonQuery(strSqlCommand, "", "N")
     End Sub
 
     Public Sub UpdateCustomerLoanPaidAmount(ByVal intLoanId As Integer, ByVal dblPaidAmount As Double)
         strSqlCommand = "UPDATE loan SET totalamount = " & dblPaidAmount & " WHERE loanid = " & intLoanId
+        ExecuteNonQuery(strSqlCommand, "", "N")
     End Sub
     Public Function GetLoanList(Optional ByVal intCustomerId As Integer = 0) As DataSet
-        strSqlCommand = "select l.loanid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month' WHEN 'Y' THEN 'Year' END type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid "
+        strSqlCommand = "select l.loanid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month(EMI)' WHEN 'T' THEN 'Month' END type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile,isnull(totalpaidamount,0),ISNULL(remainingamount,0),ISNULL((SELECT CONVERT(varchar(20),MIN(loandate),103) FROM loantable ln WHERE ln.loanid = l.loanid and ISNULL(ln.paidamount,0) = 0),'N/A')  nextemidate from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid "
 
         If intCustomerId > 0 Then
             strSqlCommand &= " WHERE l.customerid = " & intCustomerId
@@ -64,7 +67,7 @@
         Return dstData
     End Function
     Public Function RecoveryList(Optional ByVal intCustomerId As Integer = 0) As DataSet
-        strSqlCommand = "select l.loanid,ln.loantableid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month' WHEN 'Y' THEN 'Year' END type,duration,ln.loandate,enddate,loannumber,advancedate,amount,interestrate,ln.interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile, ISNULL(ln.paidamount, 0) paidamount from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid left join loantable ln on l.loanid = ln.loanid WHERE ((DATEADD(dd, 0, DATEDIFF(dd, 0, ln.loandate)) =  DATEADD(dd, 0, DATEDIFF(dd, 0, getdate()))))"
+        strSqlCommand = "select l.loanid,ln.loantableid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month(EMI)' WHEN 'T' THEN 'Month' END type,duration,ln.loandate,enddate,loannumber,advancedate,amount,interestrate,ln.interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile, ISNULL(ln.paidamount, 0) paidamount from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid left join loantable ln on l.loanid = ln.loanid WHERE ((DATEADD(dd, 0, DATEDIFF(dd, 0, ln.loandate)) =  DATEADD(dd, 0, DATEDIFF(dd, 0, getdate()))))"
 
         If intCustomerId > 0 Then
             strSqlCommand &= " AND l.customerid = " & intCustomerId

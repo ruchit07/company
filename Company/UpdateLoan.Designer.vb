@@ -226,9 +226,9 @@ Partial Class UpdateLoan
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(17, 316)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(57, 13)
+        Me.Label6.Size = New System.Drawing.Size(56, 13)
         Me.Label6.TabIndex = 0
-        Me.Label6.Text = "ફાઇન ચાર્જ​"
+        Me.Label6.Text = "ફાઇલ​ ચાર્જ​"
         '
         'ddlType
         '
