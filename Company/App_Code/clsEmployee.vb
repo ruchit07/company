@@ -5,6 +5,13 @@
 
     Public Sub InsertEmployee(ByVal strEmployeeNo As String, ByVal strName As String, ByVal strAddress As String, ByVal intTalukoid As Integer, ByVal intJilloId As Integer, ByVal intRajyaId As Integer, ByVal pincode As String, ByVal adharno As String, ByVal strMobile As String, ByVal dtBirthDate As DateTime, ByVal dtResignDate As DateTime, ByVal dtJoiningDate As DateTime)
 
+        Dim intMaxEmployeeId As Integer
+        strSqlCommand = "SELEC MAX(employeeid) FROM employee"
+        intMaxEmployeeId = Val(ExecuteScalar(strSqlCommand, "InsertEmployee"))
+
+        intMaxEmployeeId = intMaxEmployeeId + 1
+
+        strEmployeeNo = "EMP" & intMaxEmployeeId
         strSqlCommand = "INSERT INTO employee(employeenumber,name,address,talukoid,rajyaid,jilloid,pincode,mobile,adharno,birthdate,resigndate,joiningdate) VALUES (N'" & EscapeString(strEmployeeNo) & "',N'" & EscapeString(strName) & "',N'" & EscapeString(strAddress) & "','" & intTalukoid & "','" & intRajyaId & "','" & intJilloId & "',N'" & EscapeString(pincode) & "',N'" & EscapeString(strMobile) & "',N'" & EscapeString(adharno) & "','" & dtBirthDate & "','" & dtResignDate & "','" & dtJoiningDate & "')"
 
         Dim intEmployeeId As Integer
@@ -38,7 +45,7 @@
     Public Sub UpdateEmployeeDetail(ByVal strEmployeeNo As String, ByVal strName As String, ByVal strAddress As String, ByVal intTalukoid As Integer, ByVal intJilloId As Integer, ByVal intRajyaId As Integer, ByVal pincode As String, ByVal adharno As String, ByVal strMobile As String, ByVal dtBirthDate As DateTime, ByVal dtResignDate As DateTime, ByVal intEmployeeId As Integer, ByVal dtJoininigDate As DateTime)
 
 
-        strSqlCommand = "UPDATE employee SET employeenumber = N'" & EscapeString(strEmployeeNo) & "', name=N'" & EscapeString(strName) & "', address =N'" & EscapeString(strAddress) & "', talukoid = " & intTalukoid & ",jilloid = '" & intJilloId & "', rajyaid = '" & intRajyaId & "', pincode= N'" & EscapeString(pincode) & "', adharno=N'" & EscapeString(adharno) & "', mobile=N'" & EscapeString(strMobile) & "', birthdate='" & dtBirthDate & "', resigndate ='" & dtResignDate & "', joiningdate ='" & dtJoininigDate & "' WHERE employeeid = " & intEmployeeId
+        strSqlCommand = "UPDATE employee SET name=N'" & EscapeString(strName) & "', address =N'" & EscapeString(strAddress) & "', talukoid = " & intTalukoid & ",jilloid = '" & intJilloId & "', rajyaid = '" & intRajyaId & "', pincode= N'" & EscapeString(pincode) & "', adharno=N'" & EscapeString(adharno) & "', mobile=N'" & EscapeString(strMobile) & "', birthdate='" & dtBirthDate & "', resigndate ='" & dtResignDate & "', joiningdate ='" & dtJoininigDate & "' WHERE employeeid = " & intEmployeeId
 
         ExecuteNonQuery(strSqlCommand, "", "N")
 

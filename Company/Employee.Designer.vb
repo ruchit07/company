@@ -24,29 +24,6 @@ Partial Class Employee
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.employeeid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pincode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.adharno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeenumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PincodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MobileDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AdharnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BirthdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ResigndateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JoiningdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TalukoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RajyaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JilloDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeeidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeDataSet = New Company.employeeDataSet()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -62,6 +39,20 @@ Partial Class Employee
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.employeeid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pincode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.adharno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeenumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ResigndateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JoiningdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeeidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,175 +65,13 @@ Partial Class Employee
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.employeeid, Me.name, Me.address, Me.taluko, Me.jillo, Me.rajya, Me.pincode, Me.mobile, Me.adharno, Me.birthdate, Me.EmployeenumberDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.PincodeDataGridViewTextBoxColumn, Me.MobileDataGridViewTextBoxColumn, Me.AdharnoDataGridViewTextBoxColumn, Me.BirthdateDataGridViewTextBoxColumn, Me.ResigndateDataGridViewTextBoxColumn, Me.JoiningdateDataGridViewTextBoxColumn, Me.TalukoDataGridViewTextBoxColumn, Me.RajyaDataGridViewTextBoxColumn, Me.JilloDataGridViewTextBoxColumn, Me.EmployeeidDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.employeeid, Me.name, Me.address, Me.taluko, Me.jillo, Me.rajya, Me.pincode, Me.mobile, Me.adharno, Me.birthdate, Me.EmployeenumberDataGridViewTextBoxColumn, Me.ResigndateDataGridViewTextBoxColumn, Me.JoiningdateDataGridViewTextBoxColumn, Me.EmployeeidDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.EmployeeBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(980, 294)
         Me.DataGridView1.TabIndex = 0
-        '
-        'employeeid
-        '
-        Me.employeeid.DataPropertyName = "employeeid"
-        Me.employeeid.HeaderText = "Employee ID"
-        Me.employeeid.Name = "employeeid"
-        Me.employeeid.ReadOnly = True
-        Me.employeeid.Visible = False
-        '
-        'name
-        '
-        Me.name.DataPropertyName = "name"
-        Me.name.HeaderText = "Name"
-        Me.name.Name = "name"
-        Me.name.ReadOnly = True
-        '
-        'address
-        '
-        Me.address.DataPropertyName = "address"
-        Me.address.HeaderText = "Address"
-        Me.address.Name = "address"
-        Me.address.ReadOnly = True
-        '
-        'taluko
-        '
-        Me.taluko.DataPropertyName = "taluko"
-        Me.taluko.HeaderText = "Taluko"
-        Me.taluko.Name = "taluko"
-        Me.taluko.ReadOnly = True
-        '
-        'jillo
-        '
-        Me.jillo.DataPropertyName = "jillo"
-        Me.jillo.HeaderText = "Jillo"
-        Me.jillo.Name = "jillo"
-        Me.jillo.ReadOnly = True
-        '
-        'rajya
-        '
-        Me.rajya.DataPropertyName = "rajya"
-        Me.rajya.HeaderText = "Rajya"
-        Me.rajya.Name = "rajya"
-        Me.rajya.ReadOnly = True
-        '
-        'pincode
-        '
-        Me.pincode.DataPropertyName = "pincode"
-        Me.pincode.HeaderText = "Pincode"
-        Me.pincode.Name = "pincode"
-        Me.pincode.ReadOnly = True
-        '
-        'mobile
-        '
-        Me.mobile.DataPropertyName = "mobile"
-        Me.mobile.HeaderText = "Mobile"
-        Me.mobile.Name = "mobile"
-        Me.mobile.ReadOnly = True
-        '
-        'adharno
-        '
-        Me.adharno.DataPropertyName = "adharno"
-        Me.adharno.HeaderText = "Adhar No"
-        Me.adharno.Name = "adharno"
-        Me.adharno.ReadOnly = True
-        '
-        'birthdate
-        '
-        Me.birthdate.DataPropertyName = "birthdate"
-        Me.birthdate.HeaderText = "Birth Date"
-        Me.birthdate.Name = "birthdate"
-        Me.birthdate.ReadOnly = True
-        '
-        'EmployeenumberDataGridViewTextBoxColumn
-        '
-        Me.EmployeenumberDataGridViewTextBoxColumn.DataPropertyName = "employeenumber"
-        Me.EmployeenumberDataGridViewTextBoxColumn.HeaderText = "employeenumber"
-        Me.EmployeenumberDataGridViewTextBoxColumn.Name = "EmployeenumberDataGridViewTextBoxColumn"
-        Me.EmployeenumberDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "name"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "address"
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'PincodeDataGridViewTextBoxColumn
-        '
-        Me.PincodeDataGridViewTextBoxColumn.DataPropertyName = "pincode"
-        Me.PincodeDataGridViewTextBoxColumn.HeaderText = "pincode"
-        Me.PincodeDataGridViewTextBoxColumn.Name = "PincodeDataGridViewTextBoxColumn"
-        Me.PincodeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'MobileDataGridViewTextBoxColumn
-        '
-        Me.MobileDataGridViewTextBoxColumn.DataPropertyName = "mobile"
-        Me.MobileDataGridViewTextBoxColumn.HeaderText = "mobile"
-        Me.MobileDataGridViewTextBoxColumn.Name = "MobileDataGridViewTextBoxColumn"
-        Me.MobileDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AdharnoDataGridViewTextBoxColumn
-        '
-        Me.AdharnoDataGridViewTextBoxColumn.DataPropertyName = "adharno"
-        Me.AdharnoDataGridViewTextBoxColumn.HeaderText = "adharno"
-        Me.AdharnoDataGridViewTextBoxColumn.Name = "AdharnoDataGridViewTextBoxColumn"
-        Me.AdharnoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'BirthdateDataGridViewTextBoxColumn
-        '
-        Me.BirthdateDataGridViewTextBoxColumn.DataPropertyName = "birthdate"
-        Me.BirthdateDataGridViewTextBoxColumn.HeaderText = "birthdate"
-        Me.BirthdateDataGridViewTextBoxColumn.Name = "BirthdateDataGridViewTextBoxColumn"
-        Me.BirthdateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ResigndateDataGridViewTextBoxColumn
-        '
-        Me.ResigndateDataGridViewTextBoxColumn.DataPropertyName = "resigndate"
-        Me.ResigndateDataGridViewTextBoxColumn.HeaderText = "resigndate"
-        Me.ResigndateDataGridViewTextBoxColumn.Name = "ResigndateDataGridViewTextBoxColumn"
-        Me.ResigndateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'JoiningdateDataGridViewTextBoxColumn
-        '
-        Me.JoiningdateDataGridViewTextBoxColumn.DataPropertyName = "joiningdate"
-        Me.JoiningdateDataGridViewTextBoxColumn.HeaderText = "joiningdate"
-        Me.JoiningdateDataGridViewTextBoxColumn.Name = "JoiningdateDataGridViewTextBoxColumn"
-        Me.JoiningdateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TalukoDataGridViewTextBoxColumn
-        '
-        Me.TalukoDataGridViewTextBoxColumn.DataPropertyName = "taluko"
-        Me.TalukoDataGridViewTextBoxColumn.HeaderText = "taluko"
-        Me.TalukoDataGridViewTextBoxColumn.Name = "TalukoDataGridViewTextBoxColumn"
-        Me.TalukoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'RajyaDataGridViewTextBoxColumn
-        '
-        Me.RajyaDataGridViewTextBoxColumn.DataPropertyName = "rajya"
-        Me.RajyaDataGridViewTextBoxColumn.HeaderText = "rajya"
-        Me.RajyaDataGridViewTextBoxColumn.Name = "RajyaDataGridViewTextBoxColumn"
-        Me.RajyaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'JilloDataGridViewTextBoxColumn
-        '
-        Me.JilloDataGridViewTextBoxColumn.DataPropertyName = "jillo"
-        Me.JilloDataGridViewTextBoxColumn.HeaderText = "jillo"
-        Me.JilloDataGridViewTextBoxColumn.Name = "JilloDataGridViewTextBoxColumn"
-        Me.JilloDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EmployeeidDataGridViewTextBoxColumn
-        '
-        Me.EmployeeidDataGridViewTextBoxColumn.DataPropertyName = "employeeid"
-        Me.EmployeeidDataGridViewTextBoxColumn.HeaderText = "employeeid"
-        Me.EmployeeidDataGridViewTextBoxColumn.Name = "EmployeeidDataGridViewTextBoxColumn"
-        Me.EmployeeidDataGridViewTextBoxColumn.ReadOnly = True
         '
         'EmployeeBindingSource
         '
@@ -340,6 +169,106 @@ Partial Class Employee
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
+        'employeeid
+        '
+        Me.employeeid.DataPropertyName = "employeeid"
+        Me.employeeid.HeaderText = "Employee ID"
+        Me.employeeid.Name = "employeeid"
+        Me.employeeid.ReadOnly = True
+        Me.employeeid.Visible = False
+        '
+        'name
+        '
+        Me.name.DataPropertyName = "name"
+        Me.name.HeaderText = "Name"
+        Me.name.Name = "name"
+        Me.name.ReadOnly = True
+        '
+        'address
+        '
+        Me.address.DataPropertyName = "address"
+        Me.address.HeaderText = "Address"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
+        '
+        'taluko
+        '
+        Me.taluko.DataPropertyName = "taluko"
+        Me.taluko.HeaderText = "Taluko"
+        Me.taluko.Name = "taluko"
+        Me.taluko.ReadOnly = True
+        '
+        'jillo
+        '
+        Me.jillo.DataPropertyName = "jillo"
+        Me.jillo.HeaderText = "Jillo"
+        Me.jillo.Name = "jillo"
+        Me.jillo.ReadOnly = True
+        '
+        'rajya
+        '
+        Me.rajya.DataPropertyName = "rajya"
+        Me.rajya.HeaderText = "Rajya"
+        Me.rajya.Name = "rajya"
+        Me.rajya.ReadOnly = True
+        '
+        'pincode
+        '
+        Me.pincode.DataPropertyName = "pincode"
+        Me.pincode.HeaderText = "Pincode"
+        Me.pincode.Name = "pincode"
+        Me.pincode.ReadOnly = True
+        '
+        'mobile
+        '
+        Me.mobile.DataPropertyName = "mobile"
+        Me.mobile.HeaderText = "Mobile"
+        Me.mobile.Name = "mobile"
+        Me.mobile.ReadOnly = True
+        '
+        'adharno
+        '
+        Me.adharno.DataPropertyName = "adharno"
+        Me.adharno.HeaderText = "Adhar No"
+        Me.adharno.Name = "adharno"
+        Me.adharno.ReadOnly = True
+        '
+        'birthdate
+        '
+        Me.birthdate.DataPropertyName = "birthdate"
+        Me.birthdate.HeaderText = "Birth Date"
+        Me.birthdate.Name = "birthdate"
+        Me.birthdate.ReadOnly = True
+        '
+        'EmployeenumberDataGridViewTextBoxColumn
+        '
+        Me.EmployeenumberDataGridViewTextBoxColumn.DataPropertyName = "employeenumber"
+        Me.EmployeenumberDataGridViewTextBoxColumn.HeaderText = "Employee Number"
+        Me.EmployeenumberDataGridViewTextBoxColumn.Name = "EmployeenumberDataGridViewTextBoxColumn"
+        Me.EmployeenumberDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ResigndateDataGridViewTextBoxColumn
+        '
+        Me.ResigndateDataGridViewTextBoxColumn.DataPropertyName = "resigndate"
+        Me.ResigndateDataGridViewTextBoxColumn.HeaderText = "Resign Date"
+        Me.ResigndateDataGridViewTextBoxColumn.Name = "ResigndateDataGridViewTextBoxColumn"
+        Me.ResigndateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'JoiningdateDataGridViewTextBoxColumn
+        '
+        Me.JoiningdateDataGridViewTextBoxColumn.DataPropertyName = "joiningdate"
+        Me.JoiningdateDataGridViewTextBoxColumn.HeaderText = "Joining Date"
+        Me.JoiningdateDataGridViewTextBoxColumn.Name = "JoiningdateDataGridViewTextBoxColumn"
+        Me.JoiningdateDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmployeeidDataGridViewTextBoxColumn
+        '
+        Me.EmployeeidDataGridViewTextBoxColumn.DataPropertyName = "employeeid"
+        Me.EmployeeidDataGridViewTextBoxColumn.HeaderText = "employeeid"
+        Me.EmployeeidDataGridViewTextBoxColumn.Name = "EmployeeidDataGridViewTextBoxColumn"
+        Me.EmployeeidDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EmployeeidDataGridViewTextBoxColumn.Visible = False
+        '
         'Employee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -365,32 +294,9 @@ Partial Class Employee
     Friend WithEvents EmployeeDataSet As employeeDataSet
     Friend WithEvents EmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeTableAdapter As employeeDataSetTableAdapters.employeeTableAdapter
-    Friend WithEvents EmployeeidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TalukoidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RajyaidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents JilloidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents employeeid As DataGridViewTextBoxColumn
-    Friend WithEvents name As DataGridViewTextBoxColumn
-    Friend WithEvents address As DataGridViewTextBoxColumn
-    Friend WithEvents taluko As DataGridViewTextBoxColumn
-    Friend WithEvents jillo As DataGridViewTextBoxColumn
-    Friend WithEvents rajya As DataGridViewTextBoxColumn
-    Friend WithEvents pincode As DataGridViewTextBoxColumn
-    Friend WithEvents mobile As DataGridViewTextBoxColumn
-    Friend WithEvents adharno As DataGridViewTextBoxColumn
-    Friend WithEvents birthdate As DataGridViewTextBoxColumn
-    Friend WithEvents EmployeenumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PincodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents MobileDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AdharnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents BirthdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ResigndateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents JoiningdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TalukoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RajyaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents JilloDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CompanyToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CompanyListToolStripMenuItem As ToolStripMenuItem
@@ -402,4 +308,18 @@ Partial Class Employee
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents employeeid As DataGridViewTextBoxColumn
+    Friend WithEvents name As DataGridViewTextBoxColumn
+    Friend WithEvents address As DataGridViewTextBoxColumn
+    Friend WithEvents taluko As DataGridViewTextBoxColumn
+    Friend WithEvents jillo As DataGridViewTextBoxColumn
+    Friend WithEvents rajya As DataGridViewTextBoxColumn
+    Friend WithEvents pincode As DataGridViewTextBoxColumn
+    Friend WithEvents mobile As DataGridViewTextBoxColumn
+    Friend WithEvents adharno As DataGridViewTextBoxColumn
+    Friend WithEvents birthdate As DataGridViewTextBoxColumn
+    Friend WithEvents EmployeenumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ResigndateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents JoiningdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmployeeidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

@@ -15,6 +15,14 @@
 
     Public Function AddCustomer(ByVal intCompanyId As Integer, ByVal strRegNo As String, ByVal strName As String, ByVal strAddress As String, ByVal intJilloId As Integer, ByVal intTalukoId As Integer, ByRef intRajyaId As Integer, ByVal strZipCode As String, ByVal strmobile1 As String, ByVal strMobile2 As String, ByVal strAdharNo As String) As Integer
 
+
+        Dim intMaxCustomerId As Integer
+        strSqlCommand = "SELECT MAX(customerid) FROM customer"
+        intMaxCustomerId = Val(ExecuteScalar(strSqlCommand, ""))
+
+        intMaxCustomerId = intMaxCustomerId + 1
+
+        strRegNo = "CUS" & intMaxCustomerId
         strSqlCommand = "INSERT INTO customer(companyid, regno, name, address, jilloid, talukoid, rajyaid, pincode, mobile1, mobile2, adharno) VALUES (N'" & EscapeString(intCompanyId) & "',N'" & EscapeString(strRegNo) & "',N'" & EscapeString(strName) & "',N'" & EscapeString(strAddress) & "',N'" & intJilloId & "','" & intTalukoId & "',N'" & intRajyaId & "',N'" & EscapeString(strZipCode) & "',N'" & EscapeString(strmobile1) & "',N'" & EscapeString(strMobile2) & "',N'" & EscapeString(strAdharNo) & "')"
 
         Dim intCustomerId As Integer
@@ -37,7 +45,7 @@
 
     Public Sub UpdateCustomer(ByVal intCustomerId As Integer, ByVal strRegNo As String, ByVal strName As String, ByVal strAddress As String, ByVal intJilloId As Integer, ByVal intTalukoId As Integer, ByRef intRajyaId As Integer, ByVal strZipCode As String, ByVal strmobile1 As String, ByVal strMobile2 As String, ByVal strAdharNo As String)
 
-        strSqlCommand = "UPDATE customer SET regno=N'" & EscapeString(strRegNo) & "', name=N'" & EscapeString(strName) & "', address=N'" & EscapeString(strAddress) & "', jilloid=" & intJilloId & ", talukoid=" & intTalukoId & ",rajyaid=" & intRajyaId & ", pincode=N'" & EscapeString(strZipCode) & "', mobile1=N'" & EscapeString(strmobile1) & "', mobile2=N'" & EscapeString(strMobile2) & "', adharno=N'" & EscapeString(strAdharNo) & "' WHERE customerid =" & intCustomerId
+        strSqlCommand = "UPDATE customer SET name=N'" & EscapeString(strName) & "', address=N'" & EscapeString(strAddress) & "', jilloid=" & intJilloId & ", talukoid=" & intTalukoId & ",rajyaid=" & intRajyaId & ", pincode=N'" & EscapeString(strZipCode) & "', mobile1=N'" & EscapeString(strmobile1) & "', mobile2=N'" & EscapeString(strMobile2) & "', adharno=N'" & EscapeString(strAdharNo) & "' WHERE customerid =" & intCustomerId
 
         ExecuteNonQuery(strSqlCommand, "UpdateCustomer", "N")
 

@@ -67,14 +67,25 @@ Partial Class LoanDetail
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.ddlCustomer = New System.Windows.Forms.ComboBox()
+        Me.CustomerDataSet = New Company.customerDataSet()
+        Me.CustomerDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CustomerTableAdapter = New Company.customerDataSetTableAdapters.customerTableAdapter()
         Me.GroupBox1.SuspendLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.CustomerDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ddlCustomer)
+        Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.btnCancel)
         Me.GroupBox1.Controls.Add(Me.btnSave)
         Me.GroupBox1.Controls.Add(Me.ddlEmployee)
@@ -216,17 +227,18 @@ Partial Class LoanDetail
         '
         'txtDuration
         '
-        Me.txtDuration.Location = New System.Drawing.Point(109, 54)
+        Me.txtDuration.Location = New System.Drawing.Point(109, 91)
         Me.txtDuration.Name = "txtDuration"
         Me.txtDuration.Size = New System.Drawing.Size(121, 20)
         Me.txtDuration.TabIndex = 3
         '
         'txtLoanNumber
         '
-        Me.txtLoanNumber.Location = New System.Drawing.Point(109, 119)
+        Me.txtLoanNumber.Location = New System.Drawing.Point(503, 91)
         Me.txtLoanNumber.Name = "txtLoanNumber"
         Me.txtLoanNumber.Size = New System.Drawing.Size(121, 20)
         Me.txtLoanNumber.TabIndex = 3
+        Me.txtLoanNumber.Visible = False
         '
         'Label11
         '
@@ -287,8 +299,8 @@ Partial Class LoanDetail
         '
         Me.ddlType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlType.FormattingEnabled = True
-        Me.ddlType.Items.AddRange(New Object() {"દૈનીક​", "માસીક​"})
-        Me.ddlType.Location = New System.Drawing.Point(109, 23)
+        Me.ddlType.Items.AddRange(New Object() {"દૈનીક​", "માસીક​(હપ્તા)", "માસીક"})
+        Me.ddlType.Location = New System.Drawing.Point(109, 60)
         Me.ddlType.Name = "ddlType"
         Me.ddlType.Size = New System.Drawing.Size(121, 21)
         Me.ddlType.TabIndex = 1
@@ -332,7 +344,7 @@ Partial Class LoanDetail
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(17, 61)
+        Me.Label10.Location = New System.Drawing.Point(17, 98)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(30, 13)
         Me.Label10.TabIndex = 0
@@ -341,7 +353,7 @@ Partial Class LoanDetail
         'lblFinalDate
         '
         Me.lblFinalDate.AutoSize = True
-        Me.lblFinalDate.Location = New System.Drawing.Point(106, 91)
+        Me.lblFinalDate.Location = New System.Drawing.Point(106, 128)
         Me.lblFinalDate.Name = "lblFinalDate"
         Me.lblFinalDate.Size = New System.Drawing.Size(69, 13)
         Me.lblFinalDate.TabIndex = 0
@@ -350,16 +362,17 @@ Partial Class LoanDetail
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(17, 126)
+        Me.Label1.Location = New System.Drawing.Point(411, 98)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "લોન નં"
+        Me.Label1.Visible = False
         '
         'lblLastDate
         '
         Me.lblLastDate.AutoSize = True
-        Me.lblLastDate.Location = New System.Drawing.Point(17, 91)
+        Me.lblLastDate.Location = New System.Drawing.Point(17, 128)
         Me.lblLastDate.Name = "lblLastDate"
         Me.lblLastDate.Size = New System.Drawing.Size(69, 13)
         Me.lblLastDate.TabIndex = 0
@@ -368,7 +381,7 @@ Partial Class LoanDetail
         'lblType
         '
         Me.lblType.AutoSize = True
-        Me.lblType.Location = New System.Drawing.Point(17, 31)
+        Me.lblType.Location = New System.Drawing.Point(17, 68)
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(55, 13)
         Me.lblType.TabIndex = 0
@@ -416,7 +429,7 @@ Partial Class LoanDetail
         'CustomerListToolStripMenuItem
         '
         Me.CustomerListToolStripMenuItem.Name = "CustomerListToolStripMenuItem"
-        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CustomerListToolStripMenuItem.Text = "Customer List"
         '
         'EmployeeToolStripMenuItem
@@ -451,6 +464,45 @@ Partial Class LoanDetail
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(20, 30)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(35, 13)
+        Me.Label12.TabIndex = 15
+        Me.Label12.Text = "ગ્રાહક "
+        '
+        'ddlCustomer
+        '
+        Me.ddlCustomer.DataSource = Me.CustomerBindingSource
+        Me.ddlCustomer.DisplayMember = "name"
+        Me.ddlCustomer.FormattingEnabled = True
+        Me.ddlCustomer.Location = New System.Drawing.Point(109, 27)
+        Me.ddlCustomer.Name = "ddlCustomer"
+        Me.ddlCustomer.Size = New System.Drawing.Size(121, 21)
+        Me.ddlCustomer.TabIndex = 16
+        Me.ddlCustomer.ValueMember = "customerid"
+        '
+        'CustomerDataSet
+        '
+        Me.CustomerDataSet.DataSetName = "customerDataSet"
+        Me.CustomerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CustomerDataSetBindingSource
+        '
+        Me.CustomerDataSetBindingSource.DataSource = Me.CustomerDataSet
+        Me.CustomerDataSetBindingSource.Position = 0
+        '
+        'CustomerBindingSource
+        '
+        Me.CustomerBindingSource.DataMember = "customer"
+        Me.CustomerBindingSource.DataSource = Me.CustomerDataSetBindingSource
+        '
+        'CustomerTableAdapter
+        '
+        Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
         'LoanDetail
         '
         Me.AcceptButton = Me.btnSave
@@ -468,6 +520,9 @@ Partial Class LoanDetail
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.CustomerDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -517,4 +572,10 @@ Partial Class LoanDetail
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ddlCustomer As ComboBox
+    Friend WithEvents CustomerDataSetBindingSource As BindingSource
+    Friend WithEvents CustomerDataSet As customerDataSet
+    Friend WithEvents Label12 As Label
+    Friend WithEvents CustomerBindingSource As BindingSource
+    Friend WithEvents CustomerTableAdapter As customerDataSetTableAdapters.customerTableAdapter
 End Class

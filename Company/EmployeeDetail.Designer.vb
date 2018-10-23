@@ -86,7 +86,7 @@ Partial Class EmployeeDetail
         '
         'txtAdharno
         '
-        Me.txtAdharno.Location = New System.Drawing.Point(115, 454)
+        Me.txtAdharno.Location = New System.Drawing.Point(115, 425)
         Me.txtAdharno.Mask = "0000-0000-0000"
         Me.txtAdharno.Name = "txtAdharno"
         Me.txtAdharno.Size = New System.Drawing.Size(170, 20)
@@ -94,7 +94,7 @@ Partial Class EmployeeDetail
         '
         'txtPincode
         '
-        Me.txtPincode.Location = New System.Drawing.Point(115, 375)
+        Me.txtPincode.Location = New System.Drawing.Point(115, 346)
         Me.txtPincode.MaxLength = 6
         Me.txtPincode.Name = "txtPincode"
         Me.txtPincode.Size = New System.Drawing.Size(170, 20)
@@ -103,7 +103,7 @@ Partial Class EmployeeDetail
         'lblPincode
         '
         Me.lblPincode.AutoSize = True
-        Me.lblPincode.Location = New System.Drawing.Point(6, 378)
+        Me.lblPincode.Location = New System.Drawing.Point(6, 349)
         Me.lblPincode.Name = "lblPincode"
         Me.lblPincode.Size = New System.Drawing.Size(42, 13)
         Me.lblPincode.TabIndex = 15
@@ -111,7 +111,7 @@ Partial Class EmployeeDetail
         '
         'txtOtherRajya
         '
-        Me.txtOtherRajya.Location = New System.Drawing.Point(285, 337)
+        Me.txtOtherRajya.Location = New System.Drawing.Point(285, 308)
         Me.txtOtherRajya.Name = "txtOtherRajya"
         Me.txtOtherRajya.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherRajya.TabIndex = 14
@@ -123,7 +123,7 @@ Partial Class EmployeeDetail
         Me.ddlRajya.DisplayMember = "name"
         Me.ddlRajya.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlRajya.FormattingEnabled = True
-        Me.ddlRajya.Location = New System.Drawing.Point(115, 336)
+        Me.ddlRajya.Location = New System.Drawing.Point(115, 307)
         Me.ddlRajya.Name = "ddlRajya"
         Me.ddlRajya.Size = New System.Drawing.Size(121, 21)
         Me.ddlRajya.TabIndex = 13
@@ -142,7 +142,7 @@ Partial Class EmployeeDetail
         'lblRajya
         '
         Me.lblRajya.AutoSize = True
-        Me.lblRajya.Location = New System.Drawing.Point(9, 336)
+        Me.lblRajya.Location = New System.Drawing.Point(9, 307)
         Me.lblRajya.Name = "lblRajya"
         Me.lblRajya.Size = New System.Drawing.Size(31, 13)
         Me.lblRajya.TabIndex = 12
@@ -150,7 +150,7 @@ Partial Class EmployeeDetail
         '
         'txtOtherJillo
         '
-        Me.txtOtherJillo.Location = New System.Drawing.Point(285, 286)
+        Me.txtOtherJillo.Location = New System.Drawing.Point(285, 257)
         Me.txtOtherJillo.Name = "txtOtherJillo"
         Me.txtOtherJillo.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherJillo.TabIndex = 11
@@ -162,7 +162,7 @@ Partial Class EmployeeDetail
         Me.ddlJillo.DisplayMember = "name"
         Me.ddlJillo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlJillo.FormattingEnabled = True
-        Me.ddlJillo.Location = New System.Drawing.Point(115, 285)
+        Me.ddlJillo.Location = New System.Drawing.Point(115, 256)
         Me.ddlJillo.Name = "ddlJillo"
         Me.ddlJillo.Size = New System.Drawing.Size(121, 21)
         Me.ddlJillo.TabIndex = 10
@@ -181,7 +181,7 @@ Partial Class EmployeeDetail
         'lblJillo
         '
         Me.lblJillo.AutoSize = True
-        Me.lblJillo.Location = New System.Drawing.Point(6, 293)
+        Me.lblJillo.Location = New System.Drawing.Point(6, 264)
         Me.lblJillo.Name = "lblJillo"
         Me.lblJillo.Size = New System.Drawing.Size(34, 13)
         Me.lblJillo.TabIndex = 9
@@ -189,7 +189,7 @@ Partial Class EmployeeDetail
         '
         'txtOtherTaluko
         '
-        Me.txtOtherTaluko.Location = New System.Drawing.Point(285, 240)
+        Me.txtOtherTaluko.Location = New System.Drawing.Point(285, 211)
         Me.txtOtherTaluko.Name = "txtOtherTaluko"
         Me.txtOtherTaluko.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherTaluko.TabIndex = 8
@@ -201,7 +201,7 @@ Partial Class EmployeeDetail
         Me.ddlTaluko.DisplayMember = "name"
         Me.ddlTaluko.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlTaluko.FormattingEnabled = True
-        Me.ddlTaluko.Location = New System.Drawing.Point(115, 239)
+        Me.ddlTaluko.Location = New System.Drawing.Point(115, 210)
         Me.ddlTaluko.Name = "ddlTaluko"
         Me.ddlTaluko.Size = New System.Drawing.Size(121, 21)
         Me.ddlTaluko.TabIndex = 7
@@ -220,7 +220,7 @@ Partial Class EmployeeDetail
         'lblTaluko
         '
         Me.lblTaluko.AutoSize = True
-        Me.lblTaluko.Location = New System.Drawing.Point(6, 242)
+        Me.lblTaluko.Location = New System.Drawing.Point(6, 213)
         Me.lblTaluko.Name = "lblTaluko"
         Me.lblTaluko.Size = New System.Drawing.Size(35, 13)
         Me.lblTaluko.TabIndex = 6
@@ -228,7 +228,7 @@ Partial Class EmployeeDetail
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(115, 146)
+        Me.txtAddress.Location = New System.Drawing.Point(115, 117)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(170, 68)
@@ -237,7 +237,7 @@ Partial Class EmployeeDetail
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(6, 174)
+        Me.lblAddress.Location = New System.Drawing.Point(6, 145)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(40, 13)
         Me.lblAddress.TabIndex = 4
@@ -245,7 +245,7 @@ Partial Class EmployeeDetail
         '
         'txtCustomerName
         '
-        Me.txtCustomerName.Location = New System.Drawing.Point(115, 60)
+        Me.txtCustomerName.Location = New System.Drawing.Point(115, 31)
         Me.txtCustomerName.Name = "txtCustomerName"
         Me.txtCustomerName.Size = New System.Drawing.Size(170, 20)
         Me.txtCustomerName.TabIndex = 3
@@ -253,7 +253,7 @@ Partial Class EmployeeDetail
         'lblEmployeeName
         '
         Me.lblEmployeeName.AutoSize = True
-        Me.lblEmployeeName.Location = New System.Drawing.Point(6, 63)
+        Me.lblEmployeeName.Location = New System.Drawing.Point(6, 34)
         Me.lblEmployeeName.Name = "lblEmployeeName"
         Me.lblEmployeeName.Size = New System.Drawing.Size(73, 13)
         Me.lblEmployeeName.TabIndex = 2
@@ -261,10 +261,11 @@ Partial Class EmployeeDetail
         '
         'txtEmployeeNo
         '
-        Me.txtEmployeeNo.Location = New System.Drawing.Point(115, 28)
+        Me.txtEmployeeNo.Location = New System.Drawing.Point(509, 17)
         Me.txtEmployeeNo.Name = "txtEmployeeNo"
         Me.txtEmployeeNo.Size = New System.Drawing.Size(170, 20)
         Me.txtEmployeeNo.TabIndex = 1
+        Me.txtEmployeeNo.Visible = False
         '
         'JilloTableAdapter
         '
@@ -273,11 +274,12 @@ Partial Class EmployeeDetail
         'lblRegistration
         '
         Me.lblRegistration.AutoSize = True
-        Me.lblRegistration.Location = New System.Drawing.Point(6, 31)
+        Me.lblRegistration.Location = New System.Drawing.Point(400, 20)
         Me.lblRegistration.Name = "lblRegistration"
         Me.lblRegistration.Size = New System.Drawing.Size(53, 13)
         Me.lblRegistration.TabIndex = 0
         Me.lblRegistration.Text = "કર્મચારી નં"
+        Me.lblRegistration.Visible = False
         '
         'RajyaTableAdapter
         '
@@ -325,7 +327,7 @@ Partial Class EmployeeDetail
         'lblResignDate
         '
         Me.lblResignDate.AutoSize = True
-        Me.lblResignDate.Location = New System.Drawing.Point(12, 530)
+        Me.lblResignDate.Location = New System.Drawing.Point(12, 501)
         Me.lblResignDate.Name = "lblResignDate"
         Me.lblResignDate.Size = New System.Drawing.Size(54, 13)
         Me.lblResignDate.TabIndex = 44
@@ -334,7 +336,7 @@ Partial Class EmployeeDetail
         'dtResignDate
         '
         Me.dtResignDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtResignDate.Location = New System.Drawing.Point(115, 530)
+        Me.dtResignDate.Location = New System.Drawing.Point(115, 501)
         Me.dtResignDate.Name = "dtResignDate"
         Me.dtResignDate.Size = New System.Drawing.Size(170, 20)
         Me.dtResignDate.TabIndex = 21
@@ -342,7 +344,7 @@ Partial Class EmployeeDetail
         'dtBirthDate
         '
         Me.dtBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtBirthDate.Location = New System.Drawing.Point(115, 492)
+        Me.dtBirthDate.Location = New System.Drawing.Point(115, 463)
         Me.dtBirthDate.Name = "dtBirthDate"
         Me.dtBirthDate.Size = New System.Drawing.Size(170, 20)
         Me.dtBirthDate.TabIndex = 20
@@ -350,7 +352,7 @@ Partial Class EmployeeDetail
         'lblBirthDate
         '
         Me.lblBirthDate.AutoSize = True
-        Me.lblBirthDate.Location = New System.Drawing.Point(6, 492)
+        Me.lblBirthDate.Location = New System.Drawing.Point(6, 463)
         Me.lblBirthDate.Name = "lblBirthDate"
         Me.lblBirthDate.Size = New System.Drawing.Size(45, 13)
         Me.lblBirthDate.TabIndex = 42
@@ -359,7 +361,7 @@ Partial Class EmployeeDetail
         'dtJoiningDate
         '
         Me.dtJoiningDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtJoiningDate.Location = New System.Drawing.Point(115, 101)
+        Me.dtJoiningDate.Location = New System.Drawing.Point(115, 72)
         Me.dtJoiningDate.Name = "dtJoiningDate"
         Me.dtJoiningDate.Size = New System.Drawing.Size(170, 20)
         Me.dtJoiningDate.TabIndex = 41
@@ -367,7 +369,7 @@ Partial Class EmployeeDetail
         'lblJoiningDate
         '
         Me.lblJoiningDate.AutoSize = True
-        Me.lblJoiningDate.Location = New System.Drawing.Point(9, 101)
+        Me.lblJoiningDate.Location = New System.Drawing.Point(9, 72)
         Me.lblJoiningDate.Name = "lblJoiningDate"
         Me.lblJoiningDate.Size = New System.Drawing.Size(81, 13)
         Me.lblJoiningDate.TabIndex = 40
@@ -376,7 +378,7 @@ Partial Class EmployeeDetail
         'btnCancel
         '
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(210, 597)
+        Me.btnCancel.Location = New System.Drawing.Point(210, 568)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 37
@@ -385,7 +387,7 @@ Partial Class EmployeeDetail
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(115, 597)
+        Me.btnReset.Location = New System.Drawing.Point(115, 568)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(75, 23)
         Me.btnReset.TabIndex = 36
@@ -394,7 +396,7 @@ Partial Class EmployeeDetail
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(21, 597)
+        Me.btnSave.Location = New System.Drawing.Point(21, 568)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 35
@@ -404,7 +406,7 @@ Partial Class EmployeeDetail
         'lblAdharno
         '
         Me.lblAdharno.AutoSize = True
-        Me.lblAdharno.Location = New System.Drawing.Point(9, 454)
+        Me.lblAdharno.Location = New System.Drawing.Point(9, 425)
         Me.lblAdharno.Name = "lblAdharno"
         Me.lblAdharno.Size = New System.Drawing.Size(48, 13)
         Me.lblAdharno.TabIndex = 21
@@ -412,7 +414,7 @@ Partial Class EmployeeDetail
         '
         'txtMobileNumber
         '
-        Me.txtMobileNumber.Location = New System.Drawing.Point(115, 414)
+        Me.txtMobileNumber.Location = New System.Drawing.Point(115, 385)
         Me.txtMobileNumber.Name = "txtMobileNumber"
         Me.txtMobileNumber.Size = New System.Drawing.Size(170, 20)
         Me.txtMobileNumber.TabIndex = 18
@@ -420,7 +422,7 @@ Partial Class EmployeeDetail
         'lblOwnerName
         '
         Me.lblOwnerName.AutoSize = True
-        Me.lblOwnerName.Location = New System.Drawing.Point(6, 417)
+        Me.lblOwnerName.Location = New System.Drawing.Point(6, 388)
         Me.lblOwnerName.Name = "lblOwnerName"
         Me.lblOwnerName.Size = New System.Drawing.Size(58, 13)
         Me.lblOwnerName.TabIndex = 17

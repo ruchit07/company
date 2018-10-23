@@ -100,7 +100,7 @@ Partial Class UpdateCustomerDetail
         'lblCompanyId
         '
         Me.lblCompanyId.AutoSize = True
-        Me.lblCompanyId.Location = New System.Drawing.Point(378, 55)
+        Me.lblCompanyId.Location = New System.Drawing.Point(541, 95)
         Me.lblCompanyId.Name = "lblCompanyId"
         Me.lblCompanyId.Size = New System.Drawing.Size(39, 13)
         Me.lblCompanyId.TabIndex = 39
@@ -119,7 +119,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtAdharno
         '
-        Me.txtAdharno.Location = New System.Drawing.Point(115, 401)
+        Me.txtAdharno.Location = New System.Drawing.Point(115, 370)
         Me.txtAdharno.Mask = "0000-0000-0000"
         Me.txtAdharno.Name = "txtAdharno"
         Me.txtAdharno.Size = New System.Drawing.Size(170, 20)
@@ -155,7 +155,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtJaminAddress
         '
-        Me.txtJaminAddress.Location = New System.Drawing.Point(118, 519)
+        Me.txtJaminAddress.Location = New System.Drawing.Point(118, 488)
         Me.txtJaminAddress.Multiline = True
         Me.txtJaminAddress.Name = "txtJaminAddress"
         Me.txtJaminAddress.Size = New System.Drawing.Size(146, 40)
@@ -164,7 +164,7 @@ Partial Class UpdateCustomerDetail
         'lblConfirmPassword
         '
         Me.lblConfirmPassword.AutoSize = True
-        Me.lblConfirmPassword.Location = New System.Drawing.Point(9, 526)
+        Me.lblConfirmPassword.Location = New System.Drawing.Point(9, 503)
         Me.lblConfirmPassword.Name = "lblConfirmPassword"
         Me.lblConfirmPassword.Size = New System.Drawing.Size(40, 13)
         Me.lblConfirmPassword.TabIndex = 33
@@ -222,7 +222,7 @@ Partial Class UpdateCustomerDetail
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jaminid, Me.name, Me.mobile, Me.Address, Me.btnUpdate, Me.Delete})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 574)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 566)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(568, 76)
         Me.DataGridView1.TabIndex = 42
@@ -264,7 +264,7 @@ Partial Class UpdateCustomerDetail
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(294, 536)
+        Me.btnAdd.Location = New System.Drawing.Point(294, 505)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 41
@@ -274,7 +274,7 @@ Partial Class UpdateCustomerDetail
         'lblCustomerId
         '
         Me.lblCustomerId.AutoSize = True
-        Me.lblCustomerId.Location = New System.Drawing.Point(381, 92)
+        Me.lblCustomerId.Location = New System.Drawing.Point(648, 95)
         Me.lblCustomerId.Name = "lblCustomerId"
         Me.lblCustomerId.Size = New System.Drawing.Size(39, 13)
         Me.lblCustomerId.TabIndex = 40
@@ -283,7 +283,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtJaminMobile
         '
-        Me.txtJaminMobile.Location = New System.Drawing.Point(118, 482)
+        Me.txtJaminMobile.Location = New System.Drawing.Point(118, 451)
         Me.txtJaminMobile.Name = "txtJaminMobile"
         Me.txtJaminMobile.Size = New System.Drawing.Size(146, 20)
         Me.txtJaminMobile.TabIndex = 32
@@ -291,7 +291,7 @@ Partial Class UpdateCustomerDetail
         'lblJaminMobile
         '
         Me.lblJaminMobile.AutoSize = True
-        Me.lblJaminMobile.Location = New System.Drawing.Point(9, 485)
+        Me.lblJaminMobile.Location = New System.Drawing.Point(9, 462)
         Me.lblJaminMobile.Name = "lblJaminMobile"
         Me.lblJaminMobile.Size = New System.Drawing.Size(104, 13)
         Me.lblJaminMobile.TabIndex = 31
@@ -299,7 +299,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtUserName
         '
-        Me.txtUserName.Location = New System.Drawing.Point(118, 443)
+        Me.txtUserName.Location = New System.Drawing.Point(118, 412)
         Me.txtUserName.Name = "txtUserName"
         Me.txtUserName.Size = New System.Drawing.Size(146, 20)
         Me.txtUserName.TabIndex = 30
@@ -307,7 +307,7 @@ Partial Class UpdateCustomerDetail
         'lblJaminName
         '
         Me.lblJaminName.AutoSize = True
-        Me.lblJaminName.Location = New System.Drawing.Point(9, 446)
+        Me.lblJaminName.Location = New System.Drawing.Point(9, 423)
         Me.lblJaminName.Name = "lblJaminName"
         Me.lblJaminName.Size = New System.Drawing.Size(69, 13)
         Me.lblJaminName.TabIndex = 29
@@ -316,7 +316,7 @@ Partial Class UpdateCustomerDetail
         'lblAdharno
         '
         Me.lblAdharno.AutoSize = True
-        Me.lblAdharno.Location = New System.Drawing.Point(9, 401)
+        Me.lblAdharno.Location = New System.Drawing.Point(9, 378)
         Me.lblAdharno.Name = "lblAdharno"
         Me.lblAdharno.Size = New System.Drawing.Size(48, 13)
         Me.lblAdharno.TabIndex = 21
@@ -324,7 +324,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtMobileNumber2
         '
-        Me.txtMobileNumber2.Location = New System.Drawing.Point(115, 364)
+        Me.txtMobileNumber2.Location = New System.Drawing.Point(115, 333)
         Me.txtMobileNumber2.Name = "txtMobileNumber2"
         Me.txtMobileNumber2.Size = New System.Drawing.Size(170, 20)
         Me.txtMobileNumber2.TabIndex = 20
@@ -332,7 +332,7 @@ Partial Class UpdateCustomerDetail
         'lblMobile2
         '
         Me.lblMobile2.AutoSize = True
-        Me.lblMobile2.Location = New System.Drawing.Point(6, 371)
+        Me.lblMobile2.Location = New System.Drawing.Point(6, 348)
         Me.lblMobile2.Name = "lblMobile2"
         Me.lblMobile2.Size = New System.Drawing.Size(67, 13)
         Me.lblMobile2.TabIndex = 19
@@ -340,7 +340,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtMobileNumber
         '
-        Me.txtMobileNumber.Location = New System.Drawing.Point(115, 324)
+        Me.txtMobileNumber.Location = New System.Drawing.Point(115, 293)
         Me.txtMobileNumber.Name = "txtMobileNumber"
         Me.txtMobileNumber.Size = New System.Drawing.Size(170, 20)
         Me.txtMobileNumber.TabIndex = 18
@@ -348,7 +348,7 @@ Partial Class UpdateCustomerDetail
         'lblOwnerName
         '
         Me.lblOwnerName.AutoSize = True
-        Me.lblOwnerName.Location = New System.Drawing.Point(6, 327)
+        Me.lblOwnerName.Location = New System.Drawing.Point(6, 304)
         Me.lblOwnerName.Name = "lblOwnerName"
         Me.lblOwnerName.Size = New System.Drawing.Size(67, 13)
         Me.lblOwnerName.TabIndex = 17
@@ -356,7 +356,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtPincode
         '
-        Me.txtPincode.Location = New System.Drawing.Point(115, 288)
+        Me.txtPincode.Location = New System.Drawing.Point(115, 257)
         Me.txtPincode.MaxLength = 6
         Me.txtPincode.Name = "txtPincode"
         Me.txtPincode.Size = New System.Drawing.Size(170, 20)
@@ -365,7 +365,7 @@ Partial Class UpdateCustomerDetail
         'lblPincode
         '
         Me.lblPincode.AutoSize = True
-        Me.lblPincode.Location = New System.Drawing.Point(6, 291)
+        Me.lblPincode.Location = New System.Drawing.Point(6, 268)
         Me.lblPincode.Name = "lblPincode"
         Me.lblPincode.Size = New System.Drawing.Size(42, 13)
         Me.lblPincode.TabIndex = 15
@@ -373,7 +373,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtOtherRajya
         '
-        Me.txtOtherRajya.Location = New System.Drawing.Point(285, 250)
+        Me.txtOtherRajya.Location = New System.Drawing.Point(285, 219)
         Me.txtOtherRajya.Name = "txtOtherRajya"
         Me.txtOtherRajya.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherRajya.TabIndex = 14
@@ -385,7 +385,7 @@ Partial Class UpdateCustomerDetail
         Me.ddlRajya.DisplayMember = "name"
         Me.ddlRajya.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlRajya.FormattingEnabled = True
-        Me.ddlRajya.Location = New System.Drawing.Point(115, 249)
+        Me.ddlRajya.Location = New System.Drawing.Point(115, 218)
         Me.ddlRajya.Name = "ddlRajya"
         Me.ddlRajya.Size = New System.Drawing.Size(121, 21)
         Me.ddlRajya.TabIndex = 13
@@ -394,7 +394,7 @@ Partial Class UpdateCustomerDetail
         'lblRajya
         '
         Me.lblRajya.AutoSize = True
-        Me.lblRajya.Location = New System.Drawing.Point(9, 249)
+        Me.lblRajya.Location = New System.Drawing.Point(9, 226)
         Me.lblRajya.Name = "lblRajya"
         Me.lblRajya.Size = New System.Drawing.Size(31, 13)
         Me.lblRajya.TabIndex = 12
@@ -402,7 +402,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtOtherJillo
         '
-        Me.txtOtherJillo.Location = New System.Drawing.Point(285, 203)
+        Me.txtOtherJillo.Location = New System.Drawing.Point(285, 172)
         Me.txtOtherJillo.Name = "txtOtherJillo"
         Me.txtOtherJillo.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherJillo.TabIndex = 11
@@ -414,7 +414,7 @@ Partial Class UpdateCustomerDetail
         Me.ddlJillo.DisplayMember = "name"
         Me.ddlJillo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlJillo.FormattingEnabled = True
-        Me.ddlJillo.Location = New System.Drawing.Point(115, 202)
+        Me.ddlJillo.Location = New System.Drawing.Point(115, 171)
         Me.ddlJillo.Name = "ddlJillo"
         Me.ddlJillo.Size = New System.Drawing.Size(121, 21)
         Me.ddlJillo.TabIndex = 10
@@ -433,7 +433,7 @@ Partial Class UpdateCustomerDetail
         'lblJillo
         '
         Me.lblJillo.AutoSize = True
-        Me.lblJillo.Location = New System.Drawing.Point(6, 210)
+        Me.lblJillo.Location = New System.Drawing.Point(6, 187)
         Me.lblJillo.Name = "lblJillo"
         Me.lblJillo.Size = New System.Drawing.Size(34, 13)
         Me.lblJillo.TabIndex = 9
@@ -441,7 +441,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtOtherTaluko
         '
-        Me.txtOtherTaluko.Location = New System.Drawing.Point(285, 157)
+        Me.txtOtherTaluko.Location = New System.Drawing.Point(285, 126)
         Me.txtOtherTaluko.Name = "txtOtherTaluko"
         Me.txtOtherTaluko.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherTaluko.TabIndex = 8
@@ -453,7 +453,7 @@ Partial Class UpdateCustomerDetail
         Me.ddlTaluko.DisplayMember = "name"
         Me.ddlTaluko.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlTaluko.FormattingEnabled = True
-        Me.ddlTaluko.Location = New System.Drawing.Point(115, 156)
+        Me.ddlTaluko.Location = New System.Drawing.Point(115, 125)
         Me.ddlTaluko.Name = "ddlTaluko"
         Me.ddlTaluko.Size = New System.Drawing.Size(121, 21)
         Me.ddlTaluko.TabIndex = 7
@@ -472,7 +472,7 @@ Partial Class UpdateCustomerDetail
         'lblTaluko
         '
         Me.lblTaluko.AutoSize = True
-        Me.lblTaluko.Location = New System.Drawing.Point(6, 159)
+        Me.lblTaluko.Location = New System.Drawing.Point(6, 136)
         Me.lblTaluko.Name = "lblTaluko"
         Me.lblTaluko.Size = New System.Drawing.Size(35, 13)
         Me.lblTaluko.TabIndex = 6
@@ -480,7 +480,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(115, 92)
+        Me.txtAddress.Location = New System.Drawing.Point(115, 61)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(170, 54)
@@ -489,7 +489,7 @@ Partial Class UpdateCustomerDetail
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(6, 116)
+        Me.lblAddress.Location = New System.Drawing.Point(6, 93)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(40, 13)
         Me.lblAddress.TabIndex = 4
@@ -497,7 +497,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtCustomerName
         '
-        Me.txtCustomerName.Location = New System.Drawing.Point(115, 60)
+        Me.txtCustomerName.Location = New System.Drawing.Point(115, 28)
         Me.txtCustomerName.Name = "txtCustomerName"
         Me.txtCustomerName.Size = New System.Drawing.Size(170, 20)
         Me.txtCustomerName.TabIndex = 3
@@ -505,7 +505,7 @@ Partial Class UpdateCustomerDetail
         'lblCompanyName
         '
         Me.lblCompanyName.AutoSize = True
-        Me.lblCompanyName.Location = New System.Drawing.Point(6, 63)
+        Me.lblCompanyName.Location = New System.Drawing.Point(6, 31)
         Me.lblCompanyName.Name = "lblCompanyName"
         Me.lblCompanyName.Size = New System.Drawing.Size(63, 13)
         Me.lblCompanyName.TabIndex = 2
@@ -513,19 +513,21 @@ Partial Class UpdateCustomerDetail
         '
         'txtRegistrationNo
         '
-        Me.txtRegistrationNo.Location = New System.Drawing.Point(115, 28)
+        Me.txtRegistrationNo.Location = New System.Drawing.Point(559, 63)
         Me.txtRegistrationNo.Name = "txtRegistrationNo"
         Me.txtRegistrationNo.Size = New System.Drawing.Size(170, 20)
         Me.txtRegistrationNo.TabIndex = 1
+        Me.txtRegistrationNo.Visible = False
         '
         'lblRegistration
         '
         Me.lblRegistration.AutoSize = True
-        Me.lblRegistration.Location = New System.Drawing.Point(6, 31)
+        Me.lblRegistration.Location = New System.Drawing.Point(517, 35)
         Me.lblRegistration.Name = "lblRegistration"
         Me.lblRegistration.Size = New System.Drawing.Size(63, 13)
         Me.lblRegistration.TabIndex = 0
         Me.lblRegistration.Text = "રજીસ્ટ્રેશન નં"
+        Me.lblRegistration.Visible = False
         '
         'JilloTableAdapter
         '
@@ -619,7 +621,7 @@ Partial Class UpdateCustomerDetail
         Me.ClientSize = New System.Drawing.Size(800, 753)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox1)
-        'Me.name = "UpdateCustomerDetail"
+        '  Me.name = "UpdateCustomerDetail"
         Me.Text = "UpdateCustomerDetail"
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).EndInit()

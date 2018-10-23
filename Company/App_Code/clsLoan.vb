@@ -5,6 +5,12 @@
 
     Public Function InsertLoan(ByVal strType As String, ByVal strDuration As Integer, ByVal dtEndDate As Date, ByVal strLoanNumber As String, ByVal dtAdvanceDate As Date, ByVal dblLoanAmount As Double, ByVal dblInterestRate As Double, ByVal dblInterestAmount As Double, ByVal dblFineCharge As Double, ByVal dblAdvanceAmount As Double, ByVal dblTotalAmount As Double, ByVal intEmployeeId As Integer, ByVal intCustomerId As Integer, ByVal dblEmi As Integer) As Integer
 
+        Dim intMaxLoanId As Integer
+
+        strSqlCommand = "SELECT MAX(loanid) FROM loan "
+        intMaxLoanId = Val(ExecuteScalar(strSqlCommand, "InsertLoan"))
+        intMaxLoanId = intMaxLoanId + 1
+        strLoanNumber = strType & intMaxLoanId
         strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi) VALUES ('" & strType & "','" & strDuration & "',GETDATE(),'" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & ")"
 
         Dim intLoanId As Integer
@@ -14,7 +20,7 @@
     End Function
 
     Public Sub UpdateLoan(ByVal strType As String, ByVal strDuration As Integer, ByVal dtEndDate As Date, ByVal strLoanNumber As String, ByVal dtAdvanceDate As Date, ByVal dblLoanAmount As Double, ByVal dblInterestRate As Double, ByVal dblInterestAmount As Double, ByVal dblFineCharge As Double, ByVal dblAdvanceAmount As Double, ByVal dblTotalAmount As Double, ByVal intEmployeeId As Integer, ByVal intCustomerId As Integer, ByVal LoanId As Integer)
-        strSqlCommand = "UPDATE loan set type ='" & strType & "', duration ='" & strDuration & "', enddate = '" & dtEndDate & "', loannumber =N'" & strLoanNumber & "', advancedate ='" & dtAdvanceDate & "', amount='" & dblLoanAmount & "', interestrate='" & dblInterestRate & "',interestamount='" & dblInterestAmount & "', finecharge='" & dblFineCharge & "', advanceamount='" & dblAdvanceAmount & "', totalamount ='" & dblTotalAmount & "'employeeid = " & intEmployeeId & " WHERE loanid=" & LoanId
+        strSqlCommand = "UPDATE loan set type ='" & strType & "', duration ='" & strDuration & "', enddate = '" & dtEndDate & "', advancedate ='" & dtAdvanceDate & "', amount='" & dblLoanAmount & "', interestrate='" & dblInterestRate & "',interestamount='" & dblInterestAmount & "', finecharge='" & dblFineCharge & "', advanceamount='" & dblAdvanceAmount & "', totalamount ='" & dblTotalAmount & "'employeeid = " & intEmployeeId & " WHERE loanid=" & LoanId
 
         ExecuteNonQuery(strSqlCommand, "", "N")
 
