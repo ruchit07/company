@@ -24,6 +24,20 @@ Partial Class Employee
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.employeeid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pincode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.adharno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeenumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ResigndateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JoiningdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeeidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeDataSet = New Company.employeeDataSet()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -39,20 +53,6 @@ Partial Class Employee
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.employeeid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pincode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.adharno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeenumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ResigndateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JoiningdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeeidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,104 +70,8 @@ Partial Class Employee
         Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(980, 294)
+        Me.DataGridView1.Size = New System.Drawing.Size(1245, 294)
         Me.DataGridView1.TabIndex = 0
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "employee"
-        Me.EmployeeBindingSource.DataSource = Me.EmployeeDataSet
-        '
-        'EmployeeDataSet
-        '
-        Me.EmployeeDataSet.DataSetName = "employeeDataSet"
-        Me.EmployeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(916, 30)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
-        Me.btnAdd.TabIndex = 1
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'EmployeeTableAdapter
-        '
-        Me.EmployeeTableAdapter.ClearBeforeFill = True
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1004, 24)
-        Me.MenuStrip1.TabIndex = 4
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'CompanyToolStripMenuItem
-        '
-        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyListToolStripMenuItem, Me.NewCompanyToolStripMenuItem})
-        Me.CompanyToolStripMenuItem.Name = "CompanyToolStripMenuItem"
-        Me.CompanyToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.CompanyToolStripMenuItem.Text = "Company"
-        '
-        'CompanyListToolStripMenuItem
-        '
-        Me.CompanyListToolStripMenuItem.Name = "CompanyListToolStripMenuItem"
-        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.CompanyListToolStripMenuItem.Text = "Company List"
-        '
-        'NewCompanyToolStripMenuItem
-        '
-        Me.NewCompanyToolStripMenuItem.Name = "NewCompanyToolStripMenuItem"
-        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.NewCompanyToolStripMenuItem.Text = "New Company"
-        '
-        'CustomerToolStripMenuItem
-        '
-        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem})
-        Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
-        Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.CustomerToolStripMenuItem.Text = "Customer"
-        '
-        'CustomerListToolStripMenuItem
-        '
-        Me.CustomerListToolStripMenuItem.Name = "CustomerListToolStripMenuItem"
-        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
-        Me.CustomerListToolStripMenuItem.Text = "Customer List"
-        '
-        'EmployeeToolStripMenuItem
-        '
-        Me.EmployeeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmployeeListToolStripMenuItem, Me.NewEmployeeToolStripMenuItem})
-        Me.EmployeeToolStripMenuItem.Name = "EmployeeToolStripMenuItem"
-        Me.EmployeeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.EmployeeToolStripMenuItem.Text = "Employee"
-        '
-        'EmployeeListToolStripMenuItem
-        '
-        Me.EmployeeListToolStripMenuItem.Name = "EmployeeListToolStripMenuItem"
-        Me.EmployeeListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.EmployeeListToolStripMenuItem.Text = "Employee List"
-        '
-        'NewEmployeeToolStripMenuItem
-        '
-        Me.NewEmployeeToolStripMenuItem.Name = "NewEmployeeToolStripMenuItem"
-        Me.NewEmployeeToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.NewEmployeeToolStripMenuItem.Text = "New Employee"
-        '
-        'LoanToolStripMenuItem
-        '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
-        Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
-        Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
-        Me.LoanToolStripMenuItem.Text = "Loan"
-        '
-        'RecoveryListToolStripMenuItem
-        '
-        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
-        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'employeeid
         '
@@ -269,11 +173,107 @@ Partial Class Employee
         Me.EmployeeidDataGridViewTextBoxColumn.ReadOnly = True
         Me.EmployeeidDataGridViewTextBoxColumn.Visible = False
         '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "employee"
+        Me.EmployeeBindingSource.DataSource = Me.EmployeeDataSet
+        '
+        'EmployeeDataSet
+        '
+        Me.EmployeeDataSet.DataSetName = "employeeDataSet"
+        Me.EmployeeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(1182, 27)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd.TabIndex = 1
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1299, 24)
+        Me.MenuStrip1.TabIndex = 4
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'CompanyToolStripMenuItem
+        '
+        Me.CompanyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyListToolStripMenuItem, Me.NewCompanyToolStripMenuItem})
+        Me.CompanyToolStripMenuItem.Name = "CompanyToolStripMenuItem"
+        Me.CompanyToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.CompanyToolStripMenuItem.Text = "Company"
+        '
+        'CompanyListToolStripMenuItem
+        '
+        Me.CompanyListToolStripMenuItem.Name = "CompanyListToolStripMenuItem"
+        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CompanyListToolStripMenuItem.Text = "Company List"
+        '
+        'NewCompanyToolStripMenuItem
+        '
+        Me.NewCompanyToolStripMenuItem.Name = "NewCompanyToolStripMenuItem"
+        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.NewCompanyToolStripMenuItem.Text = "New Company"
+        '
+        'CustomerToolStripMenuItem
+        '
+        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem})
+        Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
+        Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.CustomerToolStripMenuItem.Text = "Customer"
+        '
+        'CustomerListToolStripMenuItem
+        '
+        Me.CustomerListToolStripMenuItem.Name = "CustomerListToolStripMenuItem"
+        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.CustomerListToolStripMenuItem.Text = "Customer List"
+        '
+        'EmployeeToolStripMenuItem
+        '
+        Me.EmployeeToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmployeeListToolStripMenuItem, Me.NewEmployeeToolStripMenuItem})
+        Me.EmployeeToolStripMenuItem.Name = "EmployeeToolStripMenuItem"
+        Me.EmployeeToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.EmployeeToolStripMenuItem.Text = "Employee"
+        '
+        'EmployeeListToolStripMenuItem
+        '
+        Me.EmployeeListToolStripMenuItem.Name = "EmployeeListToolStripMenuItem"
+        Me.EmployeeListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.EmployeeListToolStripMenuItem.Text = "Employee List"
+        '
+        'NewEmployeeToolStripMenuItem
+        '
+        Me.NewEmployeeToolStripMenuItem.Name = "NewEmployeeToolStripMenuItem"
+        Me.NewEmployeeToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.NewEmployeeToolStripMenuItem.Text = "New Employee"
+        '
+        'LoanToolStripMenuItem
+        '
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
+        Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
+        Me.LoanToolStripMenuItem.Text = "Loan"
+        '
+        'RecoveryListToolStripMenuItem
+        '
+        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
         'Employee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 450)
+        Me.ClientSize = New System.Drawing.Size(1299, 450)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)

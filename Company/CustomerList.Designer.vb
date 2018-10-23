@@ -23,6 +23,16 @@ Partial Class CustomerList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.customerid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.regno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Adhar = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.loan = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -37,16 +47,6 @@ Partial Class CustomerList
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblCompanyId = New System.Windows.Forms.Label()
-        Me.customerid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.regno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Adhar = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mobile1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.loan = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -60,12 +60,83 @@ Partial Class CustomerList
         Me.DataGridView1.Location = New System.Drawing.Point(2, 65)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(952, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(1142, 150)
         Me.DataGridView1.TabIndex = 1
+        '
+        'customerid
+        '
+        Me.customerid.DataPropertyName = "customerid"
+        Me.customerid.HeaderText = "customerid"
+        Me.customerid.Name = "customerid"
+        Me.customerid.ReadOnly = True
+        Me.customerid.Visible = False
+        '
+        'regno
+        '
+        Me.regno.DataPropertyName = "regno"
+        Me.regno.HeaderText = "રજીસ્ટ્રેશન નં"
+        Me.regno.Name = "regno"
+        Me.regno.ReadOnly = True
+        '
+        'name
+        '
+        Me.name.DataPropertyName = "name"
+        Me.name.HeaderText = "નામ​"
+        Me.name.Name = "name"
+        Me.name.ReadOnly = True
+        '
+        'Adhar
+        '
+        Me.Adhar.DataPropertyName = "adharno"
+        Me.Adhar.HeaderText = "આધાર નં"
+        Me.Adhar.Name = "Adhar"
+        Me.Adhar.ReadOnly = True
+        '
+        'address
+        '
+        Me.address.DataPropertyName = "address"
+        Me.address.HeaderText = "સરનામું"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
+        '
+        'Taluko
+        '
+        Me.Taluko.DataPropertyName = "taliko"
+        Me.Taluko.HeaderText = "તાલુકો"
+        Me.Taluko.Name = "Taluko"
+        Me.Taluko.ReadOnly = True
+        '
+        'Jillo
+        '
+        Me.Jillo.DataPropertyName = "jillo"
+        Me.Jillo.HeaderText = "જીલ્લો"
+        Me.Jillo.Name = "Jillo"
+        Me.Jillo.ReadOnly = True
+        '
+        'Rajya
+        '
+        Me.Rajya.DataPropertyName = "rajya"
+        Me.Rajya.HeaderText = "રાજ્ય​"
+        Me.Rajya.Name = "Rajya"
+        Me.Rajya.ReadOnly = True
+        '
+        'mobile1
+        '
+        Me.mobile1.DataPropertyName = "mobile1"
+        Me.mobile1.HeaderText = "મોબાઇલ​"
+        Me.mobile1.Name = "mobile1"
+        Me.mobile1.ReadOnly = True
+        '
+        'loan
+        '
+        Me.loan.DataPropertyName = "loan"
+        Me.loan.HeaderText = "લોન"
+        Me.loan.Name = "loan"
+        Me.loan.ReadOnly = True
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(798, 32)
+        Me.btnAdd.Location = New System.Drawing.Point(988, 32)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 2
@@ -74,7 +145,7 @@ Partial Class CustomerList
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(879, 32)
+        Me.btnCancel.Location = New System.Drawing.Point(1069, 32)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 3
@@ -86,7 +157,7 @@ Partial Class CustomerList
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(966, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1242, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -164,82 +235,11 @@ Partial Class CustomerList
         Me.lblCompanyId.Text = "Label1"
         Me.lblCompanyId.Visible = False
         '
-        'customerid
-        '
-        Me.customerid.DataPropertyName = "customerid"
-        Me.customerid.HeaderText = "customerid"
-        Me.customerid.Name = "customerid"
-        Me.customerid.ReadOnly = True
-        Me.customerid.Visible = False
-        '
-        'regno
-        '
-        Me.regno.DataPropertyName = "regno"
-        Me.regno.HeaderText = "રજીસ્ટ્રેશન નં"
-        Me.regno.Name = "regno"
-        Me.regno.ReadOnly = True
-        '
-        'name
-        '
-        Me.name.DataPropertyName = "name"
-        Me.name.HeaderText = "નામ​"
-        Me.name.Name = "name"
-        Me.name.ReadOnly = True
-        '
-        'Adhar
-        '
-        Me.Adhar.DataPropertyName = "adharno"
-        Me.Adhar.HeaderText = "આધાર નં"
-        Me.Adhar.Name = "Adhar"
-        Me.Adhar.ReadOnly = True
-        '
-        'address
-        '
-        Me.address.DataPropertyName = "address"
-        Me.address.HeaderText = "સરનામું"
-        Me.address.Name = "address"
-        Me.address.ReadOnly = True
-        '
-        'Taluko
-        '
-        Me.Taluko.DataPropertyName = "taliko"
-        Me.Taluko.HeaderText = "તાલુકો"
-        Me.Taluko.Name = "Taluko"
-        Me.Taluko.ReadOnly = True
-        '
-        'Jillo
-        '
-        Me.Jillo.DataPropertyName = "jillo"
-        Me.Jillo.HeaderText = "જીલ્લો"
-        Me.Jillo.Name = "Jillo"
-        Me.Jillo.ReadOnly = True
-        '
-        'Rajya
-        '
-        Me.Rajya.DataPropertyName = "rajya"
-        Me.Rajya.HeaderText = "રાજ્ય​"
-        Me.Rajya.Name = "Rajya"
-        Me.Rajya.ReadOnly = True
-        '
-        'mobile1
-        '
-        Me.mobile1.DataPropertyName = "mobile1"
-        Me.mobile1.HeaderText = "મોબાઇલ​"
-        Me.mobile1.Name = "mobile1"
-        Me.mobile1.ReadOnly = True
-        '
-        'loan
-        '
-        Me.loan.DataPropertyName = "loan"
-        Me.loan.HeaderText = "લોન"
-        Me.loan.Name = "loan"
-        Me.loan.ReadOnly = True
-        '
         'CustomerList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(966, 450)
+        Me.ClientSize = New System.Drawing.Size(1242, 450)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnAdd)
