@@ -67,9 +67,10 @@
             dblInterestAmount = ((dblLoanAmount * dblInterestRate * intDuration) / 100)
             dblTotalPayable = dblLoanAmount + dblInterestAmount + Val(txtFineCharge.Text)
             txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
-            txtAdvanceAmount.Text = txtFineCharge.Text
-            txtEMI.Text = Math.Round(dblInterestAmount, 2)
-            txtFinalAmount.Text = Math.Round(dblLoanAmount + Val(txtEMI.Text), 2)
+            txtAdvanceAmount.Text = 0
+            Dim bdlTempEmi = Math.Round(dblInterestAmount, 2)
+            txtFinalAmount.Text = Math.Round(dblLoanAmount - Val(bdlTempEmi) - Val(txtFineCharge.Text), 2)
+            txtEMI.Text = Math.Round(dblLoanAmount, 2)
         End If
 
     End Sub
