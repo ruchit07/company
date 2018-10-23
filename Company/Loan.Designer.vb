@@ -79,7 +79,11 @@ Partial Class Loan
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
 <<<<<<< HEAD
+<<<<<<< HEAD
         Me.DataGridView1.Size = New System.Drawing.Size(863, 363)
+=======
+        Me.DataGridView1.Size = New System.Drawing.Size(1039, 150)
+>>>>>>> 71339a4e48d0704686c1e1add247cbef6845ac68
 =======
         Me.DataGridView1.Size = New System.Drawing.Size(1039, 150)
 >>>>>>> 71339a4e48d0704686c1e1add247cbef6845ac68
