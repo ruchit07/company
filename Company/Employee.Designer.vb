@@ -53,6 +53,7 @@ Partial Class Employee
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -258,7 +259,7 @@ Partial Class Employee
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -266,8 +267,14 @@ Partial Class Employee
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'Employee
         '
@@ -277,7 +284,7 @@ Partial Class Employee
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
-        'Me.name = "Employee"
+        Me.name = "Employee"
         Me.Text = "Employee"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -322,4 +329,5 @@ Partial Class Employee
     Friend WithEvents ResigndateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents JoiningdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents EmployeeidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
 End Class

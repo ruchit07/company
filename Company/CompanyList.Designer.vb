@@ -24,6 +24,15 @@ Partial Class CompanyList
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.companyid = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.OwnernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MobileDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FormnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Command = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CompanyDataSet = New Company.companyDataSet()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,20 +45,12 @@ Partial Class CompanyList
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CompanyDataSet = New Company.companyDataSet()
         Me.CompanyTableAdapter = New Company.companyDataSetTableAdapters.companyTableAdapter()
-        Me.companyid = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OwnernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MobileDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FormnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Command = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -67,6 +68,68 @@ Partial Class CompanyList
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1017, 377)
         Me.DataGridView1.TabIndex = 0
+        '
+        'companyid
+        '
+        Me.companyid.DataPropertyName = "companyid"
+        Me.companyid.HeaderText = ""
+        Me.companyid.Name = "companyid"
+        Me.companyid.ReadOnly = True
+        Me.companyid.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.companyid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.companyid.Visible = False
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "કંપનીનુ નામ"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AddressDataGridViewTextBoxColumn
+        '
+        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
+        Me.AddressDataGridViewTextBoxColumn.HeaderText = "સરનામુ"
+        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
+        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'OwnernameDataGridViewTextBoxColumn
+        '
+        Me.OwnernameDataGridViewTextBoxColumn.DataPropertyName = "ownername"
+        Me.OwnernameDataGridViewTextBoxColumn.HeaderText = "માલીકનુ નામ"
+        Me.OwnernameDataGridViewTextBoxColumn.Name = "OwnernameDataGridViewTextBoxColumn"
+        Me.OwnernameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'MobileDataGridViewTextBoxColumn
+        '
+        Me.MobileDataGridViewTextBoxColumn.DataPropertyName = "mobile"
+        Me.MobileDataGridViewTextBoxColumn.HeaderText = "મોબાઇલ નંબર"
+        Me.MobileDataGridViewTextBoxColumn.Name = "MobileDataGridViewTextBoxColumn"
+        Me.MobileDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'FormnoDataGridViewTextBoxColumn
+        '
+        Me.FormnoDataGridViewTextBoxColumn.DataPropertyName = "formno"
+        Me.FormnoDataGridViewTextBoxColumn.HeaderText = "ફોમ નંબર"
+        Me.FormnoDataGridViewTextBoxColumn.Name = "FormnoDataGridViewTextBoxColumn"
+        Me.FormnoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'Command
+        '
+        Me.Command.DataPropertyName = "Expr1"
+        Me.Command.HeaderText = "સીલેકટ"
+        Me.Command.Name = "Command"
+        Me.Command.ReadOnly = True
+        '
+        'CompanyBindingSource
+        '
+        Me.CompanyBindingSource.DataMember = "company"
+        Me.CompanyBindingSource.DataSource = Me.CompanyDataSet
+        '
+        'CompanyDataSet
+        '
+        Me.CompanyDataSet.DataSetName = "companyDataSet"
+        Me.CompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnAdd
         '
@@ -139,7 +202,7 @@ Partial Class CompanyList
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -147,74 +210,18 @@ Partial Class CompanyList
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
-        '
-        'CompanyBindingSource
-        '
-        Me.CompanyBindingSource.DataMember = "company"
-        Me.CompanyBindingSource.DataSource = Me.CompanyDataSet
-        '
-        'CompanyDataSet
-        '
-        Me.CompanyDataSet.DataSetName = "companyDataSet"
-        Me.CompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'CompanyTableAdapter
         '
         Me.CompanyTableAdapter.ClearBeforeFill = True
         '
-        'companyid
+        'LoanToolStripMenuItem1
         '
-        Me.companyid.DataPropertyName = "companyid"
-        Me.companyid.HeaderText = ""
-        Me.companyid.Name = "companyid"
-        Me.companyid.ReadOnly = True
-        Me.companyid.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.companyid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.companyid.Visible = False
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "કંપનીનુ નામ"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "સરનામુ"
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'OwnernameDataGridViewTextBoxColumn
-        '
-        Me.OwnernameDataGridViewTextBoxColumn.DataPropertyName = "ownername"
-        Me.OwnernameDataGridViewTextBoxColumn.HeaderText = "માલીકનુ નામ"
-        Me.OwnernameDataGridViewTextBoxColumn.Name = "OwnernameDataGridViewTextBoxColumn"
-        Me.OwnernameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'MobileDataGridViewTextBoxColumn
-        '
-        Me.MobileDataGridViewTextBoxColumn.DataPropertyName = "mobile"
-        Me.MobileDataGridViewTextBoxColumn.HeaderText = "મોબાઇલ નંબર"
-        Me.MobileDataGridViewTextBoxColumn.Name = "MobileDataGridViewTextBoxColumn"
-        Me.MobileDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'FormnoDataGridViewTextBoxColumn
-        '
-        Me.FormnoDataGridViewTextBoxColumn.DataPropertyName = "formno"
-        Me.FormnoDataGridViewTextBoxColumn.HeaderText = "ફોમ નંબર"
-        Me.FormnoDataGridViewTextBoxColumn.Name = "FormnoDataGridViewTextBoxColumn"
-        Me.FormnoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'Command
-        '
-        Me.Command.DataPropertyName = "Expr1"
-        Me.Command.HeaderText = "સીલેકટ"
-        Me.Command.Name = "Command"
-        Me.Command.ReadOnly = True
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'CompanyList
         '
@@ -229,10 +236,10 @@ Partial Class CompanyList
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Company List"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -261,4 +268,5 @@ Partial Class CompanyList
     Friend WithEvents MobileDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents FormnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Command As DataGridViewButtonColumn
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
 End Class

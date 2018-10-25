@@ -48,6 +48,7 @@ Partial Class RecoveryList
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -210,7 +211,7 @@ Partial Class RecoveryList
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -218,8 +219,14 @@ Partial Class RecoveryList
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryList
         '
@@ -228,7 +235,7 @@ Partial Class RecoveryList
         Me.ClientSize = New System.Drawing.Size(1211, 450)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.DataGridView1)
-        'Me.name = "RecoveryList"
+        Me.name = "RecoveryList"
         Me.Text = "RecoveryList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -264,4 +271,5 @@ Partial Class RecoveryList
     Friend WithEvents mobile As DataGridViewTextBoxColumn
     Friend WithEvents paidamount As DataGridViewTextBoxColumn
     Friend WithEvents update As DataGridViewButtonColumn
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
 End Class

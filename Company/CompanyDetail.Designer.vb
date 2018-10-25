@@ -82,6 +82,7 @@ Partial Class CompanyDetail
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -571,7 +572,7 @@ Partial Class CompanyDetail
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -581,6 +582,12 @@ Partial Class CompanyDetail
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'CompanyDetail
         '
@@ -665,4 +672,5 @@ Partial Class CompanyDetail
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
 End Class

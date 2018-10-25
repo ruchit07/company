@@ -47,6 +47,7 @@ Partial Class CustomerList
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblCompanyId = New System.Windows.Forms.Label()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -214,7 +215,7 @@ Partial Class CustomerList
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -222,7 +223,7 @@ Partial Class CustomerList
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'lblCompanyId
@@ -235,6 +236,12 @@ Partial Class CustomerList
         Me.lblCompanyId.Text = "Label1"
         Me.lblCompanyId.Visible = False
         '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
+        '
         'CustomerList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,7 +252,7 @@ Partial Class CustomerList
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblCompanyId)
-        'Me.name = "CustomerList"
+        Me.name = "CustomerList"
         Me.Text = "CustomerList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -279,4 +286,5 @@ Partial Class CustomerList
     Friend WithEvents Rajya As DataGridViewTextBoxColumn
     Friend WithEvents mobile1 As DataGridViewTextBoxColumn
     Friend WithEvents loan As DataGridViewButtonColumn
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
 End Class

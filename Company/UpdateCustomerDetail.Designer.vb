@@ -86,6 +86,7 @@ Partial Class UpdateCustomerDetail
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -603,7 +604,7 @@ Partial Class UpdateCustomerDetail
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -611,8 +612,14 @@ Partial Class UpdateCustomerDetail
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'UpdateCustomerDetail
         '
@@ -621,7 +628,7 @@ Partial Class UpdateCustomerDetail
         Me.ClientSize = New System.Drawing.Size(800, 753)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox1)
-        '  Me.name = "UpdateCustomerDetail"
+        Me.name = "UpdateCustomerDetail"
         Me.Text = "UpdateCustomerDetail"
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -702,4 +709,5 @@ Partial Class UpdateCustomerDetail
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
 End Class
