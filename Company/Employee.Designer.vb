@@ -284,7 +284,7 @@ Partial Class Employee
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
-        Me.name = "Employee"
+        'Me.name = "Employee"
         Me.Text = "Employee"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

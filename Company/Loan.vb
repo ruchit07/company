@@ -70,11 +70,10 @@
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
     End Sub
-
-    Private Sub LoanToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles MyBaseToolStripMenuItem1.Click
-        Me.Hide()
-        Dim form2 = New Loan()
-        AddHandler form2.Closed, Sub(s, args) Me.Close()
-        form2.Show()
-    End Sub
+    'Private Sub LoanToolStripMenuItem1_Click_1(sender As Object, e As EventArgs) Handles MyBaseToolStripMenuItem1.Click
+    '    Me.Hide()
+    '    Dim form2 = New Loan()
+    '    AddHandler form2.Closed, Sub(s, args) Me.Close()
+    '    form2.Show()
+    'End Sub
 End Class

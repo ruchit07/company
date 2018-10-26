@@ -55,8 +55,7 @@
 
             dblInterestAmount = (dblLoanAmount * dblInterestRate * intDuration) / 100
             dblTotalPayable = dblLoanAmount + dblInterestAmount
-            txtEMI.Text = Math.Round(dblTotalPayable / (intDuration), 2)
-            dblTotalPayable = dblTotalPayable - Val(txtEMI.Text)
+            txtEMI.Text = Math.Round((dblLoanAmount + dblInterestAmount) / (intDuration), 2)
             txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
             txtAdvanceAmount.Text = Math.Round(Val(txtEMI.Text), 2)
             txtFinalAmount.Text = Math.Round(dblLoanAmount - Val(txtEMI.Text) - Val(txtFineCharge.Text), 2)
@@ -67,10 +66,10 @@
             dblInterestAmount = ((dblLoanAmount * dblInterestRate * intDuration) / 100) / 30
             dblTotalPayable = dblLoanAmount + dblInterestAmount + Val(txtFineCharge.Text)
             txtEMI.Text = Math.Round(dblLoanAmount / (intDuration), 2)
-            dblTotalPayable = dblTotalPayable - Val(txtEMI.Text)
             txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
             txtAdvanceAmount.Text = Math.Round(Val(txtEMI.Text) * Val(txtDays.Text), 2)
-            txtFinalAmount.Text = Math.Round(dblLoanAmount - (Val(txtEMI.Text) * Val(txtDays.Text)) - Val(txtFineCharge.Text), 2)
+            dblTotalPayable = Math.Round(dblLoanAmount - txtInterestAmount.Text - (Val(txtEMI.Text) * Val(txtDays.Text)) - Val(txtFineCharge.Text), 2)
+            txtFinalAmount.Text = Math.Round(dblLoanAmount - txtInterestAmount.Text - (Val(txtEMI.Text) * Val(txtDays.Text)) - Val(txtFineCharge.Text), 2)
 
         ElseIf ddlType.SelectedIndex = 2 Then
             dblInterestAmount = ((dblLoanAmount * dblInterestRate * intDuration) / 100)

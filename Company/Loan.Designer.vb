@@ -48,15 +48,15 @@ Partial Class Loan
         Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(976, 32)
+        Me.btnAdd.Location = New System.Drawing.Point(1182, 32)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 0
@@ -244,17 +244,17 @@ Partial Class Loan
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
         '
-        'RecoveryListToolStripMenuItem
-        '
-        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
-        '
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
         Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
+        '
+        'RecoveryListToolStripMenuItem
+        '
+        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'Loan
         '

@@ -235,7 +235,7 @@ Partial Class RecoveryList
         Me.ClientSize = New System.Drawing.Size(1211, 450)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.name = "RecoveryList"
+        'Me.name = "RecoveryList"
         Me.Text = "RecoveryList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)

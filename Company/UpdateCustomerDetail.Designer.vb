@@ -628,7 +628,7 @@ Partial Class UpdateCustomerDetail
         Me.ClientSize = New System.Drawing.Size(800, 753)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.name = "UpdateCustomerDetail"
+        'Me.name = "UpdateCustomerDetail"
         Me.Text = "UpdateCustomerDetail"
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
