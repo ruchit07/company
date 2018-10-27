@@ -25,11 +25,11 @@ Partial Class CompanyList
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.companyid = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.OwnernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MobileDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FormnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.owenername = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.formno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Command = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CompanyDataSet = New Company.companyDataSet()
@@ -44,9 +44,14 @@ Partial Class CompanyList
         Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompanyTableAdapter = New Company.companyDataSetTableAdapters.companyTableAdapter()
-        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.ddlSearch = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,11 +63,9 @@ Partial Class CompanyList
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.companyid, Me.NameDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.OwnernameDataGridViewTextBoxColumn, Me.MobileDataGridViewTextBoxColumn, Me.FormnoDataGridViewTextBoxColumn, Me.Command})
-        Me.DataGridView1.DataSource = Me.CompanyBindingSource
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.companyid, Me.name, Me.address, Me.owenername, Me.mobile, Me.formno, Me.Command})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 61)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -79,40 +82,40 @@ Partial Class CompanyList
         Me.companyid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         Me.companyid.Visible = False
         '
-        'NameDataGridViewTextBoxColumn
+        'name
         '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "કંપનીનુ નામ"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.name.DataPropertyName = "name"
+        Me.name.HeaderText = "કંપનીનુ નામ"
+        Me.name.Name = "name"
+        Me.name.ReadOnly = True
         '
-        'AddressDataGridViewTextBoxColumn
+        'address
         '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "સરનામુ"
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
+        Me.address.DataPropertyName = "address"
+        Me.address.HeaderText = "સરનામુ"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
         '
-        'OwnernameDataGridViewTextBoxColumn
+        'owenername
         '
-        Me.OwnernameDataGridViewTextBoxColumn.DataPropertyName = "ownername"
-        Me.OwnernameDataGridViewTextBoxColumn.HeaderText = "માલીકનુ નામ"
-        Me.OwnernameDataGridViewTextBoxColumn.Name = "OwnernameDataGridViewTextBoxColumn"
-        Me.OwnernameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.owenername.DataPropertyName = "owenername"
+        Me.owenername.HeaderText = "માલીકનુ નામ"
+        Me.owenername.Name = "owenername"
+        Me.owenername.ReadOnly = True
         '
-        'MobileDataGridViewTextBoxColumn
+        'mobile
         '
-        Me.MobileDataGridViewTextBoxColumn.DataPropertyName = "mobile"
-        Me.MobileDataGridViewTextBoxColumn.HeaderText = "મોબાઇલ નંબર"
-        Me.MobileDataGridViewTextBoxColumn.Name = "MobileDataGridViewTextBoxColumn"
-        Me.MobileDataGridViewTextBoxColumn.ReadOnly = True
+        Me.mobile.DataPropertyName = "mobile"
+        Me.mobile.HeaderText = "મોબાઇલ નંબર"
+        Me.mobile.Name = "mobile"
+        Me.mobile.ReadOnly = True
         '
-        'FormnoDataGridViewTextBoxColumn
+        'formno
         '
-        Me.FormnoDataGridViewTextBoxColumn.DataPropertyName = "formno"
-        Me.FormnoDataGridViewTextBoxColumn.HeaderText = "ફોમ નંબર"
-        Me.FormnoDataGridViewTextBoxColumn.Name = "FormnoDataGridViewTextBoxColumn"
-        Me.FormnoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.formno.DataPropertyName = "formno"
+        Me.formno.HeaderText = "ફોમ નંબર"
+        Me.formno.Name = "formno"
+        Me.formno.ReadOnly = True
         '
         'Command
         '
@@ -207,32 +210,81 @@ Partial Class CompanyList
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
         '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
+        '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'CompanyTableAdapter
         '
         Me.CompanyTableAdapter.ClearBeforeFill = True
         '
-        'LoanToolStripMenuItem1
+        'btnRefresh
         '
-        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.LoanToolStripMenuItem1.Text = "Loan"
+        Me.btnRefresh.Location = New System.Drawing.Point(338, 33)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(75, 22)
+        Me.btnRefresh.TabIndex = 14
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'ddlSearch
+        '
+        Me.ddlSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ddlSearch.FormattingEnabled = True
+        Me.ddlSearch.Items.AddRange(New Object() {"Company Name", "Owner Name", "Form Number", "Mobile"})
+        Me.ddlSearch.Location = New System.Drawing.Point(211, 34)
+        Me.ddlSearch.Name = "ddlSearch"
+        Me.ddlSearch.Size = New System.Drawing.Size(121, 21)
+        Me.ddlSearch.TabIndex = 13
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(188, 37)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(16, 13)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "In"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(58, 34)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(124, 20)
+        Me.txtSearch.TabIndex = 11
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(11, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Search"
         '
         'CompanyList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1041, 450)
+        Me.Controls.Add(Me.btnRefresh)
+        Me.Controls.Add(Me.ddlSearch)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtSearch)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "CompanyList"
+        'Me.name = "CompanyList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Company List"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -261,12 +313,17 @@ Partial Class CompanyList
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents companyid As DataGridViewButtonColumn
-    Friend WithEvents NameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AddressDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents OwnernameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents MobileDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FormnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Command As DataGridViewButtonColumn
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents companyid As DataGridViewButtonColumn
+    Friend WithEvents name As DataGridViewTextBoxColumn
+    Friend WithEvents address As DataGridViewTextBoxColumn
+    Friend WithEvents owenername As DataGridViewTextBoxColumn
+    Friend WithEvents mobile As DataGridViewTextBoxColumn
+    Friend WithEvents formno As DataGridViewTextBoxColumn
+    Friend WithEvents Command As DataGridViewButtonColumn
+    Friend WithEvents btnRefresh As Button
+    Friend WithEvents ddlSearch As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label1 As Label
 End Class

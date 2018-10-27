@@ -3,10 +3,19 @@
 
     Dim strSqlCommand As String
 
-    Public Function GetCustomerList(ByVal intCompanyId As Integer) As DataSet
+    Public Function GetCustomerList(ByVal intCompanyId As Integer, Optional ByVal strType As String = "", Optional ByVal strSearchText As String = "") As DataSet
 
         strSqlCommand = "SELECT c.customerid, c.companyid, c.regno, c.name, c.address, j.name jillo, t.name taliko, r.name rajya,mobile1,mobile2,c.adharno,'loan' AS loan FROM customer c INNER JOIN jillo j on j.jilloid = c.jilloid INNER JOIN taluko t ON t.talukoid = c.talukoid INNER JOIN rajya r ON r.rajyaid = c.rajyaid  WHERE companyid = " & intCompanyId
 
+        If strSearchText <> "" Then
+            If strType = "Name" Then
+                strSqlCommand &= " AND c.name like N'%" & EscapeString(strSearchText) & "%'"
+            ElseIf strType = "Registration Number" Then
+                strSqlCommand &= " AND c.regno like N'%" & EscapeString(strSearchText) & "%'"
+            ElseIf strType = "Mobile" Then
+                strSqlCommand &= " AND c.mobile like N'%" & EscapeString(strSearchText) & "%'"
+            End If
+        End If
         Dim dstCustomer As DataSet
         dstCustomer = FillDataSet(strSqlCommand)
 

@@ -6,10 +6,10 @@
         Dim objEmployee As New clsEmployee()
 
         Dim dstData As DataSet
-
-        'dstData = objEmployee.GetEmployeeList()
-        'DataGridView1.DataSource = dstData
         DataGridView1.AutoGenerateColumns = False
+        dstData = objEmployee.GetEmployeeList()
+        DataGridView1.DataSource = dstData.Tables(0)
+
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -80,5 +80,14 @@
         Dim form2 = New Loan()
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+
+        Dim dstData As DataSet
+        Dim objEmployee As New clsEmployee
+        DataGridView1.AutoGenerateColumns = False
+        dstData = objEmployee.GetEmployeeList(ddlSearch.Text, txtSearch.Text)
+        DataGridView1.DataSource = dstData.Tables(0)
     End Sub
 End Class

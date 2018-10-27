@@ -20,9 +20,21 @@
 
     End Sub
 
-    Public Function GetEmployeeList() As DataSet
+    Public Function GetEmployeeList(Optional ByVal strType As String = "", Optional ByVal strSearchText As String = "") As DataSet
+        strSqlCommand = "SELECT e.employeeid,e.employeenumber,e.name,e.address,t.name taluko,r.name rajya,j.name jillo,pincode,mobile,adharno,birthdate,resigndate from employee e LEFT JOIN taluko t on e.talukoid = t.talukoid LEFT JOIN jillo j on j.jilloid = e.jilloid left join rajya r on r.rajyaid = e.rajyaid "
 
-        strSqlCommand = "SELECT e.employeenumber,e.name,e.address,t.name taluko,r.name rajya,j.name jillo,pincode,mobile,adharno,birthdate,resigndate from employee e LEFT JOIN taluko t on e.talukoid = t.talukoid LEFT JOIN jillo j on j.jilloid = e.jilloid left join rajya r on r.rajyaid = e.rajyaid "
+        If strSearchText <> "" Then
+
+            If strType = "Name" Then
+                strSqlCommand &= " WHERE e.name like N'%" & EscapeString(strSearchText) & "%'"
+            ElseIf strType = "Employee Number" Then
+                strSqlCommand &= " WHERE employeenumber like N'%" & EscapeString(strSearchText) & "%'"
+            ElseIf strType = "Mobile" Then
+                strSqlCommand &= " WHERE mobile like N'%" & EscapeString(strSearchText) & "%'"
+
+            End If
+
+        End If
 
         Dim dstEmployee As DataSet
 

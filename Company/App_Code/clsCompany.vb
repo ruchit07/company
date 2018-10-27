@@ -41,4 +41,24 @@
 
     End Function
 
+    Public Function GetCompanyList(Optional ByVal strType As String = "", Optional ByVal strSearchText As String = "") As DataSet
+        strSqlCommand = "SELECT companyid, name, address, ownername, mobile, formno FROM company"
+
+        If strSearchText <> "" Then
+            If strType = "Company Name" Then
+                strSqlCommand &= " WHERE name like N'%" & EscapeString(strSearchText) & "%'"
+            ElseIf strType = "Owner Name" Then
+                strSqlCommand &= " WHERE ownername like N'%" & EscapeString(strSearchText) & "%'"
+            ElseIf strType = "Mobile" Then
+                strSqlCommand &= " WHERE mobile like N'%" & EscapeString(strSearchText) & "%'"
+            ElseIf strType = "Form Number" Then
+                strSqlCommand &= " WHERE formno like N'%" & EscapeString(strSearchText) & "%'"
+            End If
+        End If
+            Dim dstData As DataSet
+        dstData = FillDataSet(strSqlCommand)
+        Return dstData
+
+    End Function
+
 End Class

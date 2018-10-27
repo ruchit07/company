@@ -3,6 +3,12 @@
         'TODO: This line of code loads data into the 'CompanyDataSet.company' table. You can move, or remove it, as needed.
         Me.CompanyTableAdapter.Fill(Me.CompanyDataSet.company)
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Dim objCompany As New clsCompany
+        Dim dstCompany As New DataSet
+        dstCompany = objCompany.GetCompanyList()
+        DataGridView1.AutoGenerateColumns = False
+        DataGridView1.DataSource = dstCompany.Tables(0)
+        DataGridView1.Refresh()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -72,4 +78,12 @@
         form2.Show()
     End Sub
 
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Dim objCompany As New clsCompany
+        Dim dstCompany As New DataSet
+        dstCompany = objCompany.GetCompanyList(ddlSearch.SelectedText, txtSearch.Text)
+        DataGridView1.AutoGenerateColumns = False
+        DataGridView1.DataSource = dstCompany.Tables(0)
+        DataGridView1.Refresh()
+    End Sub
 End Class

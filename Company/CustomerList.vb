@@ -100,4 +100,14 @@
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
     End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        Dim objCustomer As New clsCustomer()
+        Dim dstCustomer As DataSet
+
+        dstCustomer = objCustomer.GetCustomerList(lblCompanyId.Text, ddlSearch.SelectedValue, txtSearch.Text)
+        DataGridView1.AutoGenerateColumns = False
+        DataGridView1.DataSource = dstCustomer.Tables(0)
+        DataGridView1.Refresh()
+    End Sub
 End Class

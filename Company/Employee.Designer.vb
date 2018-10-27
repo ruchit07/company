@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Employee
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,24 +20,10 @@ Partial Class Employee
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.employeeid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.pincode = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.adharno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeenumberDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ResigndateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JoiningdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeeidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EmployeeDataSet = New Company.employeeDataSet()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -52,8 +38,26 @@ Partial Class Employee
         Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.employeeid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.employeenumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.taluko = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jillo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.rajya = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.pincode = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.adharno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.joiningdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.resigndate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ddlSearch = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,115 +68,13 @@ Partial Class Employee
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.employeeid, Me.name, Me.address, Me.taluko, Me.jillo, Me.rajya, Me.pincode, Me.mobile, Me.adharno, Me.birthdate, Me.EmployeenumberDataGridViewTextBoxColumn, Me.ResigndateDataGridViewTextBoxColumn, Me.JoiningdateDataGridViewTextBoxColumn, Me.EmployeeidDataGridViewTextBoxColumn})
-        Me.DataGridView1.DataSource = Me.EmployeeBindingSource
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.employeeid, Me.employeenumber, Me.name, Me.address, Me.taluko, Me.jillo, Me.rajya, Me.pincode, Me.mobile, Me.adharno, Me.birthdate, Me.joiningdate, Me.resigndate})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1245, 294)
         Me.DataGridView1.TabIndex = 0
-        '
-        'employeeid
-        '
-        Me.employeeid.DataPropertyName = "employeeid"
-        Me.employeeid.HeaderText = "Employee ID"
-        Me.employeeid.Name = "employeeid"
-        Me.employeeid.ReadOnly = True
-        Me.employeeid.Visible = False
-        '
-        'name
-        '
-        Me.name.DataPropertyName = "name"
-        Me.name.HeaderText = "Name"
-        Me.name.Name = "name"
-        Me.name.ReadOnly = True
-        '
-        'address
-        '
-        Me.address.DataPropertyName = "address"
-        Me.address.HeaderText = "Address"
-        Me.address.Name = "address"
-        Me.address.ReadOnly = True
-        '
-        'taluko
-        '
-        Me.taluko.DataPropertyName = "taluko"
-        Me.taluko.HeaderText = "Taluko"
-        Me.taluko.Name = "taluko"
-        Me.taluko.ReadOnly = True
-        '
-        'jillo
-        '
-        Me.jillo.DataPropertyName = "jillo"
-        Me.jillo.HeaderText = "Jillo"
-        Me.jillo.Name = "jillo"
-        Me.jillo.ReadOnly = True
-        '
-        'rajya
-        '
-        Me.rajya.DataPropertyName = "rajya"
-        Me.rajya.HeaderText = "Rajya"
-        Me.rajya.Name = "rajya"
-        Me.rajya.ReadOnly = True
-        '
-        'pincode
-        '
-        Me.pincode.DataPropertyName = "pincode"
-        Me.pincode.HeaderText = "Pincode"
-        Me.pincode.Name = "pincode"
-        Me.pincode.ReadOnly = True
-        '
-        'mobile
-        '
-        Me.mobile.DataPropertyName = "mobile"
-        Me.mobile.HeaderText = "Mobile"
-        Me.mobile.Name = "mobile"
-        Me.mobile.ReadOnly = True
-        '
-        'adharno
-        '
-        Me.adharno.DataPropertyName = "adharno"
-        Me.adharno.HeaderText = "Adhar No"
-        Me.adharno.Name = "adharno"
-        Me.adharno.ReadOnly = True
-        '
-        'birthdate
-        '
-        Me.birthdate.DataPropertyName = "birthdate"
-        Me.birthdate.HeaderText = "Birth Date"
-        Me.birthdate.Name = "birthdate"
-        Me.birthdate.ReadOnly = True
-        '
-        'EmployeenumberDataGridViewTextBoxColumn
-        '
-        Me.EmployeenumberDataGridViewTextBoxColumn.DataPropertyName = "employeenumber"
-        Me.EmployeenumberDataGridViewTextBoxColumn.HeaderText = "Employee Number"
-        Me.EmployeenumberDataGridViewTextBoxColumn.Name = "EmployeenumberDataGridViewTextBoxColumn"
-        Me.EmployeenumberDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ResigndateDataGridViewTextBoxColumn
-        '
-        Me.ResigndateDataGridViewTextBoxColumn.DataPropertyName = "resigndate"
-        Me.ResigndateDataGridViewTextBoxColumn.HeaderText = "Resign Date"
-        Me.ResigndateDataGridViewTextBoxColumn.Name = "ResigndateDataGridViewTextBoxColumn"
-        Me.ResigndateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'JoiningdateDataGridViewTextBoxColumn
-        '
-        Me.JoiningdateDataGridViewTextBoxColumn.DataPropertyName = "joiningdate"
-        Me.JoiningdateDataGridViewTextBoxColumn.HeaderText = "Joining Date"
-        Me.JoiningdateDataGridViewTextBoxColumn.Name = "JoiningdateDataGridViewTextBoxColumn"
-        Me.JoiningdateDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EmployeeidDataGridViewTextBoxColumn
-        '
-        Me.EmployeeidDataGridViewTextBoxColumn.DataPropertyName = "employeeid"
-        Me.EmployeeidDataGridViewTextBoxColumn.HeaderText = "employeeid"
-        Me.EmployeeidDataGridViewTextBoxColumn.Name = "EmployeeidDataGridViewTextBoxColumn"
-        Me.EmployeeidDataGridViewTextBoxColumn.ReadOnly = True
-        Me.EmployeeidDataGridViewTextBoxColumn.Visible = False
         '
         'EmployeeBindingSource
         '
@@ -264,23 +166,164 @@ Partial Class Employee
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
         '
-        'RecoveryListToolStripMenuItem
-        '
-        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
-        '
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
+        '
+        'RecoveryListToolStripMenuItem
+        '
+        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'employeeid
+        '
+        Me.employeeid.DataPropertyName = "employeeid"
+        Me.employeeid.HeaderText = "Employee ID"
+        Me.employeeid.Name = "employeeid"
+        Me.employeeid.ReadOnly = True
+        Me.employeeid.Visible = False
+        '
+        'employeenumber
+        '
+        Me.employeenumber.DataPropertyName = "employeenumber"
+        Me.employeenumber.HeaderText = "Employee Number"
+        Me.employeenumber.Name = "employeenumber"
+        Me.employeenumber.ReadOnly = True
+        '
+        'name
+        '
+        Me.name.DataPropertyName = "name"
+        Me.name.HeaderText = "Name"
+        Me.name.Name = "name"
+        Me.name.ReadOnly = True
+        '
+        'address
+        '
+        Me.address.DataPropertyName = "address"
+        Me.address.HeaderText = "Address"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
+        '
+        'taluko
+        '
+        Me.taluko.DataPropertyName = "taluko"
+        Me.taluko.HeaderText = "Taluko"
+        Me.taluko.Name = "taluko"
+        Me.taluko.ReadOnly = True
+        '
+        'jillo
+        '
+        Me.jillo.DataPropertyName = "jillo"
+        Me.jillo.HeaderText = "Jillo"
+        Me.jillo.Name = "jillo"
+        Me.jillo.ReadOnly = True
+        '
+        'rajya
+        '
+        Me.rajya.DataPropertyName = "rajya"
+        Me.rajya.HeaderText = "Rajya"
+        Me.rajya.Name = "rajya"
+        Me.rajya.ReadOnly = True
+        '
+        'pincode
+        '
+        Me.pincode.DataPropertyName = "pincode"
+        Me.pincode.HeaderText = "Pincode"
+        Me.pincode.Name = "pincode"
+        Me.pincode.ReadOnly = True
+        '
+        'mobile
+        '
+        Me.mobile.DataPropertyName = "mobile"
+        Me.mobile.HeaderText = "Mobile"
+        Me.mobile.Name = "mobile"
+        Me.mobile.ReadOnly = True
+        '
+        'adharno
+        '
+        Me.adharno.DataPropertyName = "adharno"
+        Me.adharno.HeaderText = "Adhar No"
+        Me.adharno.Name = "adharno"
+        Me.adharno.ReadOnly = True
+        '
+        'birthdate
+        '
+        Me.birthdate.DataPropertyName = "birthdate"
+        Me.birthdate.HeaderText = "Birth Date"
+        Me.birthdate.Name = "birthdate"
+        Me.birthdate.ReadOnly = True
+        '
+        'joiningdate
+        '
+        Me.joiningdate.DataPropertyName = "joiningdate"
+        Me.joiningdate.HeaderText = "Joining Date"
+        Me.joiningdate.Name = "joiningdate"
+        Me.joiningdate.ReadOnly = True
+        '
+        'resigndate
+        '
+        Me.resigndate.DataPropertyName = "resigndate"
+        Me.resigndate.HeaderText = "Resign Date"
+        Me.resigndate.Name = "resigndate"
+        Me.resigndate.ReadOnly = True
+        '
+        'ddlSearch
+        '
+        Me.ddlSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ddlSearch.FormattingEnabled = True
+        Me.ddlSearch.Items.AddRange(New Object() {"Name", "Employee Number", "Mobile"})
+        Me.ddlSearch.Location = New System.Drawing.Point(400, 33)
+        Me.ddlSearch.Name = "ddlSearch"
+        Me.ddlSearch.Size = New System.Drawing.Size(121, 21)
+        Me.ddlSearch.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(160, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Search"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(207, 33)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(153, 20)
+        Me.txtSearch.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(368, 37)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(18, 13)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "IN"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Location = New System.Drawing.Point(546, 32)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.TabIndex = 9
+        Me.btnSearch.Text = "Refresh"
+        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'Employee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1299, 450)
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtSearch)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ddlSearch)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
@@ -315,7 +358,9 @@ Partial Class Employee
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents employeeid As DataGridViewTextBoxColumn
+    Friend WithEvents employeenumber As DataGridViewTextBoxColumn
     Friend WithEvents name As DataGridViewTextBoxColumn
     Friend WithEvents address As DataGridViewTextBoxColumn
     Friend WithEvents taluko As DataGridViewTextBoxColumn
@@ -325,9 +370,11 @@ Partial Class Employee
     Friend WithEvents mobile As DataGridViewTextBoxColumn
     Friend WithEvents adharno As DataGridViewTextBoxColumn
     Friend WithEvents birthdate As DataGridViewTextBoxColumn
-    Friend WithEvents EmployeenumberDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ResigndateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents JoiningdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmployeeidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents joiningdate As DataGridViewTextBoxColumn
+    Friend WithEvents resigndate As DataGridViewTextBoxColumn
+    Friend WithEvents ddlSearch As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnSearch As Button
 End Class
