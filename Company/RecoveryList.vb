@@ -20,7 +20,7 @@
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Dim objLoan As New clsLoan()
         Dim dstLoan As New DataSet
-        dstLoan = objLoan.RecoveryList()
+        dstLoan = objLoan.RecoveryList(dtStartDate.Value, dtEndDate.Value)
         DataGridView1.AutoGenerateColumns = False
         DataGridView1.DataSource = dstLoan.Tables(0)
 
@@ -72,5 +72,13 @@
         Dim form2 = New Loan()
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
+    End Sub
+
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Dim objLoan As New clsLoan()
+        Dim dstLoan As New DataSet
+        dstLoan = objLoan.RecoveryList(dtStartDate.Value, dtEndDate.Value)
+        DataGridView1.AutoGenerateColumns = False
+        DataGridView1.DataSource = dstLoan.Tables(0)
     End Sub
 End Class
