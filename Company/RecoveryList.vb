@@ -17,12 +17,19 @@
     End Sub
 
     Private Sub RecoveryList_Load(sender As Object, e As EventArgs) Handles Me.Load
+        'TODO: This line of code loads data into the 'CompanyDataSet.company' table. You can move, or remove it, as needed.
+        Me.CompanyTableAdapter.Fill(Me.CompanyDataSet.company)
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Dim objLoan As New clsLoan()
         Dim dstLoan As New DataSet
-        dstLoan = objLoan.RecoveryList(dtStartDate.Value, dtEndDate.Value)
+        dstLoan = objLoan.RecoveryList(dtFromDate.Value, dtToDate.Value)
         DataGridView1.AutoGenerateColumns = False
         DataGridView1.DataSource = dstLoan.Tables(0)
+        Dim dstLoanList As DataSet
+        dstLoanList = objLoan.GetLoanList()
+        ddlLoan.DataSource = dstLoanList.Tables(0)
+        ddlLoan.ValueMember = "loanid"
+        ddlLoan.DisplayMember = "loannumber"
 
     End Sub
     Private Sub NewCompanyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewCompanyToolStripMenuItem.Click
@@ -74,10 +81,11 @@
         form2.Show()
     End Sub
 
-    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
         Dim objLoan As New clsLoan()
         Dim dstLoan As New DataSet
-        dstLoan = objLoan.RecoveryList(dtStartDate.Value, dtEndDate.Value)
+        dstLoan = objLoan.RecoveryList(dtFromDate.Value, dtToDate.Value, 0, ddlLoan.SelectedValue)
         DataGridView1.AutoGenerateColumns = False
         DataGridView1.DataSource = dstLoan.Tables(0)
     End Sub

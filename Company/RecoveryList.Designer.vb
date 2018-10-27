@@ -22,6 +22,7 @@ Partial Class RecoveryList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.loanid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.loantableid = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,10 +48,22 @@ Partial Class RecoveryList
         Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.CompanyDataSet = New Company.companyDataSet()
+        Me.CompanyTableAdapter = New Company.companyDataSetTableAdapters.companyTableAdapter()
+        Me.dtFromDate = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dtToDate = New System.Windows.Forms.DateTimePicker()
+        Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ddlLoan = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -59,9 +72,9 @@ Partial Class RecoveryList
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.loantableid, Me.type, Me.duration, Me.loannumber, Me.emidate, Me.loandate, Me.amount, Me.interestrate, Me.interestamount, Me.name, Me.mobile, Me.paidamount, Me.update})
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 27)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 113)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1211, 411)
+        Me.DataGridView1.Size = New System.Drawing.Size(1263, 411)
         Me.DataGridView1.TabIndex = 0
         '
         'loanid
@@ -154,7 +167,7 @@ Partial Class RecoveryList
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1211, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1275, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -216,30 +229,114 @@ Partial Class RecoveryList
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
         '
-        'RecoveryListToolStripMenuItem
-        '
-        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
-        '
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
+        '
+        'RecoveryListToolStripMenuItem
+        '
+        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'CompanyBindingSource
+        '
+        Me.CompanyBindingSource.DataMember = "company"
+        Me.CompanyBindingSource.DataSource = Me.CompanyDataSet
+        '
+        'CompanyDataSet
+        '
+        Me.CompanyDataSet.DataSetName = "companyDataSet"
+        Me.CompanyDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'CompanyTableAdapter
+        '
+        Me.CompanyTableAdapter.ClearBeforeFill = True
+        '
+        'dtFromDate
+        '
+        Me.dtFromDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtFromDate.Location = New System.Drawing.Point(254, 38)
+        Me.dtFromDate.Name = "dtFromDate"
+        Me.dtFromDate.Size = New System.Drawing.Size(92, 20)
+        Me.dtFromDate.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(187, 41)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 13)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "From Date"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(366, 42)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 13)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "End Date"
+        '
+        'dtToDate
+        '
+        Me.dtToDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtToDate.Location = New System.Drawing.Point(425, 38)
+        Me.dtToDate.Name = "dtToDate"
+        Me.dtToDate.Size = New System.Drawing.Size(90, 20)
+        Me.dtToDate.TabIndex = 10
+        '
+        'btnRefresh
+        '
+        Me.btnRefresh.Location = New System.Drawing.Point(538, 38)
+        Me.btnRefresh.Name = "btnRefresh"
+        Me.btnRefresh.Size = New System.Drawing.Size(75, 21)
+        Me.btnRefresh.TabIndex = 11
+        Me.btnRefresh.Text = "Refresh"
+        Me.btnRefresh.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(15, 41)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(31, 13)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Loan"
+        '
+        'ddlLoan
+        '
+        Me.ddlLoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ddlLoan.FormattingEnabled = True
+        Me.ddlLoan.Location = New System.Drawing.Point(52, 37)
+        Me.ddlLoan.Name = "ddlLoan"
+        Me.ddlLoan.Size = New System.Drawing.Size(121, 21)
+        Me.ddlLoan.TabIndex = 13
         '
         'RecoveryList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1211, 450)
+        Me.ClientSize = New System.Drawing.Size(1275, 559)
+        Me.Controls.Add(Me.ddlLoan)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.btnRefresh)
+        Me.Controls.Add(Me.dtToDate)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.dtFromDate)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.DataGridView1)
-        'Me.name = "RecoveryList"
+        Me.name = "RecoveryList"
         Me.Text = "RecoveryList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -272,4 +369,14 @@ Partial Class RecoveryList
     Friend WithEvents paidamount As DataGridViewTextBoxColumn
     Friend WithEvents update As DataGridViewButtonColumn
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CompanyDataSet As companyDataSet
+    Friend WithEvents CompanyBindingSource As BindingSource
+    Friend WithEvents CompanyTableAdapter As companyDataSetTableAdapters.companyTableAdapter
+    Friend WithEvents dtFromDate As DateTimePicker
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents dtToDate As DateTimePicker
+    Friend WithEvents btnRefresh As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ddlLoan As ComboBox
 End Class
