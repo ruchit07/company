@@ -55,10 +55,33 @@
                 strSqlCommand &= " WHERE formno like N'%" & EscapeString(strSearchText) & "%'"
             End If
         End If
-            Dim dstData As DataSet
+        Dim dstData As DataSet
         dstData = FillDataSet(strSqlCommand)
         Return dstData
 
     End Function
 
+    Public Sub UpdateCompany(ByVal strCompanyName As String, ByVal strAddress As String, ByVal intJilloId As Integer, ByVal intTalukoId As Integer, ByVal intRajyaId As Integer, ByVal strZipcode As String, ByVal strOwnerName As String, ByVal strMobileNumber As String, ByVal strFormNo As String, ByVal dtStartDate As Date, ByVal dtEndDate As Date, ByVal intCompanyId As Integer)
+
+        strSqlCommand = "UPDATE company SET name = N'" & EscapeString(strCompanyName) & "', address = N'" & EscapeString(strAddress) & "', talukoid=" & intTalukoId & ", jilloid=" & intJilloId & ",rajyaid=" & intRajyaId & ",zipcode=N'" & EscapeString(strZipcode) & "', ownername=N'" & EscapeString(strOwnerName) & "', mobile= N'" & EscapeString(strMobileNumber) & "', formno = N'" & EscapeString(strFormNo) & "',startdate = '" & dtStartDate & "', enddate='" & dtEndDate & "' WHERE companyid =" & intCompanyId
+
+        ExecuteNonQuery(strSqlCommand, "", "N")
+
+    End Sub
+
+    Public Sub DeleteCompany(ByVal intCompanyId As Integer)
+
+        strSqlCommand = "DELETE FROM company where companyid = " & intCompanyId
+
+        ExecuteNonQuery(strSqlCommand, "", "N")
+    End Sub
+
+    Public Function GetCompanyDetailById(ByVal intCompanyId As Integer) As DataSet
+        strSqlCommand = "SELECT companyid,name,address,talukoid,jilloid,rajyaid,zipcode,ownername,mobile,formno,startdate,enddate,username,password from company where companyid = " & intCompanyId
+
+        Dim dstData As DataSet
+        dstData = FillDataSet(strSqlCommand)
+        Return dstData
+
+    End Function
 End Class

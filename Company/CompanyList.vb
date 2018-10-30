@@ -12,10 +12,20 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        Me.Hide()
-        Dim form2 = New Login()
-        AddHandler form2.Closed, Sub(s, args) Me.Close()
-        form2.Show()
+
+
+        If e.ColumnIndex = 6 Then
+            Me.Hide()
+            Dim form2 = New Login()
+            AddHandler form2.Closed, Sub(s, args) Me.Close()
+            form2.Show()
+        Else
+            Me.Hide()
+            Dim form2 = New UpdateCompanyDetail()
+            form2.lblCompanyId.Text = DataGridView1.CurrentRow.Cells("companyid").Value
+            AddHandler form2.Closed, Sub(s, args) Me.Close()
+            form2.Show()
+        End If
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
