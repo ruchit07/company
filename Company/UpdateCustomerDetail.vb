@@ -147,8 +147,7 @@
         Dim objCustomer As New clsCustomer()
         If TypeOf senderGrid.Columns(e.ColumnIndex) Is DataGridViewButtonColumn AndAlso
            e.RowIndex >= 0 Then
-            MessageBox.Show(e.ColumnIndex)
-            MessageBox.Show(DataGridView1.CurrentRow.Cells("name").Value)
+
             'TODO - Button Clicked - Execute Code Here
 
             If e.ColumnIndex = 4 Then
