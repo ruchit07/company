@@ -220,6 +220,12 @@
     <Compile Include="talukoDataSet.vb">
       <DependentUpon>talukoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UpdateCompanyDetail.Designer.vb">
+      <DependentUpon>UpdateCompanyDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateCompanyDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UpdateCustomerDetail.Designer.vb">
       <DependentUpon>UpdateCustomerDetail.vb</DependentUpon>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecoveryList.resx">
       <DependentUpon>RecoveryList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCompanyDetail.resx">
+      <DependentUpon>UpdateCompanyDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateCustomerDetail.resx">
       <DependentUpon>UpdateCustomerDetail.vb</DependentUpon>
