@@ -70,6 +70,8 @@
             txtAdvanceAmount.Text = Math.Round(Val(txtEMI.Text) * Val(txtDays.Text), 2)
             dblTotalPayable = Math.Round(dblLoanAmount - txtInterestAmount.Text - (Val(txtEMI.Text) * Val(txtDays.Text)) - Val(txtFineCharge.Text), 2)
             txtFinalAmount.Text = Math.Round(dblLoanAmount - txtInterestAmount.Text - (Val(txtEMI.Text) * Val(txtDays.Text)) - Val(txtFineCharge.Text), 2)
+            txtEMI.Visible = False
+            Label11.Visible = False
 
         ElseIf ddlType.SelectedIndex = 2 Then
             dblInterestAmount = ((dblLoanAmount * dblInterestRate * intDuration) / 100)

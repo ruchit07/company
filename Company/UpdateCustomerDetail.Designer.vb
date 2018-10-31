@@ -85,8 +85,8 @@ Partial Class UpdateCustomerDetail
         Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -225,7 +225,7 @@ Partial Class UpdateCustomerDetail
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jaminid, Me.name, Me.mobile, Me.Address, Me.btnUpdate, Me.Delete})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 566)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(568, 76)
+        Me.DataGridView1.Size = New System.Drawing.Size(546, 85)
         Me.DataGridView1.TabIndex = 42
         '
         'jaminid
@@ -609,17 +609,17 @@ Partial Class UpdateCustomerDetail
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
         '
-        'RecoveryListToolStripMenuItem
-        '
-        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
-        '
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
+        '
+        'RecoveryListToolStripMenuItem
+        '
+        Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'UpdateCustomerDetail
         '

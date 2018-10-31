@@ -40,6 +40,11 @@ Partial Class Employee
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ddlSearch = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
         Me.employeeid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.employeenumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,11 +58,6 @@ Partial Class Employee
         Me.birthdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.joiningdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.resigndate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ddlSearch = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnSearch = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,7 +88,7 @@ Partial Class Employee
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(1182, 27)
+        Me.btnAdd.Location = New System.Drawing.Point(1182, 33)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 1
@@ -178,6 +178,50 @@ Partial Class Employee
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
+        'ddlSearch
+        '
+        Me.ddlSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ddlSearch.FormattingEnabled = True
+        Me.ddlSearch.Items.AddRange(New Object() {"Name", "Employee Number", "Mobile"})
+        Me.ddlSearch.Location = New System.Drawing.Point(255, 29)
+        Me.ddlSearch.Name = "ddlSearch"
+        Me.ddlSearch.Size = New System.Drawing.Size(121, 21)
+        Me.ddlSearch.TabIndex = 5
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(15, 32)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Search"
+        '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(62, 29)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(153, 20)
+        Me.txtSearch.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(223, 33)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(18, 13)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "IN"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Location = New System.Drawing.Point(401, 28)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.TabIndex = 9
+        Me.btnSearch.Text = "Refresh"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
         'employeeid
         '
         Me.employeeid.DataPropertyName = "employeeid"
@@ -189,130 +233,86 @@ Partial Class Employee
         'employeenumber
         '
         Me.employeenumber.DataPropertyName = "employeenumber"
-        Me.employeenumber.HeaderText = "Employee Number"
+        Me.employeenumber.HeaderText = "ગ્રાહક નંબર​"
         Me.employeenumber.Name = "employeenumber"
         Me.employeenumber.ReadOnly = True
         '
         'name
         '
         Me.name.DataPropertyName = "name"
-        Me.name.HeaderText = "Name"
+        Me.name.HeaderText = "ગ્રાહક નુ નામ​"
         Me.name.Name = "name"
         Me.name.ReadOnly = True
         '
         'address
         '
         Me.address.DataPropertyName = "address"
-        Me.address.HeaderText = "Address"
+        Me.address.HeaderText = "સરનમુ"
         Me.address.Name = "address"
         Me.address.ReadOnly = True
         '
         'taluko
         '
         Me.taluko.DataPropertyName = "taluko"
-        Me.taluko.HeaderText = "Taluko"
+        Me.taluko.HeaderText = "તાલુકો"
         Me.taluko.Name = "taluko"
         Me.taluko.ReadOnly = True
         '
         'jillo
         '
         Me.jillo.DataPropertyName = "jillo"
-        Me.jillo.HeaderText = "Jillo"
+        Me.jillo.HeaderText = "જીલ્લો"
         Me.jillo.Name = "jillo"
         Me.jillo.ReadOnly = True
         '
         'rajya
         '
         Me.rajya.DataPropertyName = "rajya"
-        Me.rajya.HeaderText = "Rajya"
+        Me.rajya.HeaderText = "રાજ્ય​"
         Me.rajya.Name = "rajya"
         Me.rajya.ReadOnly = True
         '
         'pincode
         '
         Me.pincode.DataPropertyName = "pincode"
-        Me.pincode.HeaderText = "Pincode"
+        Me.pincode.HeaderText = "પીન કોડ"
         Me.pincode.Name = "pincode"
         Me.pincode.ReadOnly = True
         '
         'mobile
         '
         Me.mobile.DataPropertyName = "mobile"
-        Me.mobile.HeaderText = "Mobile"
+        Me.mobile.HeaderText = "મોબાઈલ નંબર​"
         Me.mobile.Name = "mobile"
         Me.mobile.ReadOnly = True
         '
         'adharno
         '
         Me.adharno.DataPropertyName = "adharno"
-        Me.adharno.HeaderText = "Adhar No"
+        Me.adharno.HeaderText = "આધાર નંબર​"
         Me.adharno.Name = "adharno"
         Me.adharno.ReadOnly = True
         '
         'birthdate
         '
         Me.birthdate.DataPropertyName = "birthdate"
-        Me.birthdate.HeaderText = "Birth Date"
+        Me.birthdate.HeaderText = "જન્મ તરીખ​"
         Me.birthdate.Name = "birthdate"
         Me.birthdate.ReadOnly = True
         '
         'joiningdate
         '
         Me.joiningdate.DataPropertyName = "joiningdate"
-        Me.joiningdate.HeaderText = "Joining Date"
+        Me.joiningdate.HeaderText = "જોડાણ તારીખ​"
         Me.joiningdate.Name = "joiningdate"
         Me.joiningdate.ReadOnly = True
         '
         'resigndate
         '
         Me.resigndate.DataPropertyName = "resigndate"
-        Me.resigndate.HeaderText = "Resign Date"
+        Me.resigndate.HeaderText = "છોડેલ તારીખ​"
         Me.resigndate.Name = "resigndate"
         Me.resigndate.ReadOnly = True
-        '
-        'ddlSearch
-        '
-        Me.ddlSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ddlSearch.FormattingEnabled = True
-        Me.ddlSearch.Items.AddRange(New Object() {"Name", "Employee Number", "Mobile"})
-        Me.ddlSearch.Location = New System.Drawing.Point(400, 33)
-        Me.ddlSearch.Name = "ddlSearch"
-        Me.ddlSearch.Size = New System.Drawing.Size(121, 21)
-        Me.ddlSearch.TabIndex = 5
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(160, 36)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 13)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Search"
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(207, 33)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(153, 20)
-        Me.txtSearch.TabIndex = 7
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(368, 37)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(18, 13)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "IN"
-        '
-        'btnSearch
-        '
-        Me.btnSearch.Location = New System.Drawing.Point(546, 32)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnSearch.TabIndex = 9
-        Me.btnSearch.Text = "Refresh"
-        Me.btnSearch.UseVisualStyleBackColor = True
         '
         'Employee
         '
@@ -359,6 +359,11 @@ Partial Class Employee
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ddlSearch As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents btnSearch As Button
     Friend WithEvents employeeid As DataGridViewTextBoxColumn
     Friend WithEvents employeenumber As DataGridViewTextBoxColumn
     Friend WithEvents name As DataGridViewTextBoxColumn
@@ -372,9 +377,4 @@ Partial Class Employee
     Friend WithEvents birthdate As DataGridViewTextBoxColumn
     Friend WithEvents joiningdate As DataGridViewTextBoxColumn
     Friend WithEvents resigndate As DataGridViewTextBoxColumn
-    Friend WithEvents ddlSearch As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txtSearch As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btnSearch As Button
 End Class
