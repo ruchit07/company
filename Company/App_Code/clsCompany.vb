@@ -23,7 +23,7 @@
 
     Public Sub InsertCompany(ByVal strCompanyName As String, ByVal strAddress As String, ByVal intJilloId As Integer, ByVal intTalukoId As Integer, ByVal intRajyaId As Integer, ByVal strZipcode As String, ByVal strOwnerName As String, ByVal strMobileNumber As String, ByVal strFormNo As String, ByVal dtStartDate As Date, ByVal dtEndDate As Date, ByVal strUserName As String, ByVal strPassword As String)
 
-        strSqlCommand = "INSERT INTO company(name,address,talukoid,jilloid,rajyaid,zipcode,ownername,mobile,formno,startdate,enddate,username,password) values(N'" & EscapeString(strCompanyName) & "',N'" & EscapeString(strAddress) & "',N'" & intTalukoId & "'," & intJilloId & "," & intRajyaId & ",'" & strZipcode & "',N'" & EscapeString(strOwnerName) & "','" & EscapeString(strMobileNumber) & "','" & EscapeString(strFormNo) & "','" & dtStartDate & "','" & dtEndDate & "',N'" & EscapeString(strUserName) & "',N'" & EscapeString(strPassword) & "')"
+        strSqlCommand = "INSERT INTO company(name,address,talukoid,jilloid,rajyaid,zipcode,ownername,mobile,formno,startdate,enddate,username,password) values(N'" & EscapeString(strCompanyName) & "',N'" & EscapeString(strAddress) & "',N'" & intTalukoId & "'," & intJilloId & "," & intRajyaId & ",'" & strZipcode & "',N'" & EscapeString(strOwnerName) & "',N'" & EscapeString(strMobileNumber) & "','" & EscapeString(strFormNo) & "','" & dtStartDate & "','" & dtEndDate & "',N'" & EscapeString(strUserName) & "',N'" & EscapeString(strPassword) & "')"
 
         Dim intCompanyId As Integer
 

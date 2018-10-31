@@ -25,6 +25,7 @@
 
     Public Function InsertRajya(ByVal strName As String) As Integer
         Dim intRajyaId As Integer
+        strSqlCommand = "INSERT INTO rajya(name) VALUES( N'" & EscapeString(strName) & "')"
         intRajyaId = ExecuteNonQuery(strSqlCommand, "InsertRajya", "Y")
         Return intRajyaId
     End Function
