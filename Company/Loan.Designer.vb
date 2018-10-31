@@ -25,6 +25,18 @@ Partial Class Loan
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.lblCustomerId = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.CompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CompanyListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewCompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomerListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.loanid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.loannumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.loandate = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,18 +50,6 @@ Partial Class Loan
         Me.totalpaidamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalremainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nextemidate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CompanyListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewCompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CustomerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CustomerListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -84,98 +84,6 @@ Partial Class Loan
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1245, 352)
         Me.DataGridView1.TabIndex = 2
-        '
-        'loanid
-        '
-        Me.loanid.DataPropertyName = "loanid"
-        Me.loanid.HeaderText = "loanid"
-        Me.loanid.Name = "loanid"
-        Me.loanid.ReadOnly = True
-        Me.loanid.Visible = False
-        '
-        'loannumber
-        '
-        Me.loannumber.DataPropertyName = "loannumber"
-        Me.loannumber.HeaderText = "Loan Number"
-        Me.loannumber.Name = "loannumber"
-        Me.loannumber.ReadOnly = True
-        '
-        'loandate
-        '
-        Me.loandate.DataPropertyName = "loandate"
-        Me.loandate.HeaderText = "Loan Date"
-        Me.loandate.Name = "loandate"
-        Me.loandate.ReadOnly = True
-        '
-        'customer
-        '
-        Me.customer.DataPropertyName = "customer"
-        Me.customer.HeaderText = "Customer Name"
-        Me.customer.Name = "customer"
-        Me.customer.ReadOnly = True
-        '
-        'mobile
-        '
-        Me.mobile.DataPropertyName = "mobile"
-        Me.mobile.HeaderText = "Mobile"
-        Me.mobile.Name = "mobile"
-        Me.mobile.ReadOnly = True
-        '
-        'amount
-        '
-        Me.amount.DataPropertyName = "amount"
-        Me.amount.HeaderText = "Amount"
-        Me.amount.Name = "amount"
-        Me.amount.ReadOnly = True
-        '
-        'advanceamount
-        '
-        Me.advanceamount.DataPropertyName = "advanceamount"
-        Me.advanceamount.HeaderText = "Advance Amount"
-        Me.advanceamount.Name = "advanceamount"
-        Me.advanceamount.ReadOnly = True
-        '
-        'interestrate
-        '
-        Me.interestrate.DataPropertyName = "interestrate"
-        Me.interestrate.HeaderText = "Interest Rate"
-        Me.interestrate.Name = "interestrate"
-        Me.interestrate.ReadOnly = True
-        '
-        'interestamount
-        '
-        Me.interestamount.DataPropertyName = "interestamount"
-        Me.interestamount.HeaderText = "Interest"
-        Me.interestamount.Name = "interestamount"
-        Me.interestamount.ReadOnly = True
-        '
-        'totalamount
-        '
-        Me.totalamount.DataPropertyName = "totalamount"
-        Me.totalamount.HeaderText = "Amount to Pay"
-        Me.totalamount.Name = "totalamount"
-        Me.totalamount.ReadOnly = True
-        '
-        'totalpaidamount
-        '
-        Me.totalpaidamount.DataPropertyName = "totalpaidamount"
-        Me.totalpaidamount.HeaderText = "Paid Amount"
-        Me.totalpaidamount.Name = "totalpaidamount"
-        Me.totalpaidamount.ReadOnly = True
-        '
-        'totalremainingamount
-        '
-        Me.totalremainingamount.DataPropertyName = "remainingamount"
-        Me.totalremainingamount.HeaderText = "Remaining Amount"
-        Me.totalremainingamount.Name = "totalremainingamount"
-        Me.totalremainingamount.ReadOnly = True
-        '
-        'nextemidate
-        '
-        Me.nextemidate.DataPropertyName = "nextemidate"
-        Me.nextemidate.HeaderText = "Next EMI Date"
-        Me.nextemidate.Name = "nextemidate"
-        Me.nextemidate.ReadOnly = True
         '
         'MenuStrip1
         '
@@ -247,14 +155,106 @@ Partial Class Loan
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'loanid
+        '
+        Me.loanid.DataPropertyName = "loanid"
+        Me.loanid.HeaderText = "loanid"
+        Me.loanid.Name = "loanid"
+        Me.loanid.ReadOnly = True
+        Me.loanid.Visible = False
+        '
+        'loannumber
+        '
+        Me.loannumber.DataPropertyName = "loannumber"
+        Me.loannumber.HeaderText = "લૉન નંબર"
+        Me.loannumber.Name = "loannumber"
+        Me.loannumber.ReadOnly = True
+        '
+        'loandate
+        '
+        Me.loandate.DataPropertyName = "loandate"
+        Me.loandate.HeaderText = "લૉન તારીખ"
+        Me.loandate.Name = "loandate"
+        Me.loandate.ReadOnly = True
+        '
+        'customer
+        '
+        Me.customer.DataPropertyName = "customer"
+        Me.customer.HeaderText = "ગ્રાહક નુ નામ"
+        Me.customer.Name = "customer"
+        Me.customer.ReadOnly = True
+        '
+        'mobile
+        '
+        Me.mobile.DataPropertyName = "mobile"
+        Me.mobile.HeaderText = "મોબાઈલ નંબર​"
+        Me.mobile.Name = "mobile"
+        Me.mobile.ReadOnly = True
+        '
+        'amount
+        '
+        Me.amount.DataPropertyName = "amount"
+        Me.amount.HeaderText = "લોન રકમ"
+        Me.amount.Name = "amount"
+        Me.amount.ReadOnly = True
+        '
+        'advanceamount
+        '
+        Me.advanceamount.DataPropertyName = "advanceamount"
+        Me.advanceamount.HeaderText = "એડવાન્સ રકમ​"
+        Me.advanceamount.Name = "advanceamount"
+        Me.advanceamount.ReadOnly = True
+        '
+        'interestrate
+        '
+        Me.interestrate.DataPropertyName = "interestrate"
+        Me.interestrate.HeaderText = "વ્યાજ"
+        Me.interestrate.Name = "interestrate"
+        Me.interestrate.ReadOnly = True
+        '
+        'interestamount
+        '
+        Me.interestamount.DataPropertyName = "interestamount"
+        Me.interestamount.HeaderText = "વ્યાજ રકમ​"
+        Me.interestamount.Name = "interestamount"
+        Me.interestamount.ReadOnly = True
+        '
+        'totalamount
+        '
+        Me.totalamount.DataPropertyName = "totalamount"
+        Me.totalamount.HeaderText = "આપેલ રકમ​"
+        Me.totalamount.Name = "totalamount"
+        Me.totalamount.ReadOnly = True
+        '
+        'totalpaidamount
+        '
+        Me.totalpaidamount.DataPropertyName = "totalpaidamount"
+        Me.totalpaidamount.HeaderText = "ભરેલ રકમ​"
+        Me.totalpaidamount.Name = "totalpaidamount"
+        Me.totalpaidamount.ReadOnly = True
+        '
+        'totalremainingamount
+        '
+        Me.totalremainingamount.DataPropertyName = "remainingamount"
+        Me.totalremainingamount.HeaderText = "બાકિ રકમ​"
+        Me.totalremainingamount.Name = "totalremainingamount"
+        Me.totalremainingamount.ReadOnly = True
+        '
+        'nextemidate
+        '
+        Me.nextemidate.DataPropertyName = "nextemidate"
+        Me.nextemidate.HeaderText = "આગામી હપ્તાની તરીખ​"
+        Me.nextemidate.Name = "nextemidate"
+        Me.nextemidate.ReadOnly = True
         '
         'Loan
         '
@@ -289,6 +289,7 @@ Partial Class Loan
     Friend WithEvents NewEmployeeToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents loanid As DataGridViewTextBoxColumn
     Friend WithEvents loannumber As DataGridViewTextBoxColumn
     Friend WithEvents loandate As DataGridViewTextBoxColumn
@@ -302,5 +303,4 @@ Partial Class Loan
     Friend WithEvents totalpaidamount As DataGridViewTextBoxColumn
     Friend WithEvents totalremainingamount As DataGridViewTextBoxColumn
     Friend WithEvents nextemidate As DataGridViewTextBoxColumn
-    Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
 End Class
