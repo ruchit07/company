@@ -26,7 +26,7 @@
 
 
         Dim intMaxCustomerId As Integer
-        strSqlCommand = "SELECT MAX(customerid) FROM customer"
+        strSqlCommand = "SELECT ISNULL(MAX(customerid),0) FROM customer"
         intMaxCustomerId = Val(ExecuteScalar(strSqlCommand, ""))
 
         intMaxCustomerId = intMaxCustomerId + 1

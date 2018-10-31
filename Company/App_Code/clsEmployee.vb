@@ -6,7 +6,7 @@
     Public Sub InsertEmployee(ByVal strEmployeeNo As String, ByVal strName As String, ByVal strAddress As String, ByVal intTalukoid As Integer, ByVal intJilloId As Integer, ByVal intRajyaId As Integer, ByVal pincode As String, ByVal adharno As String, ByVal strMobile As String, ByVal dtBirthDate As DateTime, ByVal dtResignDate As DateTime, ByVal dtJoiningDate As DateTime)
 
         Dim intMaxEmployeeId As Integer
-        strSqlCommand = "SELEC MAX(employeeid) FROM employee"
+        strSqlCommand = "SELECT ISNULL(MAX(employeeid),0) FROM employee"
         intMaxEmployeeId = Val(ExecuteScalar(strSqlCommand, "InsertEmployee"))
 
         intMaxEmployeeId = intMaxEmployeeId + 1
