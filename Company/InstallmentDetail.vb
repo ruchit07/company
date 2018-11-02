@@ -104,6 +104,56 @@
     End Sub
 
     Private Sub txtPenalty_TextChanged(sender As Object, e As EventArgs) Handles txtPenalty.TextChanged
-        lblTotalReceiving.Text = Val(txtRecevingEmi.Text) + Val(txtPendingEmi.Text)
+        lblTotalReceiving.Text = Val(txtRecevingEmi.Text) + Val(txtPenalty.Text)
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
+
+    End Sub
+
+    Private Sub ClearControls(ByVal frm As Form)
+        Dim ctrl As Control
+        For Each ctrl In frm.Controls
+            If ctrl.GetType Is GetType(TextBox) Then
+                ctrl.Text = ""
+            ElseIf ctrl.GetType Is GetType(RadioButton) Then
+                Dim radbut As RadioButton = ctrl
+                radbut.Checked = False
+            ElseIf ctrl.GetType Is GetType(DateTimePicker) Then
+                Dim datetimepicker1 As DateTimePicker = ctrl
+                datetimepicker1.ResetText()
+
+            ElseIf ctrl.GetType Is GetType(GroupBox) Then
+                ClearGroupedControls(ctrl)
+            ElseIf ctrl.GetType Is GetType(MaskedTextBox) Then
+                Dim cmb1 As MaskedTextBox = ctrl
+                cmb1.Text = ""
+            End If
+        Next
+    End Sub
+
+    Private Sub ClearGroupedControls(ByVal gctrl As GroupBox)
+        For Each ctrl In gctrl.Controls
+            If ctrl.GetType Is GetType(TextBox) Then
+                ctrl.Text = ""
+            ElseIf ctrl.GetType Is GetType(RadioButton) Then
+                Dim radbut As RadioButton = ctrl
+                radbut.Checked = False
+            ElseIf ctrl.GetType Is GetType(DateTimePicker) Then
+                Dim datetimepicker1 As DateTimePicker = ctrl
+                datetimepicker1.ResetText()
+
+            ElseIf ctrl.GetType Is GetType(GroupBox) Then
+                ClearGroupedControls(ctrl)
+
+            ElseIf ctrl.GetType Is GetType(ComboBox) Then
+                Dim cmb1 As ComboBox = ctrl
+                cmb1.SelectedIndex = 0
+
+            ElseIf ctrl.GetType Is GetType(MaskedTextBox) Then
+                Dim cmb1 As MaskedTextBox = ctrl
+                cmb1.Text = ""
+            End If
+        Next
     End Sub
 End Class
