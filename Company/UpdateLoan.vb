@@ -78,6 +78,13 @@
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         Dim objLoan As New clsLoan()
         objLoan.DeleteLoan(lblLoanId.Text)
+
+        Me.Hide()
+        Dim form2 = New Loan()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+
+        form2.lblCustomerId.Text = lblCustomerId.Text
+        form2.Show()
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click

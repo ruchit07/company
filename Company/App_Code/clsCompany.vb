@@ -42,7 +42,7 @@
     End Function
 
     Public Function GetCompanyList(Optional ByVal strType As String = "", Optional ByVal strSearchText As String = "") As DataSet
-        strSqlCommand = "SELECT companyid, name, address, ownername, mobile, formno FROM company"
+        strSqlCommand = "SELECT companyid, name, address, ownername, mobile, formno, convert(varchar,startdate,103)startdate, convert(varchar,enddate,103)enddate FROM company"
 
         If strSearchText <> "" Then
             If strType = "Company Name" Then

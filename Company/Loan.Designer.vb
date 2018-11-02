@@ -39,17 +39,19 @@ Partial Class Loan
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.loanid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.loannumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.loandate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.customer = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.loandate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.advancedate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.advanceamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.interestrate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.interestamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.finecharge = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.advanceamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalpaidamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalremainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nextemidate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.interestrate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -78,7 +80,7 @@ Partial Class Loan
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.loannumber, Me.loandate, Me.customer, Me.mobile, Me.amount, Me.advanceamount, Me.interestrate, Me.interestamount, Me.totalamount, Me.totalpaidamount, Me.totalremainingamount, Me.nextemidate})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.loannumber, Me.customer, Me.mobile, Me.loandate, Me.advancedate, Me.amount, Me.interestamount, Me.finecharge, Me.totalamount, Me.advanceamount, Me.totalpaidamount, Me.totalremainingamount, Me.nextemidate, Me.interestrate})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 75)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -179,13 +181,6 @@ Partial Class Loan
         Me.loannumber.Name = "loannumber"
         Me.loannumber.ReadOnly = True
         '
-        'loandate
-        '
-        Me.loandate.DataPropertyName = "loandate"
-        Me.loandate.HeaderText = "લૉન તારીખ"
-        Me.loandate.Name = "loandate"
-        Me.loandate.ReadOnly = True
-        '
         'customer
         '
         Me.customer.DataPropertyName = "customer"
@@ -200,26 +195,26 @@ Partial Class Loan
         Me.mobile.Name = "mobile"
         Me.mobile.ReadOnly = True
         '
+        'loandate
+        '
+        Me.loandate.DataPropertyName = "loandate"
+        Me.loandate.HeaderText = "લૉન તારીખ"
+        Me.loandate.Name = "loandate"
+        Me.loandate.ReadOnly = True
+        '
+        'advancedate
+        '
+        Me.advancedate.DataPropertyName = "advancedate"
+        Me.advancedate.HeaderText = "એડવાન્સ તારીખ​"
+        Me.advancedate.Name = "advancedate"
+        Me.advancedate.ReadOnly = True
+        '
         'amount
         '
         Me.amount.DataPropertyName = "amount"
         Me.amount.HeaderText = "લોન રકમ"
         Me.amount.Name = "amount"
         Me.amount.ReadOnly = True
-        '
-        'advanceamount
-        '
-        Me.advanceamount.DataPropertyName = "advanceamount"
-        Me.advanceamount.HeaderText = "એડવાન્સ રકમ​"
-        Me.advanceamount.Name = "advanceamount"
-        Me.advanceamount.ReadOnly = True
-        '
-        'interestrate
-        '
-        Me.interestrate.DataPropertyName = "interestrate"
-        Me.interestrate.HeaderText = "વ્યાજ"
-        Me.interestrate.Name = "interestrate"
-        Me.interestrate.ReadOnly = True
         '
         'interestamount
         '
@@ -228,12 +223,26 @@ Partial Class Loan
         Me.interestamount.Name = "interestamount"
         Me.interestamount.ReadOnly = True
         '
+        'finecharge
+        '
+        Me.finecharge.DataPropertyName = "finecharge"
+        Me.finecharge.HeaderText = "ફાઇલ ચાર્જ​"
+        Me.finecharge.Name = "finecharge"
+        Me.finecharge.ReadOnly = True
+        '
         'totalamount
         '
         Me.totalamount.DataPropertyName = "totalamount"
         Me.totalamount.HeaderText = "આપેલ રકમ​"
         Me.totalamount.Name = "totalamount"
         Me.totalamount.ReadOnly = True
+        '
+        'advanceamount
+        '
+        Me.advanceamount.DataPropertyName = "advanceamount"
+        Me.advanceamount.HeaderText = "એડવાન્સ રકમ​"
+        Me.advanceamount.Name = "advanceamount"
+        Me.advanceamount.ReadOnly = True
         '
         'totalpaidamount
         '
@@ -255,6 +264,13 @@ Partial Class Loan
         Me.nextemidate.HeaderText = "આગામી હપ્તાની તરીખ​"
         Me.nextemidate.Name = "nextemidate"
         Me.nextemidate.ReadOnly = True
+        '
+        'interestrate
+        '
+        Me.interestrate.DataPropertyName = "interestrate"
+        Me.interestrate.HeaderText = "વ્યાજ"
+        Me.interestrate.Name = "interestrate"
+        Me.interestrate.ReadOnly = True
         '
         'Loan
         '
@@ -292,15 +308,17 @@ Partial Class Loan
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents loanid As DataGridViewTextBoxColumn
     Friend WithEvents loannumber As DataGridViewTextBoxColumn
-    Friend WithEvents loandate As DataGridViewTextBoxColumn
     Friend WithEvents customer As DataGridViewTextBoxColumn
     Friend WithEvents mobile As DataGridViewTextBoxColumn
+    Friend WithEvents loandate As DataGridViewTextBoxColumn
+    Friend WithEvents advancedate As DataGridViewTextBoxColumn
     Friend WithEvents amount As DataGridViewTextBoxColumn
-    Friend WithEvents advanceamount As DataGridViewTextBoxColumn
-    Friend WithEvents interestrate As DataGridViewTextBoxColumn
     Friend WithEvents interestamount As DataGridViewTextBoxColumn
+    Friend WithEvents finecharge As DataGridViewTextBoxColumn
     Friend WithEvents totalamount As DataGridViewTextBoxColumn
+    Friend WithEvents advanceamount As DataGridViewTextBoxColumn
     Friend WithEvents totalpaidamount As DataGridViewTextBoxColumn
     Friend WithEvents totalremainingamount As DataGridViewTextBoxColumn
     Friend WithEvents nextemidate As DataGridViewTextBoxColumn
+    Friend WithEvents interestrate As DataGridViewTextBoxColumn
 End Class

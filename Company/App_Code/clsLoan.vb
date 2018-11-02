@@ -11,7 +11,7 @@
         intMaxLoanId = Val(ExecuteScalar(strSqlCommand, "InsertLoan"))
         intMaxLoanId = intMaxLoanId + 1
         strLoanNumber = strType & intMaxLoanId
-        strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi,remainingamount,totalpaidamount) VALUES ('" & strType & "','" & strDuration & "','" & dtLoanDate & "','" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & "," & dblTotalAmount & ",0)"
+        strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi,remainingamount,totalpaidamount) VALUES ('" & strType & "','" & strDuration & "','" & dtLoanDate & "','" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & "," & dblLoanAmount + dblInterestAmount + dblFineCharge & ",0)"
 
         Dim intLoanId As Integer
         intLoanId = ExecuteNonQuery(strSqlCommand, "", "Y")
@@ -27,7 +27,7 @@
     End Sub
 
     Public Function InsertLoanTable(ByVal intLoanId As Integer, ByVal dtDate As DateTime, ByVal dblInterestAmount As Double, Optional ByVal dblPaidAmount As Double = 0) As Integer
-        strSqlCommand = "INSERT INTO loantable(loanid,loandate,interestamount,paidamount) VALUES(" & intLoanId & ",'" & dtDate & "'," & dblInterestAmount & ",0)"
+        strSqlCommand = "INSERT INTO loantable(loanid,loandate,interestamount,paidamount) VALUES(" & intLoanId & ",'" & dtDate & "'," & dblInterestAmount & "," & dblPaidAmount & ")"
         Dim intLoanTableId As Integer
 
         intLoanTableId = ExecuteNonQuery(strSqlCommand, "", "Y")
@@ -57,7 +57,7 @@
         ExecuteNonQuery(strSqlCommand, "", "N")
     End Sub
     Public Function GetLoanList(Optional ByVal intCustomerId As Integer = 0) As DataSet
-        strSqlCommand = "select l.loanid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month(EMI)' WHEN 'T' THEN 'Month' END type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile,isnull(totalpaidamount,0)totalpaidamount,ISNULL(remainingamount,0)remainingamount,l.emi,ISNULL((SELECT CONVERT(varchar(20),MIN(loandate),103) FROM loantable ln WHERE ln.loanid = l.loanid and ISNULL(ln.paidamount,0) = 0),'N/A')  nextemidate from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid "
+        strSqlCommand = "select l.loanid,CASE type WHEN 'D' THEN 'Day' WHEN 'M' THEN 'Month(EMI)' WHEN 'T' THEN 'Month' END type,duration,convert(varchar,loandate,103)loandate,enddate,loannumber,convert(varchar,advancedate,103)advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,e.name employee,c.name customer,c.mobile1 mobile,isnull(totalpaidamount,0)totalpaidamount,ISNULL(remainingamount,0)remainingamount,l.emi,ISNULL((SELECT CONVERT(varchar(20),MIN(loandate),103) FROM loantable ln WHERE ln.loanid = l.loanid and ISNULL(ln.paidamount,0) = 0),'N/A')  nextemidate from loan l left join employee e on e.employeeid = l.employeeid left join customer c on c.customerid = l.customerid "
 
         If intCustomerId > 0 Then
             strSqlCommand &= " WHERE l.customerid = " & intCustomerId
@@ -82,6 +82,9 @@
     End Function
     Public Sub DeleteLoan(ByVal intLoanId As Integer)
         strSqlCommand = "DELETE FROM loan where loanid = " & intLoanId
+        ExecuteNonQuery(strSqlCommand, "", "N")
+
+        strSqlCommand = "DELETE FROM loantable where loanid = " & intLoanId
         ExecuteNonQuery(strSqlCommand, "", "N")
     End Sub
 

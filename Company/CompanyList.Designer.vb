@@ -51,6 +51,8 @@ Partial Class CompanyList
         Me.owenername = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.formno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.startdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.enddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Command = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +67,7 @@ Partial Class CompanyList
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.Window
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.companyid, Me.name, Me.address, Me.owenername, Me.mobile, Me.formno, Me.Command})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.companyid, Me.name, Me.address, Me.owenername, Me.mobile, Me.formno, Me.startdate, Me.enddate, Me.Command})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 61)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -263,6 +265,20 @@ Partial Class CompanyList
         Me.formno.Name = "formno"
         Me.formno.ReadOnly = True
         '
+        'startdate
+        '
+        Me.startdate.DataPropertyName = "startdate"
+        Me.startdate.HeaderText = "એકાઉંટ વર્ષ તા"
+        Me.startdate.Name = "startdate"
+        Me.startdate.ReadOnly = True
+        '
+        'enddate
+        '
+        Me.enddate.DataPropertyName = "enddate"
+        Me.enddate.HeaderText = "અંતિમ તા"
+        Me.enddate.Name = "enddate"
+        Me.enddate.ReadOnly = True
+        '
         'Command
         '
         Me.Command.DataPropertyName = "Expr1"
@@ -325,5 +341,7 @@ Partial Class CompanyList
     Friend WithEvents owenername As DataGridViewTextBoxColumn
     Friend WithEvents mobile As DataGridViewTextBoxColumn
     Friend WithEvents formno As DataGridViewTextBoxColumn
+    Friend WithEvents startdate As DataGridViewTextBoxColumn
+    Friend WithEvents enddate As DataGridViewTextBoxColumn
     Friend WithEvents Command As DataGridViewButtonColumn
 End Class

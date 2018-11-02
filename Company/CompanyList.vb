@@ -14,7 +14,7 @@
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
 
-        If e.ColumnIndex = 6 Then
+        If e.ColumnIndex = 8 Then
             Me.Hide()
             Dim form2 = New Login()
             AddHandler form2.Closed, Sub(s, args) Me.Close()

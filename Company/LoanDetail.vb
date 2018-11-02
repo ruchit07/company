@@ -122,22 +122,18 @@
             intDays = Val(txtDays.Text)
             For intI As Integer = 1 To intDuration
                 Dim dtEMIDate As Date
+                dtEMIDate = DateAdd(DateInterval.Day, Val(intI - 1), dtAdvanceDate.Value).Date
+                Dim dblPaidAmount As Double = 0
+                dblPaidAmount = Val(txtAdvanceAmount.Text)
+
+                If intI = 1 Then
+                    objLoan.UpdateLoanPaidAmount(intLoanId, dblPaidAmount)
+                End If
 
                 If strType = "D" Then
-
-                    intDays = intDays - 1
-
-                    dtEMIDate = DateAdd(DateInterval.Day, Val(intI), dtLoanDate.Value).Date
-                    Dim dblPaidAmount As Double = 0
-                    If intDays > 0 Then
-                        dblPaidAmount = Val(txtEMI.Text)
-                        objLoan.UpdateLoanPaidAmount(intLoanId, dblPaidAmount)
-                    End If
-
-                    objLoan.InsertLoanTable(intLoanId, dtEMIDate, Val(txtEMI.Text), dblPaidAmount)
+                    objLoan.InsertLoanTable(intLoanId, dtEMIDate, Val(txtEMI.Text), IIf(intI <= intDays, Val(dblPaidAmount / intDays), 0))
 
                 ElseIf strType = "M" Then
-                    dtEMIDate = DateAdd(DateInterval.Month, intI, dtLoanDate.Value).Date
                     objLoan.InsertLoanTable(intLoanId, dtEMIDate, Val(txtEMI.Text))
                 End If
 
