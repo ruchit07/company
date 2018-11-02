@@ -156,4 +156,14 @@
             End If
         Next
     End Sub
+
+    Private Sub txtEmpNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtEmpNo.KeyPress
+        Dim objLoan As New clsLoan()
+        Dim dstDetail As DataSet
+        dstDetail = objLoan.GetLoadDetailByLoanNumber(txtEmpNo.Text)
+        DataGridView1.AutoGenerateColumns = False
+        DataGridView1.DataSource = dstDetail.Tables(0)
+        DataGridView1.Refresh()
+
+    End Sub
 End Class
