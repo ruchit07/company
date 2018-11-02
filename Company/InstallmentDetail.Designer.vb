@@ -56,6 +56,11 @@ Partial Class InstallmentDetail
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblTotalReceiving = New System.Windows.Forms.Label()
         Me.IntallMentMaster = New System.Windows.Forms.GroupBox()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.emino = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.installmentdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtLoanEndDate = New System.Windows.Forms.DateTimePicker()
         Me.txtLoanDate = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -73,8 +78,10 @@ Partial Class InstallmentDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lblLoanId = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.IntallMentMaster.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -158,7 +165,7 @@ Partial Class InstallmentDetail
         'lblReceivedEmi
         '
         Me.lblReceivedEmi.AutoSize = True
-        Me.lblReceivedEmi.Location = New System.Drawing.Point(335, 255)
+        Me.lblReceivedEmi.Location = New System.Drawing.Point(283, 255)
         Me.lblReceivedEmi.Name = "lblReceivedEmi"
         Me.lblReceivedEmi.Size = New System.Drawing.Size(57, 13)
         Me.lblReceivedEmi.TabIndex = 12
@@ -167,7 +174,7 @@ Partial Class InstallmentDetail
         'txtReceivedEmi
         '
         Me.txtReceivedEmi.Enabled = False
-        Me.txtReceivedEmi.Location = New System.Drawing.Point(418, 255)
+        Me.txtReceivedEmi.Location = New System.Drawing.Point(346, 252)
         Me.txtReceivedEmi.Name = "txtReceivedEmi"
         Me.txtReceivedEmi.Size = New System.Drawing.Size(100, 20)
         Me.txtReceivedEmi.TabIndex = 13
@@ -192,7 +199,7 @@ Partial Class InstallmentDetail
         'lblPendingEmi
         '
         Me.lblPendingEmi.AutoSize = True
-        Me.lblPendingEmi.Location = New System.Drawing.Point(335, 296)
+        Me.lblPendingEmi.Location = New System.Drawing.Point(283, 296)
         Me.lblPendingEmi.Name = "lblPendingEmi"
         Me.lblPendingEmi.Size = New System.Drawing.Size(52, 13)
         Me.lblPendingEmi.TabIndex = 16
@@ -201,7 +208,7 @@ Partial Class InstallmentDetail
         'txtPendingEmi
         '
         Me.txtPendingEmi.Enabled = False
-        Me.txtPendingEmi.Location = New System.Drawing.Point(418, 296)
+        Me.txtPendingEmi.Location = New System.Drawing.Point(346, 293)
         Me.txtPendingEmi.Name = "txtPendingEmi"
         Me.txtPendingEmi.Size = New System.Drawing.Size(100, 20)
         Me.txtPendingEmi.TabIndex = 17
@@ -297,10 +304,10 @@ Partial Class InstallmentDetail
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.customername, Me.loannumber, Me.mobile, Me.selectcustomer})
-        Me.DataGridView1.Location = New System.Drawing.Point(418, 70)
+        Me.DataGridView1.Location = New System.Drawing.Point(543, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(452, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(478, 150)
         Me.DataGridView1.TabIndex = 29
         '
         'loanid
@@ -359,6 +366,8 @@ Partial Class InstallmentDetail
         '
         'IntallMentMaster
         '
+        Me.IntallMentMaster.Controls.Add(Me.lblLoanId)
+        Me.IntallMentMaster.Controls.Add(Me.DataGridView2)
         Me.IntallMentMaster.Controls.Add(Me.btnCancel)
         Me.IntallMentMaster.Controls.Add(Me.lblTotalReceiving)
         Me.IntallMentMaster.Controls.Add(Me.btnReset)
@@ -393,10 +402,51 @@ Partial Class InstallmentDetail
         Me.IntallMentMaster.Controls.Add(Me.txtReceivedEmi)
         Me.IntallMentMaster.Location = New System.Drawing.Point(12, 44)
         Me.IntallMentMaster.Name = "IntallMentMaster"
-        Me.IntallMentMaster.Size = New System.Drawing.Size(945, 556)
+        Me.IntallMentMaster.Size = New System.Drawing.Size(1180, 556)
         Me.IntallMentMaster.TabIndex = 32
         Me.IntallMentMaster.TabStop = False
         Me.IntallMentMaster.Text = "ઇન્સ્ટોલમેન્ટ માસ્ટર​"
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.AllowUserToAddRows = False
+        Me.DataGridView2.AllowUserToDeleteRows = False
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.emino, Me.installmentdate, Me.amount, Me.remainingamount})
+        Me.DataGridView2.Location = New System.Drawing.Point(543, 205)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.ReadOnly = True
+        Me.DataGridView2.Size = New System.Drawing.Size(489, 210)
+        Me.DataGridView2.TabIndex = 32
+        Me.DataGridView2.Visible = False
+        '
+        'emino
+        '
+        Me.emino.DataPropertyName = "emino"
+        Me.emino.HeaderText = "હપ્તા નં"
+        Me.emino.Name = "emino"
+        Me.emino.ReadOnly = True
+        '
+        'installmentdate
+        '
+        Me.installmentdate.DataPropertyName = "installmentdate"
+        Me.installmentdate.HeaderText = "હપ્તાની તારીખ​"
+        Me.installmentdate.Name = "installmentdate"
+        Me.installmentdate.ReadOnly = True
+        '
+        'amount
+        '
+        Me.amount.DataPropertyName = "receivedamount"
+        Me.amount.HeaderText = "રકમ​"
+        Me.amount.Name = "amount"
+        Me.amount.ReadOnly = True
+        '
+        'remainingamount
+        '
+        Me.remainingamount.DataPropertyName = "remainingamount"
+        Me.remainingamount.HeaderText = "બાકી રકમ​"
+        Me.remainingamount.Name = "remainingamount"
+        Me.remainingamount.ReadOnly = True
         '
         'txtLoanEndDate
         '
@@ -518,6 +568,15 @@ Partial Class InstallmentDetail
         Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
+        'lblLoanId
+        '
+        Me.lblLoanId.AutoSize = True
+        Me.lblLoanId.Location = New System.Drawing.Point(609, 464)
+        Me.lblLoanId.Name = "lblLoanId"
+        Me.lblLoanId.Size = New System.Drawing.Size(0, 13)
+        Me.lblLoanId.TabIndex = 33
+        Me.lblLoanId.Visible = False
+        '
         'InstallmentDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -530,6 +589,7 @@ Partial Class InstallmentDetail
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.IntallMentMaster.ResumeLayout(False)
         Me.IntallMentMaster.PerformLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -588,4 +648,10 @@ Partial Class InstallmentDetail
     Friend WithEvents loannumber As DataGridViewTextBoxColumn
     Friend WithEvents mobile As DataGridViewTextBoxColumn
     Friend WithEvents selectcustomer As DataGridViewButtonColumn
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents emino As DataGridViewTextBoxColumn
+    Friend WithEvents installmentdate As DataGridViewTextBoxColumn
+    Friend WithEvents amount As DataGridViewTextBoxColumn
+    Friend WithEvents remainingamount As DataGridViewTextBoxColumn
+    Friend WithEvents lblLoanId As Label
 End Class

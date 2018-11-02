@@ -39,7 +39,7 @@
         ExecuteNonQuery(strSqlCommand, "", "N")
     End Sub
     Public Function GetLoanDetail(ByVal intLoanId As Integer) As DataSet
-        strSqlCommand = "SELECT loanid,type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,ISNULL(remainingamount,0)remainingamount,isnull(totalpaidamount,0)totalpaidamount FROM loan WHERE loanid = " & intLoanId
+        strSqlCommand = "SELECT loanid,type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi,ISNULL(remainingamount,0)remainingamount,isnull(totalpaidamount,0)totalpaidamount FROM loan WHERE loanid = " & intLoanId
 
         Dim dstData As DataSet
         dstData = FillDataSet(strSqlCommand)
@@ -117,6 +117,27 @@
 
         intPaidEMI = Val(ExecuteScalar(strSqlCommand, ""))
         Return intPaidEMI
+
+    End Function
+
+    Public Sub InsertInstallment(ByVal intLoanId As Integer, ByVal installmentDate As DateTime, ByVal dblLoanAmount As Double, ByVal dblRemainingAmount As Double, ByVal dblPaidAmount As Double, ByVal dblEMI As Double, ByVal dblPenlty As Double)
+        Dim intEMINo As Integer
+        strSqlCommand = "SELECT ISNULL(MAX(emino),0) FROM installment WHERE loanid = " & intLoanId
+        intEMINo = Val(ExecuteScalar(strSqlCommand, ""))
+
+        strSqlCommand = "INSERT INTO installment(emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty) VALUES(" & intEMINo + 1 & "," & intLoanId & ",'" & installmentDate & "'," & dblLoanAmount & "," & dblRemainingAmount & "," & dblRemainingAmount & "," & dblEMI & "," & dblPenlty & ")"
+
+        Dim intInstallmentId As Integer
+        intInstallmentId = ExecuteNonQuery(strSqlCommand, "", "Y")
+
+    End Sub
+
+    Public Function GetInstallment(ByVal intLoanId As Integer) As DataSet
+        strSqlCommand = "SELECT emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty FROM installment WHERE loanid =" & intLoanId
+
+        Dim dstDetail As DataSet
+        dstDetail = FillDataSet(strSqlCommand)
+        Return dstDetail
 
     End Function
 End Class

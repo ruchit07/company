@@ -101,6 +101,19 @@
         txtReceivedEmi.Text = Val(objLoan.GetPaidEMIByLoanId(intLoanId))
         txtPendingEmi.Text = Val(objLoan.GetPendingEMI(intLoanId))
         lblTotalReceiving.Text = txtRecevingEmi.Text
+
+        Dim dstInstallmentDetail As DataSet
+        dstInstallmentDetail = objLoan.GetInstallment(intLoanId)
+        DataGridView2.AutoGenerateColumns = False
+        If dstInstallmentDetail.Tables(0).Rows.Count = 0 Then
+            DataGridView2.Visible = False
+        Else
+            DataGridView2.Visible = True
+            DataGridView2.DataSource = dstInstallmentDetail.Tables(0)
+
+        End If
+
+        lblLoanId.Text = intLoanId
     End Sub
 
     Private Sub txtPenalty_TextChanged(sender As Object, e As EventArgs) Handles txtPenalty.TextChanged
@@ -108,7 +121,7 @@
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-
+        ClearControls(Me)
     End Sub
 
     Private Sub ClearControls(ByVal frm As Form)
@@ -165,5 +178,26 @@
         DataGridView1.DataSource = dstDetail.Tables(0)
         DataGridView1.Refresh()
 
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim objLoan As New clsLoan
+        Dim dstLoan As DataSet
+        dstLoan = objLoan.GetLoanDetail(Val(lblLoanId.Text))
+
+        If dstLoan.Tables(0).Rows.Count > 0 Then
+            objLoan.InsertInstallment(Val(lblLoanId.Text), dtDate.Value, Val(txtLoanAmount.Text), Val(txtRemainingAmount.Text), Val(txtRecevingEmi.Text), dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
+        End If
+
+        Dim dstInstallmentDetail As DataSet
+        dstInstallmentDetail = objLoan.GetInstallment(Val(lblLoanId.Text))
+        DataGridView2.AutoGenerateColumns = False
+        If dstInstallmentDetail.Tables(0).Rows.Count = 0 Then
+            DataGridView2.Visible = False
+        Else
+            DataGridView2.Visible = True
+            DataGridView2.DataSource = dstInstallmentDetail.Tables(0)
+
+        End If
     End Sub
 End Class
