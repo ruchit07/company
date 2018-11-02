@@ -81,6 +81,7 @@ Partial Class CompanyDetail
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JilloBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,7 +196,7 @@ Partial Class CompanyDetail
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem, Me.InstallmentToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -203,13 +204,13 @@ Partial Class CompanyDetail
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'lblCompanyName
@@ -569,6 +570,12 @@ Partial Class CompanyDetail
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ન​વી કંપની બનાવ​વી"
         '
+        'InstallmentToolStripMenuItem
+        '
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
+        '
         'CompanyDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -650,4 +657,5 @@ Partial Class CompanyDetail
     Friend WithEvents btnReset As Button
     Friend WithEvents btnCancel As Button
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
 End Class

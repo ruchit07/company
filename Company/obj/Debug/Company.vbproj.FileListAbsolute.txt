@@ -103,3 +103,4 @@ F:\Work\Project\Company_Windows\src\trunk\Company\obj\Debug\Company.exe
 F:\Work\Project\Company_Windows\src\trunk\Company\obj\Debug\Company.xml
 F:\Work\Project\Company_Windows\src\trunk\Company\obj\Debug\Company.pdb
 F:\Work\Project\Company_Windows\src\trunk\Company\obj\Debug\Company.UpdateCompanyDetail.resources
+F:\Work\Project\Company_Windows\src\trunk\Company\obj\Debug\Company.InstallmentDetail.resources

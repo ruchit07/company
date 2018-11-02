@@ -24,6 +24,15 @@ Partial Class CompanyList
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.companyid = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.owenername = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.formno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.startdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.enddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Command = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CompanyDataSet = New Company.companyDataSet()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -45,15 +54,7 @@ Partial Class CompanyList
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.companyid = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.address = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.owenername = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.formno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.startdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.enddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Command = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +74,72 @@ Partial Class CompanyList
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(1017, 377)
         Me.DataGridView1.TabIndex = 0
+        '
+        'companyid
+        '
+        Me.companyid.DataPropertyName = "companyid"
+        Me.companyid.HeaderText = ""
+        Me.companyid.Name = "companyid"
+        Me.companyid.ReadOnly = True
+        Me.companyid.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.companyid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.companyid.Visible = False
+        '
+        'name
+        '
+        Me.name.DataPropertyName = "name"
+        Me.name.HeaderText = "કંપનીનુ નામ"
+        Me.name.Name = "name"
+        Me.name.ReadOnly = True
+        '
+        'address
+        '
+        Me.address.DataPropertyName = "address"
+        Me.address.HeaderText = "સરનામુ"
+        Me.address.Name = "address"
+        Me.address.ReadOnly = True
+        '
+        'owenername
+        '
+        Me.owenername.DataPropertyName = "ownername"
+        Me.owenername.HeaderText = "માલીકનુ નામ"
+        Me.owenername.Name = "owenername"
+        Me.owenername.ReadOnly = True
+        '
+        'mobile
+        '
+        Me.mobile.DataPropertyName = "mobile"
+        Me.mobile.HeaderText = "મોબાઇલ નંબર"
+        Me.mobile.Name = "mobile"
+        Me.mobile.ReadOnly = True
+        '
+        'formno
+        '
+        Me.formno.DataPropertyName = "formno"
+        Me.formno.HeaderText = "ફોમ નંબર"
+        Me.formno.Name = "formno"
+        Me.formno.ReadOnly = True
+        '
+        'startdate
+        '
+        Me.startdate.DataPropertyName = "startdate"
+        Me.startdate.HeaderText = "એકાઉંટ વર્ષ તા"
+        Me.startdate.Name = "startdate"
+        Me.startdate.ReadOnly = True
+        '
+        'enddate
+        '
+        Me.enddate.DataPropertyName = "enddate"
+        Me.enddate.HeaderText = "અંતિમ તા"
+        Me.enddate.Name = "enddate"
+        Me.enddate.ReadOnly = True
+        '
+        'Command
+        '
+        Me.Command.DataPropertyName = "Expr1"
+        Me.Command.HeaderText = "સીલેકટ"
+        Me.Command.Name = "Command"
+        Me.Command.ReadOnly = True
         '
         'CompanyBindingSource
         '
@@ -155,7 +222,7 @@ Partial Class CompanyList
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem, Me.InstallmentToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -163,13 +230,13 @@ Partial Class CompanyList
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'CompanyTableAdapter
@@ -220,71 +287,11 @@ Partial Class CompanyList
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Search"
         '
-        'companyid
+        'InstallmentToolStripMenuItem
         '
-        Me.companyid.DataPropertyName = "companyid"
-        Me.companyid.HeaderText = ""
-        Me.companyid.Name = "companyid"
-        Me.companyid.ReadOnly = True
-        Me.companyid.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.companyid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.companyid.Visible = False
-        '
-        'name
-        '
-        Me.name.DataPropertyName = "name"
-        Me.name.HeaderText = "કંપનીનુ નામ"
-        Me.name.Name = "name"
-        Me.name.ReadOnly = True
-        '
-        'address
-        '
-        Me.address.DataPropertyName = "address"
-        Me.address.HeaderText = "સરનામુ"
-        Me.address.Name = "address"
-        Me.address.ReadOnly = True
-        '
-        'owenername
-        '
-        Me.owenername.DataPropertyName = "ownername"
-        Me.owenername.HeaderText = "માલીકનુ નામ"
-        Me.owenername.Name = "owenername"
-        Me.owenername.ReadOnly = True
-        '
-        'mobile
-        '
-        Me.mobile.DataPropertyName = "mobile"
-        Me.mobile.HeaderText = "મોબાઇલ નંબર"
-        Me.mobile.Name = "mobile"
-        Me.mobile.ReadOnly = True
-        '
-        'formno
-        '
-        Me.formno.DataPropertyName = "formno"
-        Me.formno.HeaderText = "ફોમ નંબર"
-        Me.formno.Name = "formno"
-        Me.formno.ReadOnly = True
-        '
-        'startdate
-        '
-        Me.startdate.DataPropertyName = "startdate"
-        Me.startdate.HeaderText = "એકાઉંટ વર્ષ તા"
-        Me.startdate.Name = "startdate"
-        Me.startdate.ReadOnly = True
-        '
-        'enddate
-        '
-        Me.enddate.DataPropertyName = "enddate"
-        Me.enddate.HeaderText = "અંતિમ તા"
-        Me.enddate.Name = "enddate"
-        Me.enddate.ReadOnly = True
-        '
-        'Command
-        '
-        Me.Command.DataPropertyName = "Expr1"
-        Me.Command.HeaderText = "સીલેકટ"
-        Me.Command.Name = "Command"
-        Me.Command.ReadOnly = True
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'CompanyList
         '
@@ -344,4 +351,5 @@ Partial Class CompanyList
     Friend WithEvents startdate As DataGridViewTextBoxColumn
     Friend WithEvents enddate As DataGridViewTextBoxColumn
     Friend WithEvents Command As DataGridViewButtonColumn
+    Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
 End Class

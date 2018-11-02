@@ -76,8 +76,9 @@ Partial Class CustomerDetail
         Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.JilloDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TalukoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -525,10 +526,16 @@ Partial Class CustomerDetail
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem, Me.InstallmentToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
+        '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
@@ -536,11 +543,11 @@ Partial Class CustomerDetail
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
-        'LoanToolStripMenuItem1
+        'InstallmentToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.LoanToolStripMenuItem1.Text = "Loan"
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'CustomerDetail
         '
@@ -623,4 +630,5 @@ Partial Class CustomerDetail
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
 End Class

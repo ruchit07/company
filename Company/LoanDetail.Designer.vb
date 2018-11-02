@@ -95,6 +95,7 @@ Partial Class LoanDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomerTableAdapter = New Company.customerDataSetTableAdapters.customerTableAdapter()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -644,13 +645,13 @@ Partial Class LoanDetail
         'CompanyListToolStripMenuItem
         '
         Me.CompanyListToolStripMenuItem.Name = "CompanyListToolStripMenuItem"
-        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CompanyListToolStripMenuItem.Text = "Company List"
         '
         'NewCompanyToolStripMenuItem
         '
         Me.NewCompanyToolStripMenuItem.Name = "NewCompanyToolStripMenuItem"
-        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NewCompanyToolStripMenuItem.Text = "New Company"
         '
         'CustomerToolStripMenuItem
@@ -687,7 +688,7 @@ Partial Class LoanDetail
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem, Me.InstallmentToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -695,18 +696,24 @@ Partial Class LoanDetail
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'CustomerTableAdapter
         '
         Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
+        'InstallmentToolStripMenuItem
+        '
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'LoanDetail
         '
@@ -807,4 +814,5 @@ Partial Class LoanDetail
     Friend WithEvents Mobile1DataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents selectcustomer As DataGridViewButtonColumn
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
 End Class

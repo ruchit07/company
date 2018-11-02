@@ -68,8 +68,9 @@ Partial Class UpdateLoan
         Me.EmployeeListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EmployeeDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -426,13 +427,13 @@ Partial Class UpdateLoan
         'CompanyListToolStripMenuItem
         '
         Me.CompanyListToolStripMenuItem.Name = "CompanyListToolStripMenuItem"
-        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CompanyListToolStripMenuItem.Text = "Company List"
         '
         'NewCompanyToolStripMenuItem
         '
         Me.NewCompanyToolStripMenuItem.Name = "NewCompanyToolStripMenuItem"
-        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
+        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NewCompanyToolStripMenuItem.Text = "New Company"
         '
         'CustomerToolStripMenuItem
@@ -469,10 +470,16 @@ Partial Class UpdateLoan
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem, Me.InstallmentToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
+        '
+        'LoanToolStripMenuItem1
+        '
+        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
@@ -480,11 +487,11 @@ Partial Class UpdateLoan
         Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
-        'LoanToolStripMenuItem1
+        'InstallmentToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.LoanToolStripMenuItem1.Text = "Loan"
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'UpdateLoan
         '
@@ -553,4 +560,5 @@ Partial Class UpdateLoan
     Friend WithEvents LoanToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
 End Class

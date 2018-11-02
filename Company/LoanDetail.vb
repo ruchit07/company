@@ -201,6 +201,13 @@
         form2.Show()
     End Sub
 
+    Private Sub InstallmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InstallmentToolStripMenuItem.Click
+        Me.Hide()
+        Dim form2 = New InstallmentDetail()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
+
     Private Sub txtDuration_TextChanged(sender As Object, e As EventArgs) Handles txtDuration.TextChanged
         If Val(txtDuration.Text) > 0 Then
             If ddlType.SelectedIndex = 0 Then

@@ -89,4 +89,11 @@
         DataGridView1.AutoGenerateColumns = False
         DataGridView1.DataSource = dstLoan.Tables(0)
     End Sub
+
+    Private Sub InstallmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InstallmentToolStripMenuItem.Click
+        Me.Hide()
+        Dim form2 = New InstallmentDetail()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
 End Class

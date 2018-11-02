@@ -96,4 +96,11 @@
         DataGridView1.DataSource = dstCompany.Tables(0)
         DataGridView1.Refresh()
     End Sub
+
+    Private Sub InstallmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InstallmentToolStripMenuItem.Click
+        Me.Hide()
+        Dim form2 = New InstallmentDetail()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
 End Class

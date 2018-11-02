@@ -54,6 +54,7 @@ Partial Class CustomerList
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ddlSearch = New System.Windows.Forms.ComboBox()
         Me.btnRefresh = New System.Windows.Forms.Button()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -228,7 +229,7 @@ Partial Class CustomerList
         '
         'LoanToolStripMenuItem
         '
-        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem})
+        Me.LoanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoanToolStripMenuItem1, Me.RecoveryListToolStripMenuItem, Me.InstallmentToolStripMenuItem})
         Me.LoanToolStripMenuItem.Name = "LoanToolStripMenuItem"
         Me.LoanToolStripMenuItem.Size = New System.Drawing.Size(45, 20)
         Me.LoanToolStripMenuItem.Text = "Loan"
@@ -236,13 +237,13 @@ Partial Class CustomerList
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'lblCompanyId
@@ -299,6 +300,12 @@ Partial Class CustomerList
         Me.btnRefresh.Text = "Refresh"
         Me.btnRefresh.UseVisualStyleBackColor = True
         '
+        'InstallmentToolStripMenuItem
+        '
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
+        '
         'CustomerList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -314,7 +321,7 @@ Partial Class CustomerList
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.lblCompanyId)
-        ' Me.name = "CustomerList"
+        'Me.name = "CustomerList"
         Me.Text = "CustomerList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -355,4 +362,5 @@ Partial Class CustomerList
     Friend WithEvents Label2 As Label
     Friend WithEvents ddlSearch As ComboBox
     Friend WithEvents btnRefresh As Button
+    Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
 End Class
