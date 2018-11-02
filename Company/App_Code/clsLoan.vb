@@ -39,7 +39,7 @@
         ExecuteNonQuery(strSqlCommand, "", "N")
     End Sub
     Public Function GetLoanDetail(ByVal intLoanId As Integer) As DataSet
-        strSqlCommand = "SELECT type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid FROM loan WHERE loanid = " & intLoanId
+        strSqlCommand = "SELECT loanid,type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,ISNULL(remainingamount,0)remainingamount,isnull(totalpaidamount,0)totalpaidamount FROM loan WHERE loanid = " & intLoanId
 
         Dim dstData As DataSet
         dstData = FillDataSet(strSqlCommand)
@@ -95,4 +95,28 @@
         Return dstData
     End Function
 
+    Public Function GetLoadDetailByLoanNumber(ByVal strSearchText As String) As DataSet
+        strSqlCommand = "SELECT l.loanid,type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,c.customerid, c.name customername, c.mobile1 mobile FROM loan l inner join customer c on l.customerid = c.customerid WHERE loannumber like N'%" & EscapeString(strSearchText) & "%' OR c.mobile1 like N'%" & EscapeString(strSearchText) & "%' or c.regno like '%" & EscapeString(strSearchText) & "%'"
+
+        Dim dstData As DataSet
+        dstData = FillDataSet(strSqlCommand)
+        Return dstData
+    End Function
+
+    Public Function GetPaidEMIByLoanId(ByVal intLoanId As Integer) As Integer
+        Dim intPaidEMI As Integer
+        strSqlCommand = "SELECT ISNULL(COUNT(*),0) FROM loantable WHERE loanid = " & intLoanId & " AND ISNULL(paidamount,0) > 0"
+
+        intPaidEMI = Val(ExecuteScalar(strSqlCommand, ""))
+        Return intPaidEMI
+
+    End Function
+    Public Function GetPendingEMI(ByVal intLoanId As Integer) As Integer
+        Dim intPaidEMI As Integer
+        strSqlCommand = "SELECT ISNULL(COUNT(*),0) FROM loantable WHERE loanid = " & intLoanId & " AND ISNULL(paidamount,0) = 0"
+
+        intPaidEMI = Val(ExecuteScalar(strSqlCommand, ""))
+        Return intPaidEMI
+
+    End Function
 End Class
