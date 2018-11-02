@@ -100,5 +100,10 @@
 
         txtReceivedEmi.Text = Val(objLoan.GetPaidEMIByLoanId(intLoanId))
         txtPendingEmi.Text = Val(objLoan.GetPendingEMI(intLoanId))
+        lblTotalReceiving.Text = txtRecevingEmi.Text
+    End Sub
+
+    Private Sub txtPenalty_TextChanged(sender As Object, e As EventArgs) Handles txtPenalty.TextChanged
+        lblTotalReceiving.Text = Val(txtRecevingEmi.Text) + Val(txtPendingEmi.Text)
     End Sub
 End Class

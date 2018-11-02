@@ -48,9 +48,16 @@ Partial Class InstallmentDetail
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.dtDate = New System.Windows.Forms.DateTimePicker()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.loanid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.customername = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.loannumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.selectcustomer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblTotalReceiving = New System.Windows.Forms.Label()
         Me.IntallMentMaster = New System.Windows.Forms.GroupBox()
+        Me.txtLoanEndDate = New System.Windows.Forms.DateTimePicker()
+        Me.txtLoanDate = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCustomerName = New System.Windows.Forms.TextBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -66,13 +73,6 @@ Partial Class InstallmentDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txtLoanDate = New System.Windows.Forms.DateTimePicker()
-        Me.txtLoanEndDate = New System.Windows.Forms.DateTimePicker()
-        Me.loanid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.customername = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.loannumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.selectcustomer = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.IntallMentMaster.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -242,7 +242,6 @@ Partial Class InstallmentDetail
         '
         'txtPenalty
         '
-        Me.txtPenalty.Enabled = False
         Me.txtPenalty.Location = New System.Drawing.Point(338, 399)
         Me.txtPenalty.Name = "txtPenalty"
         Me.txtPenalty.Size = New System.Drawing.Size(100, 20)
@@ -304,6 +303,43 @@ Partial Class InstallmentDetail
         Me.DataGridView1.Size = New System.Drawing.Size(452, 150)
         Me.DataGridView1.TabIndex = 29
         '
+        'loanid
+        '
+        Me.loanid.DataPropertyName = "loanid"
+        Me.loanid.HeaderText = "loanid"
+        Me.loanid.Name = "loanid"
+        Me.loanid.ReadOnly = True
+        Me.loanid.Visible = False
+        '
+        'customername
+        '
+        Me.customername.DataPropertyName = "customername"
+        Me.customername.HeaderText = "ગ્રાહકનું નામ​"
+        Me.customername.Name = "customername"
+        Me.customername.ReadOnly = True
+        '
+        'loannumber
+        '
+        Me.loannumber.DataPropertyName = "loannumber"
+        Me.loannumber.HeaderText = "લોન નંબર​"
+        Me.loannumber.Name = "loannumber"
+        Me.loannumber.ReadOnly = True
+        '
+        'mobile
+        '
+        Me.mobile.DataPropertyName = "mobile"
+        Me.mobile.HeaderText = "મોબાઈલ​"
+        Me.mobile.Name = "mobile"
+        Me.mobile.ReadOnly = True
+        '
+        'selectcustomer
+        '
+        Me.selectcustomer.HeaderText = "Select"
+        Me.selectcustomer.Name = "selectcustomer"
+        Me.selectcustomer.ReadOnly = True
+        Me.selectcustomer.Text = "Select"
+        Me.selectcustomer.UseColumnTextForButtonValue = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -318,9 +354,8 @@ Partial Class InstallmentDetail
         Me.lblTotalReceiving.AutoSize = True
         Me.lblTotalReceiving.Location = New System.Drawing.Point(497, 402)
         Me.lblTotalReceiving.Name = "lblTotalReceiving"
-        Me.lblTotalReceiving.Size = New System.Drawing.Size(39, 13)
+        Me.lblTotalReceiving.Size = New System.Drawing.Size(0, 13)
         Me.lblTotalReceiving.TabIndex = 31
-        Me.lblTotalReceiving.Text = "Label2"
         '
         'IntallMentMaster
         '
@@ -362,6 +397,24 @@ Partial Class InstallmentDetail
         Me.IntallMentMaster.TabIndex = 32
         Me.IntallMentMaster.TabStop = False
         Me.IntallMentMaster.Text = "ઇન્સ્ટોલમેન્ટ માસ્ટર​"
+        '
+        'txtLoanEndDate
+        '
+        Me.txtLoanEndDate.Enabled = False
+        Me.txtLoanEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txtLoanEndDate.Location = New System.Drawing.Point(132, 215)
+        Me.txtLoanEndDate.Name = "txtLoanEndDate"
+        Me.txtLoanEndDate.Size = New System.Drawing.Size(92, 20)
+        Me.txtLoanEndDate.TabIndex = 28
+        '
+        'txtLoanDate
+        '
+        Me.txtLoanDate.Enabled = False
+        Me.txtLoanDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txtLoanDate.Location = New System.Drawing.Point(132, 178)
+        Me.txtLoanDate.Name = "txtLoanDate"
+        Me.txtLoanDate.Size = New System.Drawing.Size(92, 20)
+        Me.txtLoanDate.TabIndex = 28
         '
         'Label2
         '
@@ -464,60 +517,6 @@ Partial Class InstallmentDetail
         Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
         Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
-        '
-        'txtLoanDate
-        '
-        Me.txtLoanDate.Enabled = False
-        Me.txtLoanDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtLoanDate.Location = New System.Drawing.Point(132, 178)
-        Me.txtLoanDate.Name = "txtLoanDate"
-        Me.txtLoanDate.Size = New System.Drawing.Size(92, 20)
-        Me.txtLoanDate.TabIndex = 28
-        '
-        'txtLoanEndDate
-        '
-        Me.txtLoanEndDate.Enabled = False
-        Me.txtLoanEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtLoanEndDate.Location = New System.Drawing.Point(132, 215)
-        Me.txtLoanEndDate.Name = "txtLoanEndDate"
-        Me.txtLoanEndDate.Size = New System.Drawing.Size(92, 20)
-        Me.txtLoanEndDate.TabIndex = 28
-        '
-        'loanid
-        '
-        Me.loanid.DataPropertyName = "loanid"
-        Me.loanid.HeaderText = "loanid"
-        Me.loanid.Name = "loanid"
-        Me.loanid.ReadOnly = True
-        '
-        'customername
-        '
-        Me.customername.DataPropertyName = "customername"
-        Me.customername.HeaderText = "ગ્રાહકનું નામ​"
-        Me.customername.Name = "customername"
-        Me.customername.ReadOnly = True
-        '
-        'loannumber
-        '
-        Me.loannumber.DataPropertyName = "loannumber"
-        Me.loannumber.HeaderText = "લોન નંબર​"
-        Me.loannumber.Name = "loannumber"
-        Me.loannumber.ReadOnly = True
-        '
-        'mobile
-        '
-        Me.mobile.DataPropertyName = "mobile"
-        Me.mobile.HeaderText = "મોબાઈલ​"
-        Me.mobile.Name = "mobile"
-        Me.mobile.ReadOnly = True
-        '
-        'selectcustomer
-        '
-        Me.selectcustomer.HeaderText = "Select"
-        Me.selectcustomer.Name = "selectcustomer"
-        Me.selectcustomer.ReadOnly = True
-        Me.selectcustomer.Text = "Select"
-        Me.selectcustomer.UseColumnTextForButtonValue = True
         '
         'InstallmentDetail
         '
