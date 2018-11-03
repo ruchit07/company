@@ -117,6 +117,8 @@
 
         intLoanId = objLoan.InsertLoan(strType, intDuration, dtLoanDate.Value, lblFinalDate.Text, txtLoanNumber.Text, dtAdvanceDate.Value, Val(txtLoanAmount.Text), Val(txtInterestRate.Text), txtInterestAmount.Text, Val(txtFineCharge.Text), txtAdvanceAmount.Text, txtFinalAmount.Text, ddlEmployee.SelectedValue, ddlCustomer.SelectedValue, Val(txtEMI.Text))
 
+        Dim dblTotalAmountWithInt = Val(txtLoanAmount.Text)
+        Dim dblRemainingAmount = dblTotalAmountWithInt
         If strType <> "T" Then
             Dim intDays As Integer
             intDays = Val(txtDays.Text)
@@ -128,6 +130,11 @@
 
                 If intI = 1 Then
                     objLoan.UpdateLoanPaidAmount(intLoanId, dblPaidAmount)
+                End If
+
+                If intI <= intDays Then
+                    dblRemainingAmount = dblRemainingAmount - Val(txtEMI.Text)
+                    objLoan.InsertInstallment(intLoanId, dtAdvanceDate.Value, Val(txtLoanAmount.Text), dblRemainingAmount, dblPaidAmount, Val(txtEMI.Text), 0)
                 End If
 
                 If strType = "D" Then

@@ -49,6 +49,7 @@ Partial Class InstallmentDetail
         Me.dtDate = New System.Windows.Forms.DateTimePicker()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.loanid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.regno = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.customername = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.loannumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.mobile = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,6 +57,7 @@ Partial Class InstallmentDetail
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblTotalReceiving = New System.Windows.Forms.Label()
         Me.IntallMentMaster = New System.Windows.Forms.GroupBox()
+        Me.lblLoanId = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.emino = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.installmentdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -65,6 +67,8 @@ Partial Class InstallmentDetail
         Me.txtLoanDate = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCustomerName = New System.Windows.Forms.TextBox()
+        Me.txtEmi = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompanyListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -78,7 +82,10 @@ Partial Class InstallmentDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.lblLoanId = New System.Windows.Forms.Label()
+        Me.lblFileCharge = New System.Windows.Forms.Label()
+        Me.txtFileCharge = New System.Windows.Forms.TextBox()
+        Me.lblInterest = New System.Windows.Forms.Label()
+        Me.txtInterest = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.IntallMentMaster.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,7 +172,7 @@ Partial Class InstallmentDetail
         'lblReceivedEmi
         '
         Me.lblReceivedEmi.AutoSize = True
-        Me.lblReceivedEmi.Location = New System.Drawing.Point(283, 255)
+        Me.lblReceivedEmi.Location = New System.Drawing.Point(275, 293)
         Me.lblReceivedEmi.Name = "lblReceivedEmi"
         Me.lblReceivedEmi.Size = New System.Drawing.Size(57, 13)
         Me.lblReceivedEmi.TabIndex = 12
@@ -174,7 +181,7 @@ Partial Class InstallmentDetail
         'txtReceivedEmi
         '
         Me.txtReceivedEmi.Enabled = False
-        Me.txtReceivedEmi.Location = New System.Drawing.Point(346, 252)
+        Me.txtReceivedEmi.Location = New System.Drawing.Point(338, 290)
         Me.txtReceivedEmi.Name = "txtReceivedEmi"
         Me.txtReceivedEmi.Size = New System.Drawing.Size(100, 20)
         Me.txtReceivedEmi.TabIndex = 13
@@ -182,16 +189,16 @@ Partial Class InstallmentDetail
         'lblTotalAmount
         '
         Me.lblTotalAmount.AutoSize = True
-        Me.lblTotalAmount.Location = New System.Drawing.Point(25, 296)
+        Me.lblTotalAmount.Location = New System.Drawing.Point(25, 326)
         Me.lblTotalAmount.Name = "lblTotalAmount"
-        Me.lblTotalAmount.Size = New System.Drawing.Size(66, 13)
+        Me.lblTotalAmount.Size = New System.Drawing.Size(57, 13)
         Me.lblTotalAmount.TabIndex = 14
-        Me.lblTotalAmount.Text = "ભર​વાની રકમ​"
+        Me.lblTotalAmount.Text = "આપેલ​ રકમ​"
         '
         'txtTotalAmount
         '
         Me.txtTotalAmount.Enabled = False
-        Me.txtTotalAmount.Location = New System.Drawing.Point(132, 296)
+        Me.txtTotalAmount.Location = New System.Drawing.Point(132, 326)
         Me.txtTotalAmount.Name = "txtTotalAmount"
         Me.txtTotalAmount.Size = New System.Drawing.Size(100, 20)
         Me.txtTotalAmount.TabIndex = 15
@@ -199,7 +206,7 @@ Partial Class InstallmentDetail
         'lblPendingEmi
         '
         Me.lblPendingEmi.AutoSize = True
-        Me.lblPendingEmi.Location = New System.Drawing.Point(283, 296)
+        Me.lblPendingEmi.Location = New System.Drawing.Point(275, 329)
         Me.lblPendingEmi.Name = "lblPendingEmi"
         Me.lblPendingEmi.Size = New System.Drawing.Size(52, 13)
         Me.lblPendingEmi.TabIndex = 16
@@ -208,7 +215,7 @@ Partial Class InstallmentDetail
         'txtPendingEmi
         '
         Me.txtPendingEmi.Enabled = False
-        Me.txtPendingEmi.Location = New System.Drawing.Point(346, 293)
+        Me.txtPendingEmi.Location = New System.Drawing.Point(338, 326)
         Me.txtPendingEmi.Name = "txtPendingEmi"
         Me.txtPendingEmi.Size = New System.Drawing.Size(100, 20)
         Me.txtPendingEmi.TabIndex = 17
@@ -216,7 +223,7 @@ Partial Class InstallmentDetail
         'txtRemainingAmount
         '
         Me.txtRemainingAmount.Enabled = False
-        Me.txtRemainingAmount.Location = New System.Drawing.Point(132, 342)
+        Me.txtRemainingAmount.Location = New System.Drawing.Point(338, 365)
         Me.txtRemainingAmount.Name = "txtRemainingAmount"
         Me.txtRemainingAmount.Size = New System.Drawing.Size(100, 20)
         Me.txtRemainingAmount.TabIndex = 18
@@ -224,7 +231,7 @@ Partial Class InstallmentDetail
         'lblPendingAmount
         '
         Me.lblPendingAmount.AutoSize = True
-        Me.lblPendingAmount.Location = New System.Drawing.Point(25, 342)
+        Me.lblPendingAmount.Location = New System.Drawing.Point(275, 368)
         Me.lblPendingAmount.Name = "lblPendingAmount"
         Me.lblPendingAmount.Size = New System.Drawing.Size(52, 13)
         Me.lblPendingAmount.TabIndex = 19
@@ -233,7 +240,7 @@ Partial Class InstallmentDetail
         'lblReceivingEmiAmount
         '
         Me.lblReceivingEmiAmount.AutoSize = True
-        Me.lblReceivingEmiAmount.Location = New System.Drawing.Point(25, 402)
+        Me.lblReceivingEmiAmount.Location = New System.Drawing.Point(25, 366)
         Me.lblReceivingEmiAmount.Name = "lblReceivingEmiAmount"
         Me.lblReceivingEmiAmount.Size = New System.Drawing.Size(94, 13)
         Me.lblReceivingEmiAmount.TabIndex = 20
@@ -242,14 +249,14 @@ Partial Class InstallmentDetail
         'txtRecevingEmi
         '
         Me.txtRecevingEmi.Enabled = False
-        Me.txtRecevingEmi.Location = New System.Drawing.Point(132, 399)
+        Me.txtRecevingEmi.Location = New System.Drawing.Point(132, 363)
         Me.txtRecevingEmi.Name = "txtRecevingEmi"
         Me.txtRecevingEmi.Size = New System.Drawing.Size(100, 20)
         Me.txtRecevingEmi.TabIndex = 21
         '
         'txtPenalty
         '
-        Me.txtPenalty.Location = New System.Drawing.Point(338, 399)
+        Me.txtPenalty.Location = New System.Drawing.Point(338, 410)
         Me.txtPenalty.Name = "txtPenalty"
         Me.txtPenalty.Size = New System.Drawing.Size(100, 20)
         Me.txtPenalty.TabIndex = 23
@@ -257,7 +264,7 @@ Partial Class InstallmentDetail
         'lblPenalty
         '
         Me.lblPenalty.AutoSize = True
-        Me.lblPenalty.Location = New System.Drawing.Point(283, 402)
+        Me.lblPenalty.Location = New System.Drawing.Point(283, 413)
         Me.lblPenalty.Name = "lblPenalty"
         Me.lblPenalty.Size = New System.Drawing.Size(38, 13)
         Me.lblPenalty.TabIndex = 24
@@ -303,11 +310,11 @@ Partial Class InstallmentDetail
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.customername, Me.loannumber, Me.mobile, Me.selectcustomer})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.loanid, Me.regno, Me.customername, Me.loannumber, Me.mobile, Me.selectcustomer})
         Me.DataGridView1.Location = New System.Drawing.Point(543, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(478, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(631, 150)
         Me.DataGridView1.TabIndex = 29
         '
         'loanid
@@ -317,6 +324,13 @@ Partial Class InstallmentDetail
         Me.loanid.Name = "loanid"
         Me.loanid.ReadOnly = True
         Me.loanid.Visible = False
+        '
+        'regno
+        '
+        Me.regno.DataPropertyName = "regno"
+        Me.regno.HeaderText = "ગ્રાહક નંબર"
+        Me.regno.Name = "regno"
+        Me.regno.ReadOnly = True
         '
         'customername
         '
@@ -350,7 +364,7 @@ Partial Class InstallmentDetail
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(458, 402)
+        Me.Label1.Location = New System.Drawing.Point(458, 413)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(13, 13)
         Me.Label1.TabIndex = 30
@@ -359,7 +373,7 @@ Partial Class InstallmentDetail
         'lblTotalReceiving
         '
         Me.lblTotalReceiving.AutoSize = True
-        Me.lblTotalReceiving.Location = New System.Drawing.Point(497, 402)
+        Me.lblTotalReceiving.Location = New System.Drawing.Point(500, 413)
         Me.lblTotalReceiving.Name = "lblTotalReceiving"
         Me.lblTotalReceiving.Size = New System.Drawing.Size(0, 13)
         Me.lblTotalReceiving.TabIndex = 31
@@ -385,8 +399,10 @@ Partial Class InstallmentDetail
         Me.IntallMentMaster.Controls.Add(Me.txtEmpNo)
         Me.IntallMentMaster.Controls.Add(Me.txtPenalty)
         Me.IntallMentMaster.Controls.Add(Me.lblLoanType)
+        Me.IntallMentMaster.Controls.Add(Me.txtEmi)
         Me.IntallMentMaster.Controls.Add(Me.txtRecevingEmi)
         Me.IntallMentMaster.Controls.Add(Me.txtLoanType)
+        Me.IntallMentMaster.Controls.Add(Me.Label3)
         Me.IntallMentMaster.Controls.Add(Me.lblReceivingEmiAmount)
         Me.IntallMentMaster.Controls.Add(Me.lblLoanDate)
         Me.IntallMentMaster.Controls.Add(Me.lblPendingAmount)
@@ -396,6 +412,10 @@ Partial Class InstallmentDetail
         Me.IntallMentMaster.Controls.Add(Me.txtPendingEmi)
         Me.IntallMentMaster.Controls.Add(Me.txtLoanAmount)
         Me.IntallMentMaster.Controls.Add(Me.lblPendingEmi)
+        Me.IntallMentMaster.Controls.Add(Me.txtInterest)
+        Me.IntallMentMaster.Controls.Add(Me.lblInterest)
+        Me.IntallMentMaster.Controls.Add(Me.txtFileCharge)
+        Me.IntallMentMaster.Controls.Add(Me.lblFileCharge)
         Me.IntallMentMaster.Controls.Add(Me.txtTotalAmount)
         Me.IntallMentMaster.Controls.Add(Me.lblTotalAmount)
         Me.IntallMentMaster.Controls.Add(Me.lblReceivedEmi)
@@ -407,6 +427,15 @@ Partial Class InstallmentDetail
         Me.IntallMentMaster.TabStop = False
         Me.IntallMentMaster.Text = "ઇન્સ્ટોલમેન્ટ માસ્ટર​"
         '
+        'lblLoanId
+        '
+        Me.lblLoanId.AutoSize = True
+        Me.lblLoanId.Location = New System.Drawing.Point(609, 464)
+        Me.lblLoanId.Name = "lblLoanId"
+        Me.lblLoanId.Size = New System.Drawing.Size(0, 13)
+        Me.lblLoanId.TabIndex = 33
+        Me.lblLoanId.Visible = False
+        '
         'DataGridView2
         '
         Me.DataGridView2.AllowUserToAddRows = False
@@ -416,7 +445,7 @@ Partial Class InstallmentDetail
         Me.DataGridView2.Location = New System.Drawing.Point(543, 205)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.Size = New System.Drawing.Size(489, 210)
+        Me.DataGridView2.Size = New System.Drawing.Size(631, 210)
         Me.DataGridView2.TabIndex = 32
         Me.DataGridView2.Visible = False
         '
@@ -482,6 +511,23 @@ Partial Class InstallmentDetail
         Me.txtCustomerName.Name = "txtCustomerName"
         Me.txtCustomerName.Size = New System.Drawing.Size(200, 20)
         Me.txtCustomerName.TabIndex = 3
+        '
+        'txtEmi
+        '
+        Me.txtEmi.Enabled = False
+        Me.txtEmi.Location = New System.Drawing.Point(132, 410)
+        Me.txtEmi.Name = "txtEmi"
+        Me.txtEmi.Size = New System.Drawing.Size(100, 20)
+        Me.txtEmi.TabIndex = 21
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(25, 413)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(26, 13)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "હપ્તો"
         '
         'MenuStrip1
         '
@@ -568,14 +614,39 @@ Partial Class InstallmentDetail
         Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
-        'lblLoanId
+        'lblFileCharge
         '
-        Me.lblLoanId.AutoSize = True
-        Me.lblLoanId.Location = New System.Drawing.Point(609, 464)
-        Me.lblLoanId.Name = "lblLoanId"
-        Me.lblLoanId.Size = New System.Drawing.Size(0, 13)
-        Me.lblLoanId.TabIndex = 33
-        Me.lblLoanId.Visible = False
+        Me.lblFileCharge.AutoSize = True
+        Me.lblFileCharge.Location = New System.Drawing.Point(25, 291)
+        Me.lblFileCharge.Name = "lblFileCharge"
+        Me.lblFileCharge.Size = New System.Drawing.Size(56, 13)
+        Me.lblFileCharge.TabIndex = 14
+        Me.lblFileCharge.Text = "ફાઇલ ચાર્જ"
+        '
+        'txtFileCharge
+        '
+        Me.txtFileCharge.Enabled = False
+        Me.txtFileCharge.Location = New System.Drawing.Point(132, 291)
+        Me.txtFileCharge.Name = "txtFileCharge"
+        Me.txtFileCharge.Size = New System.Drawing.Size(100, 20)
+        Me.txtFileCharge.TabIndex = 15
+        '
+        'lblInterest
+        '
+        Me.lblInterest.AutoSize = True
+        Me.lblInterest.Location = New System.Drawing.Point(294, 255)
+        Me.lblInterest.Name = "lblInterest"
+        Me.lblInterest.Size = New System.Drawing.Size(33, 13)
+        Me.lblInterest.TabIndex = 14
+        Me.lblInterest.Text = "વ્યાજ​"
+        '
+        'txtInterest
+        '
+        Me.txtInterest.Enabled = False
+        Me.txtInterest.Location = New System.Drawing.Point(338, 252)
+        Me.txtInterest.Name = "txtInterest"
+        Me.txtInterest.Size = New System.Drawing.Size(100, 20)
+        Me.txtInterest.TabIndex = 15
         '
         'InstallmentDetail
         '
@@ -643,15 +714,22 @@ Partial Class InstallmentDetail
     Friend WithEvents txtCustomerName As TextBox
     Friend WithEvents txtLoanEndDate As DateTimePicker
     Friend WithEvents txtLoanDate As DateTimePicker
-    Friend WithEvents loanid As DataGridViewTextBoxColumn
-    Friend WithEvents customername As DataGridViewTextBoxColumn
-    Friend WithEvents loannumber As DataGridViewTextBoxColumn
-    Friend WithEvents mobile As DataGridViewTextBoxColumn
-    Friend WithEvents selectcustomer As DataGridViewButtonColumn
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents emino As DataGridViewTextBoxColumn
     Friend WithEvents installmentdate As DataGridViewTextBoxColumn
     Friend WithEvents amount As DataGridViewTextBoxColumn
     Friend WithEvents remainingamount As DataGridViewTextBoxColumn
     Friend WithEvents lblLoanId As Label
+    Friend WithEvents loanid As DataGridViewTextBoxColumn
+    Friend WithEvents regno As DataGridViewTextBoxColumn
+    Friend WithEvents customername As DataGridViewTextBoxColumn
+    Friend WithEvents loannumber As DataGridViewTextBoxColumn
+    Friend WithEvents mobile As DataGridViewTextBoxColumn
+    Friend WithEvents selectcustomer As DataGridViewButtonColumn
+    Friend WithEvents txtEmi As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtFileCharge As TextBox
+    Friend WithEvents lblFileCharge As Label
+    Friend WithEvents txtInterest As TextBox
+    Friend WithEvents lblInterest As Label
 End Class

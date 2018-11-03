@@ -96,7 +96,7 @@
     End Function
 
     Public Function GetLoadDetailByLoanNumber(ByVal strSearchText As String) As DataSet
-        strSqlCommand = "SELECT l.loanid,type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,c.customerid, c.name customername, c.mobile1 mobile FROM loan l inner join customer c on l.customerid = c.customerid WHERE loannumber like N'%" & EscapeString(strSearchText) & "%' OR c.mobile1 like N'%" & EscapeString(strSearchText) & "%' or c.regno like '%" & EscapeString(strSearchText) & "%'"
+        strSqlCommand = "SELECT l.loanid,type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,c.customerid, c.name customername, c.mobile1 mobile, c.regno FROM loan l inner join customer c on l.customerid = c.customerid WHERE loannumber like N'%" & EscapeString(strSearchText) & "%' OR c.mobile1 like N'%" & EscapeString(strSearchText) & "%' or c.regno like '%" & EscapeString(strSearchText) & "%'"
 
         Dim dstData As DataSet
         dstData = FillDataSet(strSqlCommand)
@@ -111,9 +111,27 @@
         Return intPaidEMI
 
     End Function
+
+    Public Function GetPaidEMIInstallmentByLoanId(ByVal intLoanId As Integer) As Integer
+        Dim intPaidEMI As Integer
+        strSqlCommand = "SELECT ISNULL(COUNT(*),0) FROM installment WHERE loanid = " & intLoanId & ""
+
+        intPaidEMI = Val(ExecuteScalar(strSqlCommand, ""))
+        Return intPaidEMI
+
+    End Function
     Public Function GetPendingEMI(ByVal intLoanId As Integer) As Integer
         Dim intPaidEMI As Integer
         strSqlCommand = "SELECT ISNULL(COUNT(*),0) FROM loantable WHERE loanid = " & intLoanId & " AND ISNULL(paidamount,0) = 0"
+
+        intPaidEMI = Val(ExecuteScalar(strSqlCommand, ""))
+        Return intPaidEMI
+
+    End Function
+
+    Public Function GetPendingEMIInstallment(ByVal intLoanId As Integer) As Integer
+        Dim intPaidEMI As Integer
+        strSqlCommand = "SELECT l.duration - ISNULL(MAX(emino),0) FROM installment i INNER JOIN loan l on l.loanid = i.loanid WHERE i.loanid = " & intLoanId & " GROUP BY l.duration"
 
         intPaidEMI = Val(ExecuteScalar(strSqlCommand, ""))
         Return intPaidEMI
@@ -125,7 +143,7 @@
         strSqlCommand = "SELECT ISNULL(MAX(emino),0) FROM installment WHERE loanid = " & intLoanId
         intEMINo = Val(ExecuteScalar(strSqlCommand, ""))
 
-        strSqlCommand = "INSERT INTO installment(emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty) VALUES(" & intEMINo + 1 & "," & intLoanId & ",'" & installmentDate & "'," & dblLoanAmount & "," & dblRemainingAmount & "," & dblRemainingAmount & "," & dblEMI & "," & dblPenlty & ")"
+        strSqlCommand = "INSERT INTO installment(emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty) VALUES(" & intEMINo + 1 & "," & intLoanId & ",'" & installmentDate & "'," & dblLoanAmount & "," & dblEMI & "," & dblRemainingAmount & "," & dblEMI & "," & dblPenlty & ")"
 
         Dim intInstallmentId As Integer
         intInstallmentId = ExecuteNonQuery(strSqlCommand, "", "Y")

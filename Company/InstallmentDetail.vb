@@ -52,6 +52,13 @@
         form2.Show()
     End Sub
 
+    Private Sub LoanToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles LoanToolStripMenuItem1.Click
+        Me.Hide()
+        Dim form2 = New Loan()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
+
     Private Sub txtEmpNo_TextChanged(sender As Object, e As EventArgs) Handles txtEmpNo.TextChanged
         Dim objLoan As New clsLoan()
         Dim dstDetail As DataSet
@@ -88,6 +95,9 @@
             txtTotalAmount.Text = dstLoan.Tables(0).Rows(0)("totalamount")
             txtRemainingAmount.Text = dstLoan.Tables(0).Rows(0)("remainingamount")
             txtRecevingEmi.Text = dstLoan.Tables(0).Rows(0)("totalpaidamount")
+            txtEmi.Text = dstLoan.Tables(0).Rows(0)("emi")
+            txtInterest.Text = dstLoan.Tables(0).Rows(0)("interestamount")
+            txtFileCharge.Text = dstLoan.Tables(0).Rows(0)("finecharge")
 
             Dim dstCustomer As DataSet
             Dim objCustomer As New clsCustomer
@@ -98,9 +108,9 @@
 
         End If
 
-        txtReceivedEmi.Text = Val(objLoan.GetPaidEMIByLoanId(intLoanId))
-        txtPendingEmi.Text = Val(objLoan.GetPendingEMI(intLoanId))
-        lblTotalReceiving.Text = txtRecevingEmi.Text
+        txtReceivedEmi.Text = Val(objLoan.GetPaidEMIInstallmentByLoanId(intLoanId))
+        txtPendingEmi.Text = Val(objLoan.GetPendingEMIInstallment(intLoanId))
+        lblTotalReceiving.Text = Val(txtEmi.Text) + Val(txtPenalty.Text)
 
         Dim dstInstallmentDetail As DataSet
         dstInstallmentDetail = objLoan.GetInstallment(intLoanId)
@@ -117,7 +127,7 @@
     End Sub
 
     Private Sub txtPenalty_TextChanged(sender As Object, e As EventArgs) Handles txtPenalty.TextChanged
-        lblTotalReceiving.Text = Val(txtRecevingEmi.Text) + Val(txtPenalty.Text)
+        lblTotalReceiving.Text = Val(txtEmi.Text) + Val(txtPenalty.Text)
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
@@ -186,7 +196,8 @@
         dstLoan = objLoan.GetLoanDetail(Val(lblLoanId.Text))
 
         If dstLoan.Tables(0).Rows.Count > 0 Then
-            objLoan.InsertInstallment(Val(lblLoanId.Text), dtDate.Value, Val(txtLoanAmount.Text), Val(txtRemainingAmount.Text), Val(txtRecevingEmi.Text), dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
+            objLoan.InsertInstallment(Val(lblLoanId.Text), dtDate.Value, Val(txtLoanAmount.Text), (Val(txtLoanAmount.Text) - (Val(txtReceivedEmi.Text) * dstLoan.Tables(0).Rows(0)("emi")) - dstLoan.Tables(0).Rows(0)("emi")), Val(txtRecevingEmi.Text), dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
+            objLoan.UpdateLoanPaidAmount(Val(lblLoanId.Text), dstLoan.Tables(0).Rows(0)("emi"))
         End If
 
         Dim dstInstallmentDetail As DataSet
@@ -199,5 +210,15 @@
             DataGridView2.DataSource = dstInstallmentDetail.Tables(0)
 
         End If
+
+        ClearControls(Me)
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Hide()
+        Dim form2 = New Loan()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+
+        form2.Show()
     End Sub
 End Class
