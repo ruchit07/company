@@ -83,11 +83,18 @@
 
             If strType = "D" Then
                 txtLoanType.Text = "Daily"
+                lblDays.Visible = True
+                txtDays.Visible = True
+
             ElseIf strType = "M" Then
                 txtLoanType.Text = "Monthly(EMI)"
+                lblDays.Visible = False
+                txtDays.Visible = False
 
             ElseIf strType = "T" Then
                 txtLoanType.Text = "Monthly"
+                lblDays.Visible = False
+                txtDays.Visible = False
             End If
             txtLoanDate.Value = dstLoan.Tables(0).Rows(0)("loandate")
             txtLoanEndDate.Value = dstLoan.Tables(0).Rows(0)("enddate")
@@ -98,6 +105,7 @@
             txtEmi.Text = dstLoan.Tables(0).Rows(0)("emi")
             txtInterest.Text = dstLoan.Tables(0).Rows(0)("interestamount")
             txtFileCharge.Text = dstLoan.Tables(0).Rows(0)("finecharge")
+            txtDays.Text = 1
 
             Dim dstCustomer As DataSet
             Dim objCustomer As New clsCustomer
@@ -128,6 +136,13 @@
 
     Private Sub txtPenalty_TextChanged(sender As Object, e As EventArgs) Handles txtPenalty.TextChanged
         lblTotalReceiving.Text = Val(txtEmi.Text) + Val(txtPenalty.Text)
+    End Sub
+
+    Private Sub txtDays_TextChanged(sender As Object, e As EventArgs) Handles txtDays.TextChanged
+        If Val(txtPendingEmi.Text) < Val(txtDays.Text) Then
+            txtDays.Text = Val(txtPendingEmi.Text)
+        End If
+        lblTotalReceiving.Text = Val(txtEmi.Text) * Val(txtDays.Text)
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
@@ -194,10 +209,31 @@
         Dim objLoan As New clsLoan
         Dim dstLoan As DataSet
         dstLoan = objLoan.GetLoanDetail(Val(lblLoanId.Text))
+        Dim strType As String
+        strType = dstLoan.Tables(0).Rows(0)("type")
 
-        If dstLoan.Tables(0).Rows.Count > 0 Then
-            objLoan.InsertInstallment(Val(lblLoanId.Text), dtDate.Value, Val(txtLoanAmount.Text), (Val(txtLoanAmount.Text) - (Val(txtReceivedEmi.Text) * dstLoan.Tables(0).Rows(0)("emi")) - dstLoan.Tables(0).Rows(0)("emi")), Val(txtRecevingEmi.Text), dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
-            objLoan.UpdateLoanPaidAmount(Val(lblLoanId.Text), dstLoan.Tables(0).Rows(0)("emi"))
+        If dstLoan.Tables(0).Rows.Count > 0 And Val(txtRemainingAmount.Text) > 0 Then
+            Dim remainingAmount = (Val(txtLoanAmount.Text) - (Val(txtReceivedEmi.Text) * dstLoan.Tables(0).Rows(0)("emi")) - dstLoan.Tables(0).Rows(0)("emi"))
+            txtDays.Text = IIf(Val(txtDays.Text) <= 0, "1", Val(txtDays.Text))
+            Dim receivingEmi = Val(txtRecevingEmi.Text) / IIf(Val(txtDays.Text) >= 1, Val(txtDays.Text), 1)
+
+            If strType = "D" Then
+                For intI = 1 To Val(txtDays.Text)
+                    Dim dtEMIDate As Date = objLoan.GetMaxInstallmentDate(Val(lblLoanId.Text))
+                    dtDate.Value = DateAdd(DateInterval.Day, 0, dtDate.Value).Date
+                    dtEMIDate = IIf(dtEMIDate = DateTime.MinValue, dtDate.Value, dtEMIDate)
+                    dtEMIDate = DateAdd(DateInterval.Day, 1, dtEMIDate).Date
+
+                    objLoan.InsertInstallment(Val(lblLoanId.Text), dtEMIDate, Val(txtLoanAmount.Text), remainingAmount, receivingEmi, dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
+                    objLoan.UpdateLoanPaidAmount(Val(lblLoanId.Text), dstLoan.Tables(0).Rows(0)("emi"))
+                    remainingAmount -= dstLoan.Tables(0).Rows(0)("emi")
+                    receivingEmi += dstLoan.Tables(0).Rows(0)("emi")
+                Next
+            Else
+                objLoan.InsertInstallment(Val(lblLoanId.Text), dtDate.Value, Val(txtLoanAmount.Text), remainingAmount, receivingEmi, dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
+                objLoan.UpdateLoanPaidAmount(Val(lblLoanId.Text), dstLoan.Tables(0).Rows(0)("emi"))
+            End If
+
         End If
 
         Dim dstInstallmentDetail As DataSet

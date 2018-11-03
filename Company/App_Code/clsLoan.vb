@@ -11,7 +11,7 @@
         intMaxLoanId = Val(ExecuteScalar(strSqlCommand, "InsertLoan"))
         intMaxLoanId = intMaxLoanId + 1
         strLoanNumber = strType & intMaxLoanId
-        strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi,remainingamount,totalpaidamount) VALUES ('" & strType & "','" & strDuration & "','" & dtLoanDate & "','" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & "," & dblLoanAmount + dblInterestAmount + dblFineCharge & ",0)"
+        strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi,remainingamount,totalpaidamount) VALUES ('" & strType & "','" & strDuration & "','" & dtLoanDate & "','" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & "," & IIf(strType = "M", dblLoanAmount + dblInterestAmount, dblLoanAmount) & ",0)"
 
         Dim intLoanId As Integer
         intLoanId = ExecuteNonQuery(strSqlCommand, "", "Y")
@@ -156,6 +156,15 @@
         Dim dstDetail As DataSet
         dstDetail = FillDataSet(strSqlCommand)
         Return dstDetail
+
+    End Function
+
+    Public Function GetMaxInstallmentDate(ByVal intLoanId As Integer) As DateTime
+        Dim dtInstallmentDate As DateTime
+        strSqlCommand = "SELECT MAX(installmentdate) FROM installment WHERE loanid =  " & intLoanId & ""
+
+        dtInstallmentDate = ExecuteScalar(strSqlCommand, "")
+        Return dtInstallmentDate
 
     End Function
 End Class
