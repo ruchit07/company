@@ -59,10 +59,6 @@ Partial Class InstallmentDetail
         Me.IntallMentMaster = New System.Windows.Forms.GroupBox()
         Me.lblLoanId = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.emino = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.installmentdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.remainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtLoanEndDate = New System.Windows.Forms.DateTimePicker()
         Me.txtLoanDate = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -88,6 +84,11 @@ Partial Class InstallmentDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.emino = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.installmentdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.installmentreceiveddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.IntallMentMaster.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -445,41 +446,13 @@ Partial Class InstallmentDetail
         Me.DataGridView2.AllowUserToAddRows = False
         Me.DataGridView2.AllowUserToDeleteRows = False
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.emino, Me.installmentdate, Me.amount, Me.remainingamount})
+        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.emino, Me.installmentdate, Me.amount, Me.remainingamount, Me.installmentreceiveddate})
         Me.DataGridView2.Location = New System.Drawing.Point(543, 205)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.Size = New System.Drawing.Size(631, 210)
         Me.DataGridView2.TabIndex = 32
         Me.DataGridView2.Visible = False
-        '
-        'emino
-        '
-        Me.emino.DataPropertyName = "emino"
-        Me.emino.HeaderText = "હપ્તા નં"
-        Me.emino.Name = "emino"
-        Me.emino.ReadOnly = True
-        '
-        'installmentdate
-        '
-        Me.installmentdate.DataPropertyName = "installmentdate"
-        Me.installmentdate.HeaderText = "હપ્તાની તારીખ​"
-        Me.installmentdate.Name = "installmentdate"
-        Me.installmentdate.ReadOnly = True
-        '
-        'amount
-        '
-        Me.amount.DataPropertyName = "receivedamount"
-        Me.amount.HeaderText = "રકમ​"
-        Me.amount.Name = "amount"
-        Me.amount.ReadOnly = True
-        '
-        'remainingamount
-        '
-        Me.remainingamount.DataPropertyName = "remainingamount"
-        Me.remainingamount.HeaderText = "બાકી રકમ​"
-        Me.remainingamount.Name = "remainingamount"
-        Me.remainingamount.ReadOnly = True
         '
         'txtLoanEndDate
         '
@@ -669,6 +642,41 @@ Partial Class InstallmentDetail
         Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
+        'emino
+        '
+        Me.emino.DataPropertyName = "emino"
+        Me.emino.HeaderText = "હપ્તા નં"
+        Me.emino.Name = "emino"
+        Me.emino.ReadOnly = True
+        '
+        'installmentdate
+        '
+        Me.installmentdate.DataPropertyName = "installmentdate"
+        Me.installmentdate.HeaderText = "હપ્તાની તારીખ​"
+        Me.installmentdate.Name = "installmentdate"
+        Me.installmentdate.ReadOnly = True
+        '
+        'amount
+        '
+        Me.amount.DataPropertyName = "receivedamount"
+        Me.amount.HeaderText = "રકમ​"
+        Me.amount.Name = "amount"
+        Me.amount.ReadOnly = True
+        '
+        'remainingamount
+        '
+        Me.remainingamount.DataPropertyName = "remainingamount"
+        Me.remainingamount.HeaderText = "બાકી રકમ​"
+        Me.remainingamount.Name = "remainingamount"
+        Me.remainingamount.ReadOnly = True
+        '
+        'installmentreceiveddate
+        '
+        Me.installmentreceiveddate.DataPropertyName = "installmentreceiveddate"
+        Me.installmentreceiveddate.HeaderText = "હપ્તો લિધેલ તરીખ​"
+        Me.installmentreceiveddate.Name = "installmentreceiveddate"
+        Me.installmentreceiveddate.ReadOnly = True
+        '
         'InstallmentDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -736,10 +744,6 @@ Partial Class InstallmentDetail
     Friend WithEvents txtLoanEndDate As DateTimePicker
     Friend WithEvents txtLoanDate As DateTimePicker
     Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents emino As DataGridViewTextBoxColumn
-    Friend WithEvents installmentdate As DataGridViewTextBoxColumn
-    Friend WithEvents amount As DataGridViewTextBoxColumn
-    Friend WithEvents remainingamount As DataGridViewTextBoxColumn
     Friend WithEvents lblLoanId As Label
     Friend WithEvents loanid As DataGridViewTextBoxColumn
     Friend WithEvents regno As DataGridViewTextBoxColumn
@@ -755,4 +759,9 @@ Partial Class InstallmentDetail
     Friend WithEvents lblInterest As Label
     Friend WithEvents lblDays As Label
     Friend WithEvents txtDays As TextBox
+    Friend WithEvents emino As DataGridViewTextBoxColumn
+    Friend WithEvents installmentdate As DataGridViewTextBoxColumn
+    Friend WithEvents amount As DataGridViewTextBoxColumn
+    Friend WithEvents remainingamount As DataGridViewTextBoxColumn
+    Friend WithEvents installmentreceiveddate As DataGridViewTextBoxColumn
 End Class

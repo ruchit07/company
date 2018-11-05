@@ -224,13 +224,13 @@
                     dtEMIDate = IIf(dtEMIDate = DateTime.MinValue, dtDate.Value, dtEMIDate)
                     dtEMIDate = DateAdd(DateInterval.Day, 1, dtEMIDate).Date
 
-                    objLoan.InsertInstallment(Val(lblLoanId.Text), dtEMIDate, Val(txtLoanAmount.Text), remainingAmount, receivingEmi, dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
+                    objLoan.InsertInstallment(Val(lblLoanId.Text), dtEMIDate, Val(txtLoanAmount.Text), remainingAmount, receivingEmi, dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text), DateTime.Now)
                     objLoan.UpdateLoanPaidAmount(Val(lblLoanId.Text), dstLoan.Tables(0).Rows(0)("emi"))
                     remainingAmount -= dstLoan.Tables(0).Rows(0)("emi")
                     receivingEmi += dstLoan.Tables(0).Rows(0)("emi")
                 Next
             Else
-                objLoan.InsertInstallment(Val(lblLoanId.Text), dtDate.Value, Val(txtLoanAmount.Text), remainingAmount, receivingEmi, dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text))
+                objLoan.InsertInstallment(Val(lblLoanId.Text), dtDate.Value, Val(txtLoanAmount.Text), remainingAmount, receivingEmi, dstLoan.Tables(0).Rows(0)("emi"), Val(txtPenalty.Text), DateTime.Now)
                 objLoan.UpdateLoanPaidAmount(Val(lblLoanId.Text), dstLoan.Tables(0).Rows(0)("emi"))
             End If
 

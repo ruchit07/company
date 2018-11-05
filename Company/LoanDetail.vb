@@ -123,8 +123,13 @@
             Dim intDays As Integer
             intDays = Val(txtDays.Text)
             For intI As Integer = 1 To intDuration
-                Dim dtEMIDate As Date
-                dtEMIDate = DateAdd(DateInterval.Day, Val(intI - 1), dtAdvanceDate.Value).Date
+                Dim dtEMIDate As Date = objLoan.GetMaxInstallmentDate(intLoanId)
+                If intI = 1 Then
+                    dtEMIDate = DateAdd(DateInterval.Day, Val(intI - 1), dtAdvanceDate.Value).Date
+                Else
+                    dtEMIDate = DateAdd(DateInterval.Day, 1, dtEMIDate).Date
+                End If
+
                 Dim dblPaidAmount As Double = 0
                 dblPaidAmount = Val(txtAdvanceAmount.Text)
 
@@ -136,7 +141,7 @@
                     If intI <= intDays Then
                         dblRemainingAmount = dblRemainingAmount - Val(txtEMI.Text)
 
-                        objLoan.InsertInstallment(intLoanId, dtAdvanceDate.Value, Val(txtLoanAmount.Text), dblRemainingAmount, dblPaidAmount, Val(txtEMI.Text), 0)
+                        objLoan.InsertInstallment(intLoanId, dtEMIDate, Val(txtLoanAmount.Text), dblRemainingAmount, dblPaidAmount, Val(txtEMI.Text), 0, DateTime.Now)
                     End If
 
                     objLoan.InsertLoanTable(intLoanId, dtEMIDate, Val(txtEMI.Text), IIf(intI <= intDays, Val(dblPaidAmount / intDays), 0))
@@ -148,7 +153,7 @@
 
                     If intI <= intDays Then
                         dblRemainingAmount = dblRemainingAmount - Val(txtEMI.Text)
-                        objLoan.InsertInstallment(intLoanId, dtAdvanceDate.Value, Val(txtLoanAmount.Text), dblRemainingAmount, dblPaidAmount, Val(txtEMI.Text), 0)
+                        objLoan.InsertInstallment(intLoanId, dtEMIDate, Val(txtLoanAmount.Text), dblRemainingAmount, dblPaidAmount, Val(txtEMI.Text), 0, DateTime.Now)
                     End If
 
                     objLoan.InsertLoanTable(intLoanId, dtEMIDate, Val(txtEMI.Text))

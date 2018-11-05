@@ -138,12 +138,12 @@
 
     End Function
 
-    Public Sub InsertInstallment(ByVal intLoanId As Integer, ByVal installmentDate As DateTime, ByVal dblLoanAmount As Double, ByVal dblRemainingAmount As Double, ByVal dblPaidAmount As Double, ByVal dblEMI As Double, ByVal dblPenlty As Double)
+    Public Sub InsertInstallment(ByVal intLoanId As Integer, ByVal installmentDate As DateTime, ByVal dblLoanAmount As Double, ByVal dblRemainingAmount As Double, ByVal dblPaidAmount As Double, ByVal dblEMI As Double, ByVal dblPenlty As Double, ByVal installmentReceivedDate As DateTime)
         Dim intEMINo As Integer
         strSqlCommand = "SELECT ISNULL(MAX(emino),0) FROM installment WHERE loanid = " & intLoanId
         intEMINo = Val(ExecuteScalar(strSqlCommand, ""))
 
-        strSqlCommand = "INSERT INTO installment(emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty) VALUES(" & intEMINo + 1 & "," & intLoanId & ",'" & installmentDate & "'," & dblLoanAmount & "," & dblEMI & "," & dblRemainingAmount & "," & dblEMI & "," & dblPenlty & ")"
+        strSqlCommand = "INSERT INTO installment(emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty, installmentreceiveddate) VALUES(" & intEMINo + 1 & "," & intLoanId & ",'" & installmentDate & "'," & dblLoanAmount & "," & dblEMI & "," & dblRemainingAmount & "," & dblEMI & "," & dblPenlty & ",'" & installmentReceivedDate & "')"
 
         Dim intInstallmentId As Integer
         intInstallmentId = ExecuteNonQuery(strSqlCommand, "", "Y")
@@ -151,7 +151,7 @@
     End Sub
 
     Public Function GetInstallment(ByVal intLoanId As Integer) As DataSet
-        strSqlCommand = "SELECT emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty FROM installment WHERE loanid =" & intLoanId
+        strSqlCommand = "SELECT emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty,installmentreceiveddate FROM installment WHERE loanid =" & intLoanId
 
         Dim dstDetail As DataSet
         dstDetail = FillDataSet(strSqlCommand)
@@ -161,7 +161,7 @@
 
     Public Function GetMaxInstallmentDate(ByVal intLoanId As Integer) As DateTime
         Dim dtInstallmentDate As DateTime
-        strSqlCommand = "SELECT MAX(installmentdate) FROM installment WHERE loanid =  " & intLoanId & ""
+        strSqlCommand = "SELECT ISNULL(MAX(installmentdate),'')installmentdate FROM installment WHERE loanid =  " & intLoanId & ""
 
         dtInstallmentDate = ExecuteScalar(strSqlCommand, "")
         Return dtInstallmentDate
