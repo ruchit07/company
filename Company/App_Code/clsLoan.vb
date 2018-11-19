@@ -10,13 +10,27 @@
         strSqlCommand = "SELECT ISNULL(MAX(loanid), 0) FROM loan "
         intMaxLoanId = Val(ExecuteScalar(strSqlCommand, "InsertLoan"))
         intMaxLoanId = intMaxLoanId + 1
-        strLoanNumber = strType & intMaxLoanId
+
+        If String.IsNullOrEmpty(strLoanNumber) Then
+            strLoanNumber = strType & intMaxLoanId
+        End If
+
         strSqlCommand = "INSERT INTO loan(type,duration,loandate,enddate,loannumber,advancedate,amount,interestrate,interestamount,finecharge,advanceamount,totalamount,employeeid,customerid,emi,remainingamount,totalpaidamount) VALUES ('" & strType & "','" & strDuration & "','" & dtLoanDate & "','" & dtEndDate & "',N'" & strLoanNumber & "','" & dtAdvanceDate & "','" & dblLoanAmount & "','" & dblInterestRate & "','" & dblInterestAmount & "','" & dblFineCharge & "','" & dblAdvanceAmount & "','" & dblTotalAmount & "','" & intEmployeeId & "','" & intCustomerId & "'," & dblEmi & "," & IIf(strType = "M", dblLoanAmount + dblInterestAmount, dblLoanAmount) & ",0)"
 
         Dim intLoanId As Integer
         intLoanId = ExecuteNonQuery(strSqlCommand, "", "Y")
 
         Return intLoanId
+    End Function
+    Public Function GetLoanByNo(ByVal strLoanNumber As String) As DataSet
+
+        strSqlCommand = "SELECT l.loanid FROM loan l WHERE loannumber = N'" & strLoanNumber & "'"
+
+
+        Dim dstCustomer As DataSet
+        dstCustomer = FillDataSet(strSqlCommand)
+
+        Return dstCustomer
     End Function
 
     Public Sub UpdateLoan(ByVal strType As String, ByVal strDuration As Integer, ByVal dtEndDate As Date, ByVal strLoanNumber As String, ByVal dtAdvanceDate As Date, ByVal dblLoanAmount As Double, ByVal dblInterestRate As Double, ByVal dblInterestAmount As Double, ByVal dblFineCharge As Double, ByVal dblAdvanceAmount As Double, ByVal dblTotalAmount As Double, ByVal intEmployeeId As Integer, ByVal intCustomerId As Integer, ByVal LoanId As Integer)

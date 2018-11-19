@@ -114,6 +114,14 @@
         intDuration = Val(txtDuration.Text)
         Dim intLoanId As Integer
 
+        If Not String.IsNullOrEmpty(txtLoanNumber.Text) Then
+            Dim dstCustomer As DataSet
+            dstCustomer = objLoan.GetLoanByNo(txtLoanNumber.Text)
+            If dstCustomer.Tables.Count > 0 AndAlso dstCustomer.Tables(0).Rows.Count > 0 Then
+                MessageBox.Show("Loan Number " & txtLoanNumber.Text & " already exist.")
+                Return
+            End If
+        End If
 
         intLoanId = objLoan.InsertLoan(strType, intDuration, dtLoanDate.Value, lblFinalDate.Text, txtLoanNumber.Text, dtAdvanceDate.Value, Val(txtLoanAmount.Text), Val(txtInterestRate.Text), txtInterestAmount.Text, Val(txtFineCharge.Text), txtAdvanceAmount.Text, txtFinalAmount.Text, ddlEmployee.SelectedValue, ddlCustomer.SelectedValue, Val(txtEMI.Text))
 

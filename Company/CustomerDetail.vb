@@ -123,6 +123,16 @@
         Else
             intRajyaId = ddlRajya.SelectedValue
         End If
+
+        'If Not String.IsNullOrEmpty(txtRegistrationNo.Text) Then
+        '    Dim dstCustomer As DataSet
+        '    dstCustomer = objCustomr.GetCustomerRegistrationNo(txtRegistrationNo.Text)
+        '    If dstCustomer.Tables.Count > 0 AndAlso dstCustomer.Tables(0).Rows.Count > 0 Then
+        '        MessageBox.Show("Customer Number " & txtRegistrationNo.Text & " already exist.")
+        '        Return
+        '    End If
+        'End If
+
         Dim intCustomerId As Integer
         intCustomerId = objCustomr.AddCustomer(Val(lblCompanyId.Text), txtRegistrationNo.Text, txtCustomerName.Text, txtAddress.Text, intJilloId, intTalukoId, intRajyaId, txtPincode.Text, txtMobileNumber.Text, txtMobileNumber2.Text, txtAdharno.Text)
 

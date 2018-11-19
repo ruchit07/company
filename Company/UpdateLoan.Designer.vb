@@ -218,8 +218,9 @@ Partial Class UpdateLoan
         'txtLoanNumber
         '
         Me.txtLoanNumber.Enabled = False
-        Me.txtLoanNumber.Location = New System.Drawing.Point(109, 127)
+        Me.txtLoanNumber.Location = New System.Drawing.Point(109, 132)
         Me.txtLoanNumber.Name = "txtLoanNumber"
+        Me.txtLoanNumber.ReadOnly = True
         Me.txtLoanNumber.Size = New System.Drawing.Size(100, 20)
         Me.txtLoanNumber.TabIndex = 3
         '
@@ -238,7 +239,7 @@ Partial Class UpdateLoan
         Me.ddlType.Enabled = False
         Me.ddlType.FormattingEnabled = True
         Me.ddlType.Items.AddRange(New Object() {"દૈનીક​", "માસીક​", "વાષૅીક​"})
-        Me.ddlType.Location = New System.Drawing.Point(109, 23)
+        Me.ddlType.Location = New System.Drawing.Point(109, 26)
         Me.ddlType.Name = "ddlType"
         Me.ddlType.Size = New System.Drawing.Size(121, 21)
         Me.ddlType.TabIndex = 1
@@ -300,7 +301,7 @@ Partial Class UpdateLoan
         'lblType
         '
         Me.lblType.AutoSize = True
-        Me.lblType.Location = New System.Drawing.Point(17, 31)
+        Me.lblType.Location = New System.Drawing.Point(17, 34)
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(55, 13)
         Me.lblType.TabIndex = 0
@@ -427,13 +428,13 @@ Partial Class UpdateLoan
         'CompanyListToolStripMenuItem
         '
         Me.CompanyListToolStripMenuItem.Name = "CompanyListToolStripMenuItem"
-        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.CompanyListToolStripMenuItem.Text = "Company List"
         '
         'NewCompanyToolStripMenuItem
         '
         Me.NewCompanyToolStripMenuItem.Name = "NewCompanyToolStripMenuItem"
-        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.NewCompanyToolStripMenuItem.Text = "New Company"
         '
         'CustomerToolStripMenuItem
@@ -478,19 +479,19 @@ Partial Class UpdateLoan
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'InstallmentToolStripMenuItem
         '
         Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
-        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'UpdateLoan

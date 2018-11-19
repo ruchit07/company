@@ -69,6 +69,7 @@ Partial Class UpdateCustomerDetail
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.lblAddress = New System.Windows.Forms.Label()
         Me.txtCustomerName = New System.Windows.Forms.TextBox()
+        Me.lblCustomerNo = New System.Windows.Forms.Label()
         Me.lblCompanyName = New System.Windows.Forms.Label()
         Me.txtRegistrationNo = New System.Windows.Forms.TextBox()
         Me.lblRegistration = New System.Windows.Forms.Label()
@@ -102,7 +103,7 @@ Partial Class UpdateCustomerDetail
         'lblCompanyId
         '
         Me.lblCompanyId.AutoSize = True
-        Me.lblCompanyId.Location = New System.Drawing.Point(541, 95)
+        Me.lblCompanyId.Location = New System.Drawing.Point(541, 124)
         Me.lblCompanyId.Name = "lblCompanyId"
         Me.lblCompanyId.Size = New System.Drawing.Size(39, 13)
         Me.lblCompanyId.TabIndex = 39
@@ -207,6 +208,7 @@ Partial Class UpdateCustomerDetail
         Me.GroupBox1.Controls.Add(Me.txtAddress)
         Me.GroupBox1.Controls.Add(Me.lblAddress)
         Me.GroupBox1.Controls.Add(Me.txtCustomerName)
+        Me.GroupBox1.Controls.Add(Me.lblCustomerNo)
         Me.GroupBox1.Controls.Add(Me.lblCompanyName)
         Me.GroupBox1.Controls.Add(Me.txtRegistrationNo)
         Me.GroupBox1.Controls.Add(Me.lblRegistration)
@@ -276,7 +278,7 @@ Partial Class UpdateCustomerDetail
         'lblCustomerId
         '
         Me.lblCustomerId.AutoSize = True
-        Me.lblCustomerId.Location = New System.Drawing.Point(648, 95)
+        Me.lblCustomerId.Location = New System.Drawing.Point(648, 124)
         Me.lblCustomerId.Name = "lblCustomerId"
         Me.lblCustomerId.Size = New System.Drawing.Size(39, 13)
         Me.lblCustomerId.TabIndex = 40
@@ -326,7 +328,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtMobileNumber2
         '
-        Me.txtMobileNumber2.Location = New System.Drawing.Point(115, 333)
+        Me.txtMobileNumber2.Location = New System.Drawing.Point(410, 326)
         Me.txtMobileNumber2.Name = "txtMobileNumber2"
         Me.txtMobileNumber2.Size = New System.Drawing.Size(170, 20)
         Me.txtMobileNumber2.TabIndex = 20
@@ -334,7 +336,7 @@ Partial Class UpdateCustomerDetail
         'lblMobile2
         '
         Me.lblMobile2.AutoSize = True
-        Me.lblMobile2.Location = New System.Drawing.Point(6, 348)
+        Me.lblMobile2.Location = New System.Drawing.Point(314, 333)
         Me.lblMobile2.Name = "lblMobile2"
         Me.lblMobile2.Size = New System.Drawing.Size(67, 13)
         Me.lblMobile2.TabIndex = 19
@@ -342,7 +344,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtMobileNumber
         '
-        Me.txtMobileNumber.Location = New System.Drawing.Point(115, 293)
+        Me.txtMobileNumber.Location = New System.Drawing.Point(115, 330)
         Me.txtMobileNumber.Name = "txtMobileNumber"
         Me.txtMobileNumber.Size = New System.Drawing.Size(170, 20)
         Me.txtMobileNumber.TabIndex = 18
@@ -350,7 +352,7 @@ Partial Class UpdateCustomerDetail
         'lblOwnerName
         '
         Me.lblOwnerName.AutoSize = True
-        Me.lblOwnerName.Location = New System.Drawing.Point(6, 304)
+        Me.lblOwnerName.Location = New System.Drawing.Point(6, 333)
         Me.lblOwnerName.Name = "lblOwnerName"
         Me.lblOwnerName.Size = New System.Drawing.Size(67, 13)
         Me.lblOwnerName.TabIndex = 17
@@ -358,7 +360,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtPincode
         '
-        Me.txtPincode.Location = New System.Drawing.Point(115, 257)
+        Me.txtPincode.Location = New System.Drawing.Point(115, 286)
         Me.txtPincode.MaxLength = 6
         Me.txtPincode.Name = "txtPincode"
         Me.txtPincode.Size = New System.Drawing.Size(170, 20)
@@ -367,7 +369,7 @@ Partial Class UpdateCustomerDetail
         'lblPincode
         '
         Me.lblPincode.AutoSize = True
-        Me.lblPincode.Location = New System.Drawing.Point(6, 268)
+        Me.lblPincode.Location = New System.Drawing.Point(6, 297)
         Me.lblPincode.Name = "lblPincode"
         Me.lblPincode.Size = New System.Drawing.Size(42, 13)
         Me.lblPincode.TabIndex = 15
@@ -375,7 +377,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtOtherRajya
         '
-        Me.txtOtherRajya.Location = New System.Drawing.Point(285, 219)
+        Me.txtOtherRajya.Location = New System.Drawing.Point(285, 248)
         Me.txtOtherRajya.Name = "txtOtherRajya"
         Me.txtOtherRajya.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherRajya.TabIndex = 14
@@ -387,7 +389,7 @@ Partial Class UpdateCustomerDetail
         Me.ddlRajya.DisplayMember = "name"
         Me.ddlRajya.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlRajya.FormattingEnabled = True
-        Me.ddlRajya.Location = New System.Drawing.Point(115, 218)
+        Me.ddlRajya.Location = New System.Drawing.Point(115, 247)
         Me.ddlRajya.Name = "ddlRajya"
         Me.ddlRajya.Size = New System.Drawing.Size(121, 21)
         Me.ddlRajya.TabIndex = 13
@@ -396,7 +398,7 @@ Partial Class UpdateCustomerDetail
         'lblRajya
         '
         Me.lblRajya.AutoSize = True
-        Me.lblRajya.Location = New System.Drawing.Point(9, 226)
+        Me.lblRajya.Location = New System.Drawing.Point(9, 255)
         Me.lblRajya.Name = "lblRajya"
         Me.lblRajya.Size = New System.Drawing.Size(31, 13)
         Me.lblRajya.TabIndex = 12
@@ -404,7 +406,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtOtherJillo
         '
-        Me.txtOtherJillo.Location = New System.Drawing.Point(285, 172)
+        Me.txtOtherJillo.Location = New System.Drawing.Point(285, 201)
         Me.txtOtherJillo.Name = "txtOtherJillo"
         Me.txtOtherJillo.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherJillo.TabIndex = 11
@@ -416,7 +418,7 @@ Partial Class UpdateCustomerDetail
         Me.ddlJillo.DisplayMember = "name"
         Me.ddlJillo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlJillo.FormattingEnabled = True
-        Me.ddlJillo.Location = New System.Drawing.Point(115, 171)
+        Me.ddlJillo.Location = New System.Drawing.Point(115, 200)
         Me.ddlJillo.Name = "ddlJillo"
         Me.ddlJillo.Size = New System.Drawing.Size(121, 21)
         Me.ddlJillo.TabIndex = 10
@@ -435,7 +437,7 @@ Partial Class UpdateCustomerDetail
         'lblJillo
         '
         Me.lblJillo.AutoSize = True
-        Me.lblJillo.Location = New System.Drawing.Point(6, 187)
+        Me.lblJillo.Location = New System.Drawing.Point(6, 216)
         Me.lblJillo.Name = "lblJillo"
         Me.lblJillo.Size = New System.Drawing.Size(34, 13)
         Me.lblJillo.TabIndex = 9
@@ -443,7 +445,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtOtherTaluko
         '
-        Me.txtOtherTaluko.Location = New System.Drawing.Point(285, 126)
+        Me.txtOtherTaluko.Location = New System.Drawing.Point(285, 155)
         Me.txtOtherTaluko.Name = "txtOtherTaluko"
         Me.txtOtherTaluko.Size = New System.Drawing.Size(160, 20)
         Me.txtOtherTaluko.TabIndex = 8
@@ -455,7 +457,7 @@ Partial Class UpdateCustomerDetail
         Me.ddlTaluko.DisplayMember = "name"
         Me.ddlTaluko.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlTaluko.FormattingEnabled = True
-        Me.ddlTaluko.Location = New System.Drawing.Point(115, 125)
+        Me.ddlTaluko.Location = New System.Drawing.Point(115, 154)
         Me.ddlTaluko.Name = "ddlTaluko"
         Me.ddlTaluko.Size = New System.Drawing.Size(121, 21)
         Me.ddlTaluko.TabIndex = 7
@@ -474,7 +476,7 @@ Partial Class UpdateCustomerDetail
         'lblTaluko
         '
         Me.lblTaluko.AutoSize = True
-        Me.lblTaluko.Location = New System.Drawing.Point(6, 136)
+        Me.lblTaluko.Location = New System.Drawing.Point(6, 165)
         Me.lblTaluko.Name = "lblTaluko"
         Me.lblTaluko.Size = New System.Drawing.Size(35, 13)
         Me.lblTaluko.TabIndex = 6
@@ -482,7 +484,7 @@ Partial Class UpdateCustomerDetail
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(115, 61)
+        Me.txtAddress.Location = New System.Drawing.Point(115, 90)
         Me.txtAddress.Multiline = True
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(170, 54)
@@ -491,7 +493,7 @@ Partial Class UpdateCustomerDetail
         'lblAddress
         '
         Me.lblAddress.AutoSize = True
-        Me.lblAddress.Location = New System.Drawing.Point(6, 93)
+        Me.lblAddress.Location = New System.Drawing.Point(6, 122)
         Me.lblAddress.Name = "lblAddress"
         Me.lblAddress.Size = New System.Drawing.Size(40, 13)
         Me.lblAddress.TabIndex = 4
@@ -499,15 +501,24 @@ Partial Class UpdateCustomerDetail
         '
         'txtCustomerName
         '
-        Me.txtCustomerName.Location = New System.Drawing.Point(115, 28)
+        Me.txtCustomerName.Location = New System.Drawing.Point(115, 57)
         Me.txtCustomerName.Name = "txtCustomerName"
         Me.txtCustomerName.Size = New System.Drawing.Size(170, 20)
         Me.txtCustomerName.TabIndex = 3
         '
+        'lblCustomerNo
+        '
+        Me.lblCustomerNo.AutoSize = True
+        Me.lblCustomerNo.Location = New System.Drawing.Point(6, 26)
+        Me.lblCustomerNo.Name = "lblCustomerNo"
+        Me.lblCustomerNo.Size = New System.Drawing.Size(57, 13)
+        Me.lblCustomerNo.TabIndex = 2
+        Me.lblCustomerNo.Text = "ગ્રાહક નંબર​"
+        '
         'lblCompanyName
         '
         Me.lblCompanyName.AutoSize = True
-        Me.lblCompanyName.Location = New System.Drawing.Point(6, 31)
+        Me.lblCompanyName.Location = New System.Drawing.Point(6, 60)
         Me.lblCompanyName.Name = "lblCompanyName"
         Me.lblCompanyName.Size = New System.Drawing.Size(63, 13)
         Me.lblCompanyName.TabIndex = 2
@@ -515,16 +526,16 @@ Partial Class UpdateCustomerDetail
         '
         'txtRegistrationNo
         '
-        Me.txtRegistrationNo.Location = New System.Drawing.Point(559, 63)
+        Me.txtRegistrationNo.Location = New System.Drawing.Point(115, 23)
         Me.txtRegistrationNo.Name = "txtRegistrationNo"
+        Me.txtRegistrationNo.ReadOnly = True
         Me.txtRegistrationNo.Size = New System.Drawing.Size(170, 20)
         Me.txtRegistrationNo.TabIndex = 1
-        Me.txtRegistrationNo.Visible = False
         '
         'lblRegistration
         '
         Me.lblRegistration.AutoSize = True
-        Me.lblRegistration.Location = New System.Drawing.Point(517, 35)
+        Me.lblRegistration.Location = New System.Drawing.Point(517, 64)
         Me.lblRegistration.Name = "lblRegistration"
         Me.lblRegistration.Size = New System.Drawing.Size(63, 13)
         Me.lblRegistration.TabIndex = 0
@@ -613,19 +624,19 @@ Partial Class UpdateCustomerDetail
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
         '
         'InstallmentToolStripMenuItem
         '
         Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
-        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'UpdateCustomerDetail
@@ -718,4 +729,5 @@ Partial Class UpdateCustomerDetail
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents lblCustomerNo As Label
 End Class

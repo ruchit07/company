@@ -39,11 +39,16 @@ Partial Class LoanDetail
         Me.nextemidate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.enddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.customerid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.regno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Mobile1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.selectcustomer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomerDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CustomerDataSet = New Company.customerDataSet()
         Me.ddlCustomer = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.ddlEmployee = New System.Windows.Forms.ComboBox()
@@ -91,12 +96,6 @@ Partial Class LoanDetail
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CustomerTableAdapter = New Company.customerDataSetTableAdapters.customerTableAdapter()
-        Me.customerid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.regno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Mobile1DataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.selectcustomer = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,7 +116,6 @@ Partial Class LoanDetail
         Me.GroupBox1.Controls.Add(Me.DataGridView2)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.ddlCustomer)
-        Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.btnCancel)
         Me.GroupBox1.Controls.Add(Me.btnSave)
         Me.GroupBox1.Controls.Add(Me.ddlEmployee)
@@ -158,7 +156,7 @@ Partial Class LoanDetail
         'lblDays
         '
         Me.lblDays.AutoSize = True
-        Me.lblDays.Location = New System.Drawing.Point(251, 322)
+        Me.lblDays.Location = New System.Drawing.Point(251, 330)
         Me.lblDays.Name = "lblDays"
         Me.lblDays.Size = New System.Drawing.Size(31, 13)
         Me.lblDays.TabIndex = 22
@@ -166,7 +164,7 @@ Partial Class LoanDetail
         '
         'txtDays
         '
-        Me.txtDays.Location = New System.Drawing.Point(251, 341)
+        Me.txtDays.Location = New System.Drawing.Point(251, 349)
         Me.txtDays.Name = "txtDays"
         Me.txtDays.Size = New System.Drawing.Size(78, 20)
         Me.txtDays.TabIndex = 21
@@ -175,7 +173,7 @@ Partial Class LoanDetail
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(17, 75)
+        Me.Label13.Location = New System.Drawing.Point(17, 83)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(72, 13)
         Me.Label13.TabIndex = 20
@@ -277,6 +275,50 @@ Partial Class LoanDetail
         Me.DataGridView1.Size = New System.Drawing.Size(953, 150)
         Me.DataGridView1.TabIndex = 17
         '
+        'customerid
+        '
+        Me.customerid.DataPropertyName = "customerid"
+        Me.customerid.HeaderText = "customerid"
+        Me.customerid.Name = "customerid"
+        Me.customerid.ReadOnly = True
+        Me.customerid.Visible = False
+        '
+        'regno
+        '
+        Me.regno.DataPropertyName = "regno"
+        Me.regno.HeaderText = "ગ્રહક નંબર"
+        Me.regno.Name = "regno"
+        Me.regno.ReadOnly = True
+        '
+        'NameDataGridViewTextBoxColumn
+        '
+        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
+        Me.NameDataGridViewTextBoxColumn.HeaderText = "નામ​"
+        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
+        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'AddressDataGridViewTextBoxColumn
+        '
+        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
+        Me.AddressDataGridViewTextBoxColumn.HeaderText = "સરનામુ"
+        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
+        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'Mobile1DataGridViewTextBoxColumn
+        '
+        Me.Mobile1DataGridViewTextBoxColumn.DataPropertyName = "mobile1"
+        Me.Mobile1DataGridViewTextBoxColumn.HeaderText = "મોબાઇલ​"
+        Me.Mobile1DataGridViewTextBoxColumn.Name = "Mobile1DataGridViewTextBoxColumn"
+        Me.Mobile1DataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'selectcustomer
+        '
+        Me.selectcustomer.HeaderText = "Select"
+        Me.selectcustomer.Name = "selectcustomer"
+        Me.selectcustomer.ReadOnly = True
+        Me.selectcustomer.Text = "Select"
+        Me.selectcustomer.UseColumnTextForButtonValue = True
+        '
         'CustomerBindingSource
         '
         Me.CustomerBindingSource.DataMember = "customer"
@@ -303,15 +345,6 @@ Partial Class LoanDetail
         Me.ddlCustomer.TabIndex = 16
         Me.ddlCustomer.ValueMember = "customerid"
         Me.ddlCustomer.Visible = False
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(17, 19)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(35, 13)
-        Me.Label12.TabIndex = 15
-        Me.Label12.Text = "ગ્રાહક "
         '
         'btnCancel
         '
@@ -356,7 +389,7 @@ Partial Class LoanDetail
         'dtLoanDate
         '
         Me.dtLoanDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtLoanDate.Location = New System.Drawing.Point(109, 68)
+        Me.dtLoanDate.Location = New System.Drawing.Point(109, 79)
         Me.dtLoanDate.Name = "dtLoanDate"
         Me.dtLoanDate.Size = New System.Drawing.Size(121, 20)
         Me.dtLoanDate.TabIndex = 4
@@ -364,7 +397,7 @@ Partial Class LoanDetail
         'dtAdvanceDate
         '
         Me.dtAdvanceDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtAdvanceDate.Location = New System.Drawing.Point(109, 162)
+        Me.dtAdvanceDate.Location = New System.Drawing.Point(109, 170)
         Me.dtAdvanceDate.Name = "dtAdvanceDate"
         Me.dtAdvanceDate.Size = New System.Drawing.Size(121, 20)
         Me.dtAdvanceDate.TabIndex = 4
@@ -372,7 +405,7 @@ Partial Class LoanDetail
         'txtEMI
         '
         Me.txtEMI.Enabled = False
-        Me.txtEMI.Location = New System.Drawing.Point(109, 421)
+        Me.txtEMI.Location = New System.Drawing.Point(109, 429)
         Me.txtEMI.Name = "txtEMI"
         Me.txtEMI.ReadOnly = True
         Me.txtEMI.Size = New System.Drawing.Size(121, 20)
@@ -381,7 +414,7 @@ Partial Class LoanDetail
         'txtFinalAmount
         '
         Me.txtFinalAmount.Enabled = False
-        Me.txtFinalAmount.Location = New System.Drawing.Point(109, 379)
+        Me.txtFinalAmount.Location = New System.Drawing.Point(109, 387)
         Me.txtFinalAmount.Name = "txtFinalAmount"
         Me.txtFinalAmount.ReadOnly = True
         Me.txtFinalAmount.Size = New System.Drawing.Size(121, 20)
@@ -390,14 +423,14 @@ Partial Class LoanDetail
         'txtAdvanceAmount
         '
         Me.txtAdvanceAmount.Enabled = False
-        Me.txtAdvanceAmount.Location = New System.Drawing.Point(109, 342)
+        Me.txtAdvanceAmount.Location = New System.Drawing.Point(109, 350)
         Me.txtAdvanceAmount.Name = "txtAdvanceAmount"
         Me.txtAdvanceAmount.Size = New System.Drawing.Size(121, 20)
         Me.txtAdvanceAmount.TabIndex = 9
         '
         'txtFineCharge
         '
-        Me.txtFineCharge.Location = New System.Drawing.Point(109, 309)
+        Me.txtFineCharge.Location = New System.Drawing.Point(109, 317)
         Me.txtFineCharge.Name = "txtFineCharge"
         Me.txtFineCharge.Size = New System.Drawing.Size(121, 20)
         Me.txtFineCharge.TabIndex = 8
@@ -405,44 +438,43 @@ Partial Class LoanDetail
         'txtInterestAmount
         '
         Me.txtInterestAmount.Enabled = False
-        Me.txtInterestAmount.Location = New System.Drawing.Point(109, 273)
+        Me.txtInterestAmount.Location = New System.Drawing.Point(109, 281)
         Me.txtInterestAmount.Name = "txtInterestAmount"
         Me.txtInterestAmount.Size = New System.Drawing.Size(121, 20)
         Me.txtInterestAmount.TabIndex = 7
         '
         'txtInterestRate
         '
-        Me.txtInterestRate.Location = New System.Drawing.Point(109, 234)
+        Me.txtInterestRate.Location = New System.Drawing.Point(109, 242)
         Me.txtInterestRate.Name = "txtInterestRate"
         Me.txtInterestRate.Size = New System.Drawing.Size(121, 20)
         Me.txtInterestRate.TabIndex = 6
         '
         'txtLoanAmount
         '
-        Me.txtLoanAmount.Location = New System.Drawing.Point(109, 198)
+        Me.txtLoanAmount.Location = New System.Drawing.Point(109, 206)
         Me.txtLoanAmount.Name = "txtLoanAmount"
         Me.txtLoanAmount.Size = New System.Drawing.Size(121, 20)
         Me.txtLoanAmount.TabIndex = 5
         '
         'txtDuration
         '
-        Me.txtDuration.Location = New System.Drawing.Point(109, 95)
+        Me.txtDuration.Location = New System.Drawing.Point(109, 107)
         Me.txtDuration.Name = "txtDuration"
         Me.txtDuration.Size = New System.Drawing.Size(121, 20)
         Me.txtDuration.TabIndex = 3
         '
         'txtLoanNumber
         '
-        Me.txtLoanNumber.Location = New System.Drawing.Point(598, 491)
+        Me.txtLoanNumber.Location = New System.Drawing.Point(109, 18)
         Me.txtLoanNumber.Name = "txtLoanNumber"
         Me.txtLoanNumber.Size = New System.Drawing.Size(121, 20)
         Me.txtLoanNumber.TabIndex = 3
-        Me.txtLoanNumber.Visible = False
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(17, 424)
+        Me.Label11.Location = New System.Drawing.Point(17, 432)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(26, 13)
         Me.Label11.TabIndex = 0
@@ -460,7 +492,7 @@ Partial Class LoanDetail
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(17, 382)
+        Me.Label8.Location = New System.Drawing.Point(17, 390)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(70, 26)
         Me.Label8.TabIndex = 0
@@ -469,7 +501,7 @@ Partial Class LoanDetail
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(17, 345)
+        Me.Label7.Location = New System.Drawing.Point(17, 353)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 13)
         Me.Label7.TabIndex = 0
@@ -488,7 +520,7 @@ Partial Class LoanDetail
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(17, 312)
+        Me.Label6.Location = New System.Drawing.Point(17, 320)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(57, 13)
         Me.Label6.TabIndex = 0
@@ -499,7 +531,7 @@ Partial Class LoanDetail
         Me.ddlType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ddlType.FormattingEnabled = True
         Me.ddlType.Items.AddRange(New Object() {"દૈનીક​", "માસીક​(હપ્તા)", "માસીક"})
-        Me.ddlType.Location = New System.Drawing.Point(109, 36)
+        Me.ddlType.Location = New System.Drawing.Point(109, 47)
         Me.ddlType.Name = "ddlType"
         Me.ddlType.Size = New System.Drawing.Size(121, 21)
         Me.ddlType.TabIndex = 1
@@ -507,7 +539,7 @@ Partial Class LoanDetail
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 276)
+        Me.Label5.Location = New System.Drawing.Point(17, 284)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(67, 13)
         Me.Label5.TabIndex = 0
@@ -516,7 +548,7 @@ Partial Class LoanDetail
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 168)
+        Me.Label2.Location = New System.Drawing.Point(17, 176)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 13)
         Me.Label2.TabIndex = 0
@@ -525,7 +557,7 @@ Partial Class LoanDetail
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(17, 237)
+        Me.Label4.Location = New System.Drawing.Point(17, 245)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(59, 13)
         Me.Label4.TabIndex = 0
@@ -534,7 +566,7 @@ Partial Class LoanDetail
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(17, 205)
+        Me.Label3.Location = New System.Drawing.Point(17, 213)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(60, 13)
         Me.Label3.TabIndex = 0
@@ -543,7 +575,7 @@ Partial Class LoanDetail
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(17, 102)
+        Me.Label10.Location = New System.Drawing.Point(17, 110)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(30, 13)
         Me.Label10.TabIndex = 0
@@ -552,7 +584,7 @@ Partial Class LoanDetail
         'lblFinalDate
         '
         Me.lblFinalDate.AutoSize = True
-        Me.lblFinalDate.Location = New System.Drawing.Point(106, 132)
+        Me.lblFinalDate.Location = New System.Drawing.Point(106, 140)
         Me.lblFinalDate.Name = "lblFinalDate"
         Me.lblFinalDate.Size = New System.Drawing.Size(69, 13)
         Me.lblFinalDate.TabIndex = 0
@@ -561,17 +593,16 @@ Partial Class LoanDetail
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(506, 498)
+        Me.Label1.Location = New System.Drawing.Point(17, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "લોન નં"
-        Me.Label1.Visible = False
         '
         'lblLastDate
         '
         Me.lblLastDate.AutoSize = True
-        Me.lblLastDate.Location = New System.Drawing.Point(17, 132)
+        Me.lblLastDate.Location = New System.Drawing.Point(17, 140)
         Me.lblLastDate.Name = "lblLastDate"
         Me.lblLastDate.Size = New System.Drawing.Size(69, 13)
         Me.lblLastDate.TabIndex = 0
@@ -580,7 +611,7 @@ Partial Class LoanDetail
         'lblType
         '
         Me.lblType.AutoSize = True
-        Me.lblType.Location = New System.Drawing.Point(17, 44)
+        Me.lblType.Location = New System.Drawing.Point(17, 52)
         Me.lblType.Name = "lblType"
         Me.lblType.Size = New System.Drawing.Size(55, 13)
         Me.lblType.TabIndex = 0
@@ -679,50 +710,6 @@ Partial Class LoanDetail
         '
         Me.CustomerTableAdapter.ClearBeforeFill = True
         '
-        'customerid
-        '
-        Me.customerid.DataPropertyName = "customerid"
-        Me.customerid.HeaderText = "customerid"
-        Me.customerid.Name = "customerid"
-        Me.customerid.ReadOnly = True
-        Me.customerid.Visible = False
-        '
-        'regno
-        '
-        Me.regno.DataPropertyName = "regno"
-        Me.regno.HeaderText = "ગ્રહક નંબર"
-        Me.regno.Name = "regno"
-        Me.regno.ReadOnly = True
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "નામ​"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
-        Me.NameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "સરનામુ"
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'Mobile1DataGridViewTextBoxColumn
-        '
-        Me.Mobile1DataGridViewTextBoxColumn.DataPropertyName = "mobile1"
-        Me.Mobile1DataGridViewTextBoxColumn.HeaderText = "મોબાઇલ​"
-        Me.Mobile1DataGridViewTextBoxColumn.Name = "Mobile1DataGridViewTextBoxColumn"
-        Me.Mobile1DataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'selectcustomer
-        '
-        Me.selectcustomer.HeaderText = "Select"
-        Me.selectcustomer.Name = "selectcustomer"
-        Me.selectcustomer.ReadOnly = True
-        Me.selectcustomer.Text = "Select"
-        Me.selectcustomer.UseColumnTextForButtonValue = True
-        '
         'LoanDetail
         '
         Me.AcceptButton = Me.btnSave
@@ -797,7 +784,6 @@ Partial Class LoanDetail
     Friend WithEvents ddlCustomer As ComboBox
     Friend WithEvents CustomerDataSetBindingSource As BindingSource
     Friend WithEvents CustomerDataSet As customerDataSet
-    Friend WithEvents Label12 As Label
     Friend WithEvents CustomerBindingSource As BindingSource
     Friend WithEvents CustomerTableAdapter As customerDataSetTableAdapters.customerTableAdapter
     Friend WithEvents DataGridView1 As DataGridView
