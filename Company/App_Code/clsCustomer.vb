@@ -114,4 +114,36 @@
         ExecuteNonQuery(strSqlCommand, "", "N")
     End Sub
 
+    Public Function SearchCustomer(ByVal strCustomerNo As String, ByVal strCustomerName As String, ByVal strMobile As String, ByVal strLoanNumber As String) As DataSet
+
+        strSqlCommand = "select DISTINCT c.customerid,companyid,regno,name,address,jilloid,talukoid,rajyaid,pincode,mobile1,mobile2,adharno from customer c inner join loan l on l.customerid = c.customerid "
+
+        If strCustomerNo <> "" Or strCustomerName <> "" Or strMobile <> "" Or strLoanNumber <> "" Then
+
+            strSqlCommand &= " WHERE 1 =1 "
+
+            If strCustomerNo <> "" Then
+                strSqlCommand &= " AND regno like N'%" & strCustomerNo & "%'"
+            End If
+
+            If strCustomerName <> "" Then
+                strSqlCommand &= " AND name like N'%" & strCustomerName & "%'"
+            End If
+
+            If strMobile <> "" Then
+                strSqlCommand &= " AND (mobile1 like N'%" & strMobile & "%')"
+            End If
+
+            If strLoanNumber <> "" Then
+                strSqlCommand &= " AND l.loannumber like N'%" & strLoanNumber & "%'"
+            End If
+
+        End If
+
+        Dim dstData As DataSet
+        dstData = FillDataSet(strSqlCommand)
+        Return dstData
+
+    End Function
+
 End Class

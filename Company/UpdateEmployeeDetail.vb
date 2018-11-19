@@ -38,6 +38,7 @@
         AddHandler form2.Closed, Sub(s, args) Me.Close()
 
         form2.Show()
+
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -163,6 +164,13 @@
     Private Sub InstallmentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InstallmentToolStripMenuItem.Click
         Me.Hide()
         Dim form2 = New InstallmentDetail()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
+
+    Private Sub CustomerLoanDetailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerLoanDetailToolStripMenuItem.Click
+        Me.Hide()
+        Dim form2 = New CustomerLoanDetail()
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
     End Sub

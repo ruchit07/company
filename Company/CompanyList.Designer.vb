@@ -48,13 +48,14 @@ Partial Class CompanyList
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompanyTableAdapter = New Company.companyDataSetTableAdapters.companyTableAdapter()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.ddlSearch = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomerLoanDetailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CompanyDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,7 +191,7 @@ Partial Class CompanyList
         '
         'CustomerToolStripMenuItem
         '
-        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem})
+        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem, Me.CustomerLoanDetailToolStripMenuItem})
         Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
         Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.CustomerToolStripMenuItem.Text = "Customer"
@@ -198,7 +199,7 @@ Partial Class CompanyList
         'CustomerListToolStripMenuItem
         '
         Me.CustomerListToolStripMenuItem.Name = "CustomerListToolStripMenuItem"
-        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
         Me.CustomerListToolStripMenuItem.Text = "Customer List"
         '
         'EmployeeToolStripMenuItem
@@ -230,14 +231,20 @@ Partial Class CompanyList
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'InstallmentToolStripMenuItem
+        '
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'CompanyTableAdapter
         '
@@ -287,11 +294,11 @@ Partial Class CompanyList
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "Search"
         '
-        'InstallmentToolStripMenuItem
+        'CustomerLoanDetailToolStripMenuItem
         '
-        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
-        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.InstallmentToolStripMenuItem.Text = "Installment"
+        Me.CustomerLoanDetailToolStripMenuItem.Name = "CustomerLoanDetailToolStripMenuItem"
+        Me.CustomerLoanDetailToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.CustomerLoanDetailToolStripMenuItem.Text = "Customer Loan Detail"
         '
         'CompanyList
         '
@@ -352,4 +359,5 @@ Partial Class CompanyList
     Friend WithEvents enddate As DataGridViewTextBoxColumn
     Friend WithEvents Command As DataGridViewButtonColumn
     Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CustomerLoanDetailToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -53,6 +53,7 @@ Partial Class RecoveryList
         Me.LoanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompanyBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CompanyDataSet = New Company.companyDataSet()
         Me.CompanyTableAdapter = New Company.companyDataSetTableAdapters.companyTableAdapter()
@@ -63,7 +64,7 @@ Partial Class RecoveryList
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ddlLoan = New System.Windows.Forms.ComboBox()
-        Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomerLoanDetailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.CompanyBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -189,7 +190,7 @@ Partial Class RecoveryList
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1645, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1428, 24)
         Me.MenuStrip1.TabIndex = 4
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -214,7 +215,7 @@ Partial Class RecoveryList
         '
         'CustomerToolStripMenuItem
         '
-        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem})
+        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem, Me.CustomerLoanDetailToolStripMenuItem})
         Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
         Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.CustomerToolStripMenuItem.Text = "Customer"
@@ -222,7 +223,7 @@ Partial Class RecoveryList
         'CustomerListToolStripMenuItem
         '
         Me.CustomerListToolStripMenuItem.Name = "CustomerListToolStripMenuItem"
-        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
         Me.CustomerListToolStripMenuItem.Text = "Customer List"
         '
         'EmployeeToolStripMenuItem
@@ -254,14 +255,20 @@ Partial Class RecoveryList
         'LoanToolStripMenuItem1
         '
         Me.LoanToolStripMenuItem1.Name = "LoanToolStripMenuItem1"
-        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.LoanToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.LoanToolStripMenuItem1.Text = "Loan"
         '
         'RecoveryListToolStripMenuItem
         '
         Me.RecoveryListToolStripMenuItem.Name = "RecoveryListToolStripMenuItem"
-        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RecoveryListToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.RecoveryListToolStripMenuItem.Text = "Recovery List"
+        '
+        'InstallmentToolStripMenuItem
+        '
+        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
+        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
         'CompanyBindingSource
         '
@@ -338,17 +345,17 @@ Partial Class RecoveryList
         Me.ddlLoan.Size = New System.Drawing.Size(121, 21)
         Me.ddlLoan.TabIndex = 13
         '
-        'InstallmentToolStripMenuItem
+        'CustomerLoanDetailToolStripMenuItem
         '
-        Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
-        Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.InstallmentToolStripMenuItem.Text = "Installment"
+        Me.CustomerLoanDetailToolStripMenuItem.Name = "CustomerLoanDetailToolStripMenuItem"
+        Me.CustomerLoanDetailToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.CustomerLoanDetailToolStripMenuItem.Text = "Customer Loan Detail"
         '
         'RecoveryList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1645, 559)
+        Me.ClientSize = New System.Drawing.Size(1428, 559)
         Me.Controls.Add(Me.ddlLoan)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnRefresh)
@@ -358,7 +365,7 @@ Partial Class RecoveryList
         Me.Controls.Add(Me.dtFromDate)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.DataGridView1)
-        'Me.name = "RecoveryList"
+        '  Me.name = "RecoveryList"
         Me.Text = "RecoveryList"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
@@ -411,4 +418,5 @@ Partial Class RecoveryList
     Friend WithEvents paidamount As DataGridViewTextBoxColumn
     Friend WithEvents update As DataGridViewButtonColumn
     Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CustomerLoanDetailToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -39,7 +39,12 @@
         form2.Show()
 
     End Sub
-
+    Private Sub CustomerLoanDetailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerLoanDetailToolStripMenuItem.Click
+        Me.Hide()
+        Dim form2 = New CustomerLoanDetail()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
     Private Sub UpdateCustomerDetail_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.RajyaTableAdapter.Fill(Me.RajyaDataSet.rajya)
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

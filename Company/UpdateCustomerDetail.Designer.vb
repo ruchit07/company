@@ -89,6 +89,7 @@ Partial Class UpdateCustomerDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CustomerLoanDetailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RajyaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RajyaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -584,7 +585,7 @@ Partial Class UpdateCustomerDetail
         '
         'CustomerToolStripMenuItem
         '
-        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem})
+        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem, Me.CustomerLoanDetailToolStripMenuItem})
         Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
         Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.CustomerToolStripMenuItem.Text = "Customer"
@@ -592,7 +593,7 @@ Partial Class UpdateCustomerDetail
         'CustomerListToolStripMenuItem
         '
         Me.CustomerListToolStripMenuItem.Name = "CustomerListToolStripMenuItem"
-        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
         Me.CustomerListToolStripMenuItem.Text = "Customer List"
         '
         'EmployeeToolStripMenuItem
@@ -638,6 +639,12 @@ Partial Class UpdateCustomerDetail
         Me.InstallmentToolStripMenuItem.Name = "InstallmentToolStripMenuItem"
         Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
+        '
+        'CustomerLoanDetailToolStripMenuItem
+        '
+        Me.CustomerLoanDetailToolStripMenuItem.Name = "CustomerLoanDetailToolStripMenuItem"
+        Me.CustomerLoanDetailToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.CustomerLoanDetailToolStripMenuItem.Text = "Customer Loan Detail"
         '
         'UpdateCustomerDetail
         '
@@ -730,4 +737,5 @@ Partial Class UpdateCustomerDetail
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents lblCustomerNo As Label
+    Friend WithEvents CustomerLoanDetailToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -32,7 +32,12 @@
         form2.lblCustomerId.Text = lblCustomerId.Text
         form2.Show()
     End Sub
-
+    Private Sub CustomerLoanDetailToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CustomerLoanDetailToolStripMenuItem.Click
+        Me.Hide()
+        Dim form2 = New CustomerLoanDetail()
+        AddHandler form2.Closed, Sub(s, args) Me.Close()
+        form2.Show()
+    End Sub
     Private Sub NewCompanyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewCompanyToolStripMenuItem.Click
         Me.Hide()
         Dim form2 = New CompanyDetail()

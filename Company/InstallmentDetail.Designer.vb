@@ -59,6 +59,11 @@ Partial Class InstallmentDetail
         Me.IntallMentMaster = New System.Windows.Forms.GroupBox()
         Me.lblLoanId = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.emino = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.installmentdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.installmentreceiveddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txtLoanEndDate = New System.Windows.Forms.DateTimePicker()
         Me.txtLoanDate = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -84,11 +89,7 @@ Partial Class InstallmentDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.emino = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.installmentdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.remainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.installmentreceiveddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerLoanDetailToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.IntallMentMaster.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -454,6 +455,41 @@ Partial Class InstallmentDetail
         Me.DataGridView2.TabIndex = 32
         Me.DataGridView2.Visible = False
         '
+        'emino
+        '
+        Me.emino.DataPropertyName = "emino"
+        Me.emino.HeaderText = "હપ્તા નં"
+        Me.emino.Name = "emino"
+        Me.emino.ReadOnly = True
+        '
+        'installmentdate
+        '
+        Me.installmentdate.DataPropertyName = "installmentdate"
+        Me.installmentdate.HeaderText = "હપ્તાની તારીખ​"
+        Me.installmentdate.Name = "installmentdate"
+        Me.installmentdate.ReadOnly = True
+        '
+        'amount
+        '
+        Me.amount.DataPropertyName = "receivedamount"
+        Me.amount.HeaderText = "રકમ​"
+        Me.amount.Name = "amount"
+        Me.amount.ReadOnly = True
+        '
+        'remainingamount
+        '
+        Me.remainingamount.DataPropertyName = "remainingamount"
+        Me.remainingamount.HeaderText = "બાકી રકમ​"
+        Me.remainingamount.Name = "remainingamount"
+        Me.remainingamount.ReadOnly = True
+        '
+        'installmentreceiveddate
+        '
+        Me.installmentreceiveddate.DataPropertyName = "installmentreceiveddate"
+        Me.installmentreceiveddate.HeaderText = "હપ્તો લિધેલ તરીખ​"
+        Me.installmentreceiveddate.Name = "installmentreceiveddate"
+        Me.installmentreceiveddate.ReadOnly = True
+        '
         'txtLoanEndDate
         '
         Me.txtLoanEndDate.Enabled = False
@@ -587,7 +623,7 @@ Partial Class InstallmentDetail
         '
         'CustomerToolStripMenuItem
         '
-        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem})
+        Me.CustomerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CustomerListToolStripMenuItem, Me.CustomerLoanDetailToolStripMenuItem})
         Me.CustomerToolStripMenuItem.Name = "CustomerToolStripMenuItem"
         Me.CustomerToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.CustomerToolStripMenuItem.Text = "Customer"
@@ -595,7 +631,7 @@ Partial Class InstallmentDetail
         'CustomerListToolStripMenuItem
         '
         Me.CustomerListToolStripMenuItem.Name = "CustomerListToolStripMenuItem"
-        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(147, 22)
+        Me.CustomerListToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
         Me.CustomerListToolStripMenuItem.Text = "Customer List"
         '
         'EmployeeToolStripMenuItem
@@ -642,40 +678,11 @@ Partial Class InstallmentDetail
         Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
-        'emino
+        'CustomerLoanDetailToolStripMenuItem
         '
-        Me.emino.DataPropertyName = "emino"
-        Me.emino.HeaderText = "હપ્તા નં"
-        Me.emino.Name = "emino"
-        Me.emino.ReadOnly = True
-        '
-        'installmentdate
-        '
-        Me.installmentdate.DataPropertyName = "installmentdate"
-        Me.installmentdate.HeaderText = "હપ્તાની તારીખ​"
-        Me.installmentdate.Name = "installmentdate"
-        Me.installmentdate.ReadOnly = True
-        '
-        'amount
-        '
-        Me.amount.DataPropertyName = "receivedamount"
-        Me.amount.HeaderText = "રકમ​"
-        Me.amount.Name = "amount"
-        Me.amount.ReadOnly = True
-        '
-        'remainingamount
-        '
-        Me.remainingamount.DataPropertyName = "remainingamount"
-        Me.remainingamount.HeaderText = "બાકી રકમ​"
-        Me.remainingamount.Name = "remainingamount"
-        Me.remainingamount.ReadOnly = True
-        '
-        'installmentreceiveddate
-        '
-        Me.installmentreceiveddate.DataPropertyName = "installmentreceiveddate"
-        Me.installmentreceiveddate.HeaderText = "હપ્તો લિધેલ તરીખ​"
-        Me.installmentreceiveddate.Name = "installmentreceiveddate"
-        Me.installmentreceiveddate.ReadOnly = True
+        Me.CustomerLoanDetailToolStripMenuItem.Name = "CustomerLoanDetailToolStripMenuItem"
+        Me.CustomerLoanDetailToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.CustomerLoanDetailToolStripMenuItem.Text = "Customer Loan Detail"
         '
         'InstallmentDetail
         '
@@ -764,4 +771,5 @@ Partial Class InstallmentDetail
     Friend WithEvents amount As DataGridViewTextBoxColumn
     Friend WithEvents remainingamount As DataGridViewTextBoxColumn
     Friend WithEvents installmentreceiveddate As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerLoanDetailToolStripMenuItem As ToolStripMenuItem
 End Class
