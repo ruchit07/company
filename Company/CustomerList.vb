@@ -105,7 +105,7 @@
         Dim objCustomer As New clsCustomer()
         Dim dstCustomer As DataSet
 
-        dstCustomer = objCustomer.GetCustomerList(lblCompanyId.Text, ddlSearch.SelectedValue, txtSearch.Text)
+        dstCustomer = objCustomer.GetCustomerList(lblCompanyId.Text, ddlSearch.SelectedItem, txtSearch.Text)
         DataGridView1.AutoGenerateColumns = False
         DataGridView1.DataSource = dstCustomer.Tables(0)
         DataGridView1.Refresh()

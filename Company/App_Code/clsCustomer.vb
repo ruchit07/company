@@ -13,7 +13,7 @@
             ElseIf strType = "Registration Number" Then
                 strSqlCommand &= " AND c.regno like N'%" & EscapeString(strSearchText) & "%'"
             ElseIf strType = "Mobile" Then
-                strSqlCommand &= " AND c.mobile like N'%" & EscapeString(strSearchText) & "%'"
+                strSqlCommand &= " AND c.mobile1 like N'%" & EscapeString(strSearchText) & "%'"
             End If
         End If
         Dim dstCustomer As DataSet

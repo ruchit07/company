@@ -137,14 +137,14 @@
             intRajyaId = ddlRajya.SelectedValue
         End If
 
-        If Not String.IsNullOrEmpty(txtRegistrationNo.Text) Then
-            Dim dstCustomer As DataSet
-            dstCustomer = objCustomer.GetCustomerRegistrationNo(txtRegistrationNo.Text)
-            If dstCustomer.Tables.Count > 0 AndAlso dstCustomer.Tables(0).Rows.Count > 0 Then
-                MessageBox.Show("Customer Number " & txtRegistrationNo.Text & " already exist.")
-                Return
-            End If
-        End If
+        'If Not String.IsNullOrEmpty(txtRegistrationNo.Text) Then
+        '    Dim dstCustomer As DataSet
+        '    dstCustomer = objCustomer.GetCustomerRegistrationNo(txtRegistrationNo.Text)
+        '    If dstCustomer.Tables.Count > 0 AndAlso dstCustomer.Tables(0).Rows.Count > 0 Then
+        '        MessageBox.Show("Customer Number " & txtRegistrationNo.Text & " already exist.")
+        '        Return
+        '    End If
+        'End If
 
         objCustomer.UpdateCustomer(intCustomerListId, txtRegistrationNo.Text, txtCustomerName.Text, txtAddress.Text, intJilloId, intTalukoId, intRajyaId, txtPincode.Text, txtMobileNumber.Text, txtMobileNumber2.Text, txtAdharno.Text)
 

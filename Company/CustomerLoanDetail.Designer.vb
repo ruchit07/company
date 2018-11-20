@@ -67,11 +67,6 @@ Partial Class CustomerLoanDetail
         Me.Label16 = New System.Windows.Forms.Label()
         Me.txtEmi = New System.Windows.Forms.TextBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.eminumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.emidate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.emiamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.receivedamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.remainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.CompanyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompanyListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -86,6 +81,12 @@ Partial Class CustomerLoanDetail
         Me.LoanToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RecoveryListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InstallmentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.eminumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.emidate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.emiamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.receivedamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.remainingamount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.installmentreceiveddate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -271,7 +272,7 @@ Partial Class CustomerLoanDetail
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(709, 44)
+        Me.Label6.Location = New System.Drawing.Point(679, 40)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(37, 13)
         Me.Label6.TabIndex = 32
@@ -279,7 +280,7 @@ Partial Class CustomerLoanDetail
         '
         'txtLoanNumber
         '
-        Me.txtLoanNumber.Location = New System.Drawing.Point(787, 41)
+        Me.txtLoanNumber.Location = New System.Drawing.Point(757, 37)
         Me.txtLoanNumber.Name = "txtLoanNumber"
         Me.txtLoanNumber.Size = New System.Drawing.Size(97, 20)
         Me.txtLoanNumber.TabIndex = 33
@@ -287,7 +288,7 @@ Partial Class CustomerLoanDetail
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(709, 84)
+        Me.Label7.Location = New System.Drawing.Point(679, 80)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(63, 13)
         Me.Label7.TabIndex = 32
@@ -296,7 +297,7 @@ Partial Class CustomerLoanDetail
         'txtLoanAmount
         '
         Me.txtLoanAmount.Enabled = False
-        Me.txtLoanAmount.Location = New System.Drawing.Point(787, 81)
+        Me.txtLoanAmount.Location = New System.Drawing.Point(757, 77)
         Me.txtLoanAmount.Name = "txtLoanAmount"
         Me.txtLoanAmount.Size = New System.Drawing.Size(97, 20)
         Me.txtLoanAmount.TabIndex = 33
@@ -304,7 +305,7 @@ Partial Class CustomerLoanDetail
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(709, 128)
+        Me.Label8.Location = New System.Drawing.Point(679, 124)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(63, 13)
         Me.Label8.TabIndex = 32
@@ -313,7 +314,7 @@ Partial Class CustomerLoanDetail
         'txtInstallments
         '
         Me.txtInstallments.Enabled = False
-        Me.txtInstallments.Location = New System.Drawing.Point(787, 125)
+        Me.txtInstallments.Location = New System.Drawing.Point(757, 121)
         Me.txtInstallments.Name = "txtInstallments"
         Me.txtInstallments.Size = New System.Drawing.Size(97, 20)
         Me.txtInstallments.TabIndex = 33
@@ -321,7 +322,7 @@ Partial Class CustomerLoanDetail
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(709, 168)
+        Me.Label9.Location = New System.Drawing.Point(679, 164)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(72, 13)
         Me.Label9.TabIndex = 32
@@ -330,7 +331,7 @@ Partial Class CustomerLoanDetail
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(977, 44)
+        Me.Label10.Location = New System.Drawing.Point(947, 40)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(73, 13)
         Me.Label10.TabIndex = 32
@@ -339,7 +340,7 @@ Partial Class CustomerLoanDetail
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(977, 84)
+        Me.Label11.Location = New System.Drawing.Point(947, 80)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(73, 13)
         Me.Label11.TabIndex = 32
@@ -348,7 +349,7 @@ Partial Class CustomerLoanDetail
         'txtPaidAmount
         '
         Me.txtPaidAmount.Enabled = False
-        Me.txtPaidAmount.Location = New System.Drawing.Point(1070, 41)
+        Me.txtPaidAmount.Location = New System.Drawing.Point(1040, 37)
         Me.txtPaidAmount.Name = "txtPaidAmount"
         Me.txtPaidAmount.Size = New System.Drawing.Size(97, 20)
         Me.txtPaidAmount.TabIndex = 33
@@ -356,7 +357,7 @@ Partial Class CustomerLoanDetail
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(977, 128)
+        Me.Label12.Location = New System.Drawing.Point(947, 124)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(68, 13)
         Me.Label12.TabIndex = 32
@@ -365,7 +366,7 @@ Partial Class CustomerLoanDetail
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(977, 168)
+        Me.Label13.Location = New System.Drawing.Point(947, 164)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(68, 13)
         Me.Label13.TabIndex = 32
@@ -374,7 +375,7 @@ Partial Class CustomerLoanDetail
         'txtInstalmentDone
         '
         Me.txtInstalmentDone.Enabled = False
-        Me.txtInstalmentDone.Location = New System.Drawing.Point(1070, 82)
+        Me.txtInstalmentDone.Location = New System.Drawing.Point(1040, 78)
         Me.txtInstalmentDone.Name = "txtInstalmentDone"
         Me.txtInstalmentDone.Size = New System.Drawing.Size(97, 20)
         Me.txtInstalmentDone.TabIndex = 33
@@ -382,7 +383,7 @@ Partial Class CustomerLoanDetail
         'txtPendingInstallment
         '
         Me.txtPendingInstallment.Enabled = False
-        Me.txtPendingInstallment.Location = New System.Drawing.Point(1070, 125)
+        Me.txtPendingInstallment.Location = New System.Drawing.Point(1040, 121)
         Me.txtPendingInstallment.Name = "txtPendingInstallment"
         Me.txtPendingInstallment.Size = New System.Drawing.Size(97, 20)
         Me.txtPendingInstallment.TabIndex = 33
@@ -390,7 +391,7 @@ Partial Class CustomerLoanDetail
         'txtPendingAmount
         '
         Me.txtPendingAmount.Enabled = False
-        Me.txtPendingAmount.Location = New System.Drawing.Point(1070, 164)
+        Me.txtPendingAmount.Location = New System.Drawing.Point(1040, 160)
         Me.txtPendingAmount.Name = "txtPendingAmount"
         Me.txtPendingAmount.Size = New System.Drawing.Size(97, 20)
         Me.txtPendingAmount.TabIndex = 33
@@ -399,7 +400,7 @@ Partial Class CustomerLoanDetail
         '
         Me.txtLoanDate.Enabled = False
         Me.txtLoanDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtLoanDate.Location = New System.Drawing.Point(787, 161)
+        Me.txtLoanDate.Location = New System.Drawing.Point(757, 157)
         Me.txtLoanDate.Name = "txtLoanDate"
         Me.txtLoanDate.Size = New System.Drawing.Size(97, 20)
         Me.txtLoanDate.TabIndex = 34
@@ -407,7 +408,7 @@ Partial Class CustomerLoanDetail
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(709, 205)
+        Me.Label14.Location = New System.Drawing.Point(679, 201)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(79, 13)
         Me.Label14.TabIndex = 32
@@ -417,7 +418,7 @@ Partial Class CustomerLoanDetail
         '
         Me.txtAdvanceDate.Enabled = False
         Me.txtAdvanceDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtAdvanceDate.Location = New System.Drawing.Point(787, 198)
+        Me.txtAdvanceDate.Location = New System.Drawing.Point(757, 194)
         Me.txtAdvanceDate.Name = "txtAdvanceDate"
         Me.txtAdvanceDate.Size = New System.Drawing.Size(97, 20)
         Me.txtAdvanceDate.TabIndex = 34
@@ -425,7 +426,7 @@ Partial Class CustomerLoanDetail
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(709, 241)
+        Me.Label15.Location = New System.Drawing.Point(679, 237)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(72, 13)
         Me.Label15.TabIndex = 32
@@ -435,7 +436,7 @@ Partial Class CustomerLoanDetail
         '
         Me.txtEndDate.Enabled = False
         Me.txtEndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtEndDate.Location = New System.Drawing.Point(787, 234)
+        Me.txtEndDate.Location = New System.Drawing.Point(757, 230)
         Me.txtEndDate.Name = "txtEndDate"
         Me.txtEndDate.Size = New System.Drawing.Size(97, 20)
         Me.txtEndDate.TabIndex = 34
@@ -443,7 +444,7 @@ Partial Class CustomerLoanDetail
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(709, 275)
+        Me.Label16.Location = New System.Drawing.Point(679, 271)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(60, 13)
         Me.Label16.TabIndex = 32
@@ -452,7 +453,7 @@ Partial Class CustomerLoanDetail
         'txtEmi
         '
         Me.txtEmi.Enabled = False
-        Me.txtEmi.Location = New System.Drawing.Point(787, 272)
+        Me.txtEmi.Location = New System.Drawing.Point(757, 268)
         Me.txtEmi.Name = "txtEmi"
         Me.txtEmi.Size = New System.Drawing.Size(97, 20)
         Me.txtEmi.TabIndex = 33
@@ -462,54 +463,19 @@ Partial Class CustomerLoanDetail
         Me.DataGridView3.AllowUserToAddRows = False
         Me.DataGridView3.AllowUserToDeleteRows = False
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eminumber, Me.emidate, Me.emiamount, Me.receivedamount, Me.remainingamount})
-        Me.DataGridView3.Location = New System.Drawing.Point(712, 323)
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eminumber, Me.emidate, Me.emiamount, Me.receivedamount, Me.remainingamount, Me.installmentreceiveddate})
+        Me.DataGridView3.Location = New System.Drawing.Point(682, 323)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.ReadOnly = True
-        Me.DataGridView3.Size = New System.Drawing.Size(556, 150)
+        Me.DataGridView3.Size = New System.Drawing.Size(682, 150)
         Me.DataGridView3.TabIndex = 35
-        '
-        'eminumber
-        '
-        Me.eminumber.DataPropertyName = "emino"
-        Me.eminumber.HeaderText = "હપ્તા"
-        Me.eminumber.Name = "eminumber"
-        Me.eminumber.ReadOnly = True
-        '
-        'emidate
-        '
-        Me.emidate.DataPropertyName = "installmentdate"
-        Me.emidate.HeaderText = "હપ્તાની તારીખ​"
-        Me.emidate.Name = "emidate"
-        Me.emidate.ReadOnly = True
-        '
-        'emiamount
-        '
-        Me.emiamount.DataPropertyName = "emi"
-        Me.emiamount.HeaderText = "હપ્તાની રકમ​"
-        Me.emiamount.Name = "emiamount"
-        Me.emiamount.ReadOnly = True
-        '
-        'receivedamount
-        '
-        Me.receivedamount.DataPropertyName = "receivedamount"
-        Me.receivedamount.HeaderText = "કુલ આવેલ રકમ​"
-        Me.receivedamount.Name = "receivedamount"
-        Me.receivedamount.ReadOnly = True
-        '
-        'remainingamount
-        '
-        Me.remainingamount.DataPropertyName = "remainingamount"
-        Me.remainingamount.HeaderText = "કુલ બાકી રકમ​"
-        Me.remainingamount.Name = "remainingamount"
-        Me.remainingamount.ReadOnly = True
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CompanyToolStripMenuItem, Me.CustomerToolStripMenuItem, Me.EmployeeToolStripMenuItem, Me.LoanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1280, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1406, 24)
         Me.MenuStrip1.TabIndex = 36
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -595,11 +561,53 @@ Partial Class CustomerLoanDetail
         Me.InstallmentToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InstallmentToolStripMenuItem.Text = "Installment"
         '
+        'eminumber
+        '
+        Me.eminumber.DataPropertyName = "emino"
+        Me.eminumber.HeaderText = "હપ્તા"
+        Me.eminumber.Name = "eminumber"
+        Me.eminumber.ReadOnly = True
+        '
+        'emidate
+        '
+        Me.emidate.DataPropertyName = "installmentdate"
+        Me.emidate.HeaderText = "હપ્તાની તારીખ​"
+        Me.emidate.Name = "emidate"
+        Me.emidate.ReadOnly = True
+        '
+        'emiamount
+        '
+        Me.emiamount.DataPropertyName = "emi"
+        Me.emiamount.HeaderText = "હપ્તાની રકમ​"
+        Me.emiamount.Name = "emiamount"
+        Me.emiamount.ReadOnly = True
+        '
+        'receivedamount
+        '
+        Me.receivedamount.DataPropertyName = "receivedamount"
+        Me.receivedamount.HeaderText = "કુલ આવેલ રકમ​"
+        Me.receivedamount.Name = "receivedamount"
+        Me.receivedamount.ReadOnly = True
+        '
+        'remainingamount
+        '
+        Me.remainingamount.DataPropertyName = "remainingamount"
+        Me.remainingamount.HeaderText = "કુલ બાકી રકમ​"
+        Me.remainingamount.Name = "remainingamount"
+        Me.remainingamount.ReadOnly = True
+        '
+        'installmentreceiveddate
+        '
+        Me.installmentreceiveddate.DataPropertyName = "installmentreceiveddate"
+        Me.installmentreceiveddate.HeaderText = "હપ્તો લિધેલ તરીખ​"
+        Me.installmentreceiveddate.Name = "installmentreceiveddate"
+        Me.installmentreceiveddate.ReadOnly = True
+        '
         'CustomerLoanDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1280, 644)
+        Me.ClientSize = New System.Drawing.Size(1406, 644)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.DataGridView3)
         Me.Controls.Add(Me.txtEndDate)
@@ -712,4 +720,5 @@ Partial Class CustomerLoanDetail
     Friend WithEvents emiamount As DataGridViewTextBoxColumn
     Friend WithEvents receivedamount As DataGridViewTextBoxColumn
     Friend WithEvents remainingamount As DataGridViewTextBoxColumn
+    Friend WithEvents installmentreceiveddate As DataGridViewTextBoxColumn
 End Class
