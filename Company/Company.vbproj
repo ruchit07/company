@@ -146,6 +146,12 @@
     <Compile Include="CustomerList.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomerLoanDetail.Designer.vb">
+      <DependentUpon>CustomerLoanDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerLoanDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Employee.Designer.vb">
       <DependentUpon>Employee.vb</DependentUpon>
     </Compile>
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerList.resx">
       <DependentUpon>CustomerList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerLoanDetail.resx">
+      <DependentUpon>CustomerLoanDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.vb</DependentUpon>

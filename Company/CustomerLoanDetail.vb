@@ -38,8 +38,24 @@
         Me.SearchCustomer()
     End Sub
 
+    Private Sub txLoanNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtLoanNumber.KeyPress
+        Me.SearchLoan()
+    End Sub
+
     Private Sub txtMobileNumber_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMobileNumber.KeyPress
         Me.SearchCustomer()
+    End Sub
+
+    Public Sub SearchLoan()
+        Dim dstLoan As DataSet
+        Dim objLoan As New clsLoan()
+        dstLoan = objLoan.GetLoadDetailByLoanNumber(txtLoanNumber.Text)
+        DataGridView2.AutoGenerateColumns = False
+        If dstLoan.Tables.Count > 0 Then
+            DataGridView2.DataSource = dstLoan.Tables(0)
+            DataGridView2.Refresh()
+        End If
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -72,7 +88,7 @@
             txtEmi.Text = dstLoan.Tables(0).Rows(0)("emi")
             txtPaidAmount.Text = dstLoan.Tables(0).Rows(0)("totalpaidamount")
             txtPendingAmount.Text = dstLoan.Tables(0).Rows(0)("remainingamount")
-            txtInstalmentDone.Text = Val(objLoan.GetPaidEMIByLoanId(intLoanId))
+            txtInstalmentDone.Text = Val(objLoan.GetPaidEMIInstallmentByLoanId(intLoanId))
             txtPendingInstallment.Text = Val(objLoan.GetPendingEMI(intLoanId))
             txtInstallments.Text = Val(txtInstalmentDone.Text) + Val(txtPendingInstallment.Text)
 
@@ -83,6 +99,13 @@
         dstInstallment = objLoan.GetInstallment(intLoanId)
         DataGridView3.DataSource = dstInstallment.Tables(0)
         DataGridView3.Refresh()
+
+        Dim dstCustomer As DataSet
+        Dim objCustomer As New clsCustomer
+        dstCustomer = objCustomer.SearchCustomer(txtCustomerNo.Text, txtCustomerName.Text, txtMobileNumber.Text, txtLoanNumber.Text)
+        DataGridView1.AutoGenerateColumns = False
+        DataGridView1.DataSource = dstCustomer.Tables(0)
+        DataGridView1.Refresh()
 
     End Sub
 

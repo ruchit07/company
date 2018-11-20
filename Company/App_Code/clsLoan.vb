@@ -165,7 +165,7 @@
     End Sub
 
     Public Function GetInstallment(ByVal intLoanId As Integer) As DataSet
-        strSqlCommand = "SELECT emino,loanid,installmentdate,loanamount,receivedamount,remainingamount,emi,penlty,installmentreceiveddate FROM installment WHERE loanid =" & intLoanId
+        strSqlCommand = "SELECT emino,loanid,installmentdate,loanamount,(ISNULL(emino, 1) * emi) receivedamount,remainingamount,emi,penlty,installmentreceiveddate FROM installment WHERE loanid =" & intLoanId
 
         Dim dstDetail As DataSet
         dstDetail = FillDataSet(strSqlCommand)

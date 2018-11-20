@@ -116,7 +116,7 @@
 
     Public Function SearchCustomer(ByVal strCustomerNo As String, ByVal strCustomerName As String, ByVal strMobile As String, ByVal strLoanNumber As String) As DataSet
 
-        strSqlCommand = "select DISTINCT c.customerid,companyid,regno,name,address,jilloid,talukoid,rajyaid,pincode,mobile1,mobile2,adharno from customer c inner join loan l on l.customerid = c.customerid "
+        strSqlCommand = "select DISTINCT c.customerid,companyid,regno,name,address,jilloid,talukoid,rajyaid,pincode,mobile1,mobile2,adharno from customer c left join loan l on l.customerid = c.customerid "
 
         If strCustomerNo <> "" Or strCustomerName <> "" Or strMobile <> "" Or strLoanNumber <> "" Then
 

@@ -279,7 +279,6 @@ Partial Class CustomerLoanDetail
         '
         'txtLoanNumber
         '
-        Me.txtLoanNumber.Enabled = False
         Me.txtLoanNumber.Location = New System.Drawing.Point(787, 41)
         Me.txtLoanNumber.Name = "txtLoanNumber"
         Me.txtLoanNumber.Size = New System.Drawing.Size(97, 20)
@@ -524,13 +523,13 @@ Partial Class CustomerLoanDetail
         'CompanyListToolStripMenuItem
         '
         Me.CompanyListToolStripMenuItem.Name = "CompanyListToolStripMenuItem"
-        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CompanyListToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.CompanyListToolStripMenuItem.Text = "Company List"
         '
         'NewCompanyToolStripMenuItem
         '
         Me.NewCompanyToolStripMenuItem.Name = "NewCompanyToolStripMenuItem"
-        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewCompanyToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.NewCompanyToolStripMenuItem.Text = "New Company"
         '
         'CustomerToolStripMenuItem
@@ -694,11 +693,6 @@ Partial Class CustomerLoanDetail
     Friend WithEvents Label16 As Label
     Friend WithEvents txtEmi As TextBox
     Friend WithEvents DataGridView3 As DataGridView
-    Friend WithEvents eminumber As DataGridViewTextBoxColumn
-    Friend WithEvents emidate As DataGridViewTextBoxColumn
-    Friend WithEvents emiamount As DataGridViewTextBoxColumn
-    Friend WithEvents receivedamount As DataGridViewTextBoxColumn
-    Friend WithEvents remainingamount As DataGridViewTextBoxColumn
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents CompanyToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CompanyListToolStripMenuItem As ToolStripMenuItem
@@ -713,4 +707,9 @@ Partial Class CustomerLoanDetail
     Friend WithEvents LoanToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents RecoveryListToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InstallmentToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents eminumber As DataGridViewTextBoxColumn
+    Friend WithEvents emidate As DataGridViewTextBoxColumn
+    Friend WithEvents emiamount As DataGridViewTextBoxColumn
+    Friend WithEvents receivedamount As DataGridViewTextBoxColumn
+    Friend WithEvents remainingamount As DataGridViewTextBoxColumn
 End Class
