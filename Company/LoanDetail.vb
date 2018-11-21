@@ -53,7 +53,7 @@
         dblInterestRate = Val(txtInterestRate.Text)
         If ddlType.SelectedIndex = 1 Then
 
-            dblInterestAmount = (dblLoanAmount * dblInterestRate * intDuration) / 100
+            dblInterestAmount = (dblLoanAmount * dblInterestRate) / 100
             dblTotalPayable = dblLoanAmount + dblInterestAmount
             txtEMI.Text = Math.Round((dblLoanAmount + dblInterestAmount) / (intDuration), 2)
             txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
