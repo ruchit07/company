@@ -37,7 +37,7 @@
         End If
     End Sub
 
-    Private Sub CalculateInterest()
+    Private Sub CalculateInterest(Optional ByVal blnInterestAmount As Boolean = False)
 
         Dim dblLoanAmount As Double
         Dim dblInterestRate As Double
@@ -56,7 +56,9 @@
             dblInterestAmount = (dblLoanAmount * dblInterestRate) / 100
             dblTotalPayable = dblLoanAmount + dblInterestAmount
             txtEMI.Text = Math.Round((dblLoanAmount + dblInterestAmount) / (intDuration), 2)
-            txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
+            If blnInterestAmount = False Then
+                txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
+            End If
             txtAdvanceAmount.Text = Math.Round(Val(txtEMI.Text), 2)
             txtFinalAmount.Text = Math.Round(dblLoanAmount - Val(txtEMI.Text) - Val(txtFineCharge.Text), 2)
             'txtEMI.Text = Math.Round(dblTotalPayable / intDuration, 2)
@@ -66,7 +68,9 @@
             dblInterestAmount = ((dblLoanAmount * dblInterestRate * intDuration) / 100) / 30
             dblTotalPayable = dblLoanAmount + dblInterestAmount + Val(txtFineCharge.Text)
             txtEMI.Text = Math.Round(dblLoanAmount / (intDuration), 2)
-            txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
+            If blnInterestAmount = False Then
+                txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
+            End If
             txtAdvanceAmount.Text = Math.Round(Val(txtEMI.Text) * Val(txtDays.Text), 2)
             dblTotalPayable = Math.Round(dblLoanAmount - txtInterestAmount.Text - (Val(txtEMI.Text) * Val(txtDays.Text)) - Val(txtFineCharge.Text), 2)
             txtFinalAmount.Text = Math.Round(dblLoanAmount - txtInterestAmount.Text - (Val(txtEMI.Text) * Val(txtDays.Text)) - Val(txtFineCharge.Text), 2)
@@ -76,7 +80,9 @@
         ElseIf ddlType.SelectedIndex = 2 Then
             dblInterestAmount = ((dblLoanAmount * dblInterestRate * intDuration) / 100)
             dblTotalPayable = dblLoanAmount + dblInterestAmount + Val(txtFineCharge.Text)
-            txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
+            If blnInterestAmount = False Then
+                txtInterestAmount.Text = Math.Round(dblInterestAmount, 2)
+            End If
             txtAdvanceAmount.Text = 0
             Dim bdlTempEmi = Math.Round(dblInterestAmount, 2)
             txtFinalAmount.Text = Math.Round(dblLoanAmount - Val(bdlTempEmi) - Val(txtFineCharge.Text), 2)
@@ -184,7 +190,8 @@
         Dim form2 = New Loan()
         AddHandler form2.Closed, Sub(s, args) Me.Close()
 
-        form2.lblCustomerId.Text = ddlCustomer.SelectedValue
+
+        'form2.lblCustomerId.Text = ddlCustomer.SelectedValue
         form2.Show()
     End Sub
 
@@ -306,5 +313,22 @@
         Dim form2 = New CustomerLoanDetail()
         AddHandler form2.Closed, Sub(s, args) Me.Close()
         form2.Show()
+    End Sub
+
+    Private Sub txtInterestAmount_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtInterestAmount.KeyPress
+
+    End Sub
+
+    Private Sub txtInterestAmount_TextChanged(sender As Object, e As EventArgs) Handles txtInterestAmount.TextChanged
+        If Val(txtInterestAmount.Text) > 0 Then
+            If ddlType.SelectedIndex = 1 Then
+                txtInterestRate.Text = Math.Round(Val(txtInterestAmount.Text) * 100 / Val(txtLoanAmount.Text), 2)
+            ElseIf ddlType.SelectedIndex = 2 Then
+                txtInterestRate.Text = Math.Round((Val(txtInterestAmount.Text) * 100) / (Val(txtLoanAmount.Text) * Val(txtDuration.Text)), 2)
+            ElseIf ddlType.SelectedIndex = 0 Then
+                txtInterestRate.Text = Math.Round((Val(txtInterestAmount.Text) * 100 * 30) / (Val(txtLoanAmount.Text) * Val(txtDuration.Text)), 2)
+            End If
+
+        End If
     End Sub
 End Class
